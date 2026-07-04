@@ -1,0 +1,33 @@
+#order_data {
+    .order_data_column {
+        ._invoice_carruer_type_field,
+        ._invoice_random_number_field {
+            float: right;
+            clear: right;
+        }
+
+        ._invoice_date_field {
+            input.hour,
+            input.minute,
+            input.second {
+                width: 15%;
+                padding-right: 0;
+            }
+        }
+
+        .address.ivoice strong {
+            display: inline-block;
+        }
+    }
+
+    .ivoice_data_column {
+        float: left;
+        width: 63%;
+        padding-right: 2%;
+    }
+
+    .ivoice_action_column {
+        float: left;
+        width: 35%;
+    }
+}

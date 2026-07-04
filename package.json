@@ -1,0 +1,26 @@
+{
+    "name": "ry-invoice-for-ezpay",
+    "title": "RY Invoice for ezPay",
+    "version": "2026.7.4",
+    "author": "Richer Yang",
+    "private": true,
+    "devDependencies": {
+        "@wordpress/i18n": "^6.21.0",
+        "@wordpress/scripts": "^32.4.0"
+    },
+    "scripts": {
+        "start": "wp-scripts start",
+        "build": "npm run build:assets && npm run i18n:pot && npm run i18n:po",
+        "build:all": "npm run build:assets && npm run build:i18n",
+        "build:assets": "wp-scripts build",
+        "build:i18n": "npm run i18n:pot && npm run i18n:po && npm run i18n:mo && npm run i18n:php && npm run i18n:json && npm run i18n:clearpot && npm run i18n:clearjson",
+        "i18n:pot": "wp i18n make-pot \"\" \"languages/ry-invoice-for-ezpay.pot\" --slug=\"ry-invoice-for-ezpay\" --domain=\"ry-invoice-for-ezpay\" --exclude=\"node_modules,assets-src\"",
+        "i18n:po": "wp i18n update-po \"languages/ry-invoice-for-ezpay.pot\" languages",
+        "i18n:mo": "wp i18n make-mo \"languages\"",
+        "i18n:php": "wp i18n make-php \"languages\"",
+        "i18n:json": "del-cli -f \"languages/*.json\" && wp i18n make-json \"languages\" --no-purge",
+        "i18n:clearpot": "node -e \"const fs=require('fs');const path=require('path');const dir='languages';for(const file of fs.readdirSync(dir)){if(!file.endsWith('.pot'))continue;const full=path.join(dir,file);const data=fs.readFileSync(full,'utf8').split('\\n');const newData=data.filter(line=>!line.startsWith('\\\"POT-Creation-Date:'));fs.writeFileSync(full,newData.join('\\n'));}\"",
+        "i18n:clearjson": "node -e \"const fs=require('fs');const path=require('path');const dir='languages';for(const file of fs.readdirSync(dir)){if(!file.endsWith('.json'))continue;const full=path.join(dir,file);const data=JSON.parse(fs.readFileSync(full,'utf8'));if(Object.prototype.hasOwnProperty.call(data,'translation-revision-date')){delete data['translation-revision-date'];fs.writeFileSync(full,JSON.stringify(data));}}\"",
+        "update": "npm update"
+    }
+}
