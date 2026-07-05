@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-06-29T20:45:49+08:00\n"
-"PO-Revision-Date: 2026-07-03 17:15+0800\n"
+"PO-Revision-Date: 2026-07-05 11:04+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -149,12 +149,12 @@ msgid "Invalid donate number"
 msgstr "無效的愛心碼"
 
 #: woocommerce/invoice-basic.php:245
-#: woocommerce/invoice.php:247
+#: woocommerce/invoice.php:242
 msgid "Zero total fee without invoice"
 msgstr "總額零元不開立發票"
 
 #: woocommerce/invoice-basic.php:252
-#: woocommerce/invoice.php:253
+#: woocommerce/invoice.php:248
 msgid "Negative total fee can't invoice"
 msgstr "總額負數不開立發票"
 
@@ -256,16 +256,16 @@ msgstr "忽略國外訂單"
 msgid "Disable auto get invoice for order billing country and shipping country are not in Taiwan."
 msgstr "當帳單地址與運送地址不是台灣的時候，停止自動開立發票。"
 
-#: woocommerce/admin/settings/settings-invoice.php:78
+#: woocommerce/admin/settings/settings-invoice.php:80
 msgid "Invalid mode"
 msgstr "作廢發票模式"
 
-#: woocommerce/admin/settings/settings-invoice.php:83
+#: woocommerce/admin/settings/settings-invoice.php:85
 msgctxt "invalid mode"
 msgid "manual"
 msgstr "手動"
 
-#: woocommerce/admin/settings/settings-invoice.php:84
+#: woocommerce/admin/settings/settings-invoice.php:86
 msgctxt "invalid mode"
 msgid "auto ( when order status cancelled OR refunded )"
 msgstr "自動 (當訂單狀態為取消或退費)"
@@ -327,18 +327,18 @@ msgstr "開立發票錯誤：%1$s (%2$s)"
 msgid "Invoice create time"
 msgstr "發票開立時間"
 
-#: woocommerce/invoice.php:317
-#: woocommerce/invoice.php:330
-#: woocommerce/invoice.php:343
-#: woocommerce/invoice.php:353
+#: woocommerce/invoice.php:312
+#: woocommerce/invoice.php:325
+#: woocommerce/invoice.php:338
+#: woocommerce/invoice.php:348
 msgid "parcel"
 msgstr "批"
 
-#: woocommerce/invoice.php:340
+#: woocommerce/invoice.php:335
 msgid "shipping fee"
 msgstr "運費"
 
-#: woocommerce/invoice.php:350
+#: woocommerce/invoice.php:345
 msgid "return fee"
 msgstr "退款"
 
@@ -360,15 +360,11 @@ msgstr "不建議同時啟用兩個發票外掛！"
 msgid "Settings saved."
 msgstr "設定已儲存。"
 
-#: woocommerce/admin/settings/settings-invoice.php:66
-msgid "Delay time"
-msgstr "延遲時間"
-
-#: woocommerce/admin/settings/settings-invoice.php:73
+#: woocommerce/admin/settings/settings-invoice.php:75
 msgid "After N hours get invoice."
 msgstr "在 N 小時候執行開立。"
 
-#: woocommerce/admin/settings/settings-invoice.php:74
+#: woocommerce/admin/settings/settings-invoice.php:76
 msgid "According to WordPress cron job, the actual execution time will be later than the specified time."
 msgstr "基於 WordPress 的排程系統，實際執行時間將比指定的時間晚。"
 
@@ -426,11 +422,11 @@ msgstr "<strong>注意</strong>：紀錄可能包含個人資料。"
 msgid "Log file %s"
 msgstr "紀錄檔 %s"
 
-#: woocommerce/admin/settings/settings-invoice.php:88
+#: woocommerce/admin/settings/settings-invoice.php:90
 msgid "Trade no prefix"
 msgstr "交易編號前綴字"
 
-#: woocommerce/admin/settings/settings-invoice.php:91
+#: woocommerce/admin/settings/settings-invoice.php:93
 msgid "The prefix string of trade no. Only letters and numbers allowed."
 msgstr "交易編號前綴字符串。只允許使用英文字母與數字。"
 
@@ -474,6 +470,14 @@ msgstr "HashIV"
 msgid "Item count precision"
 msgstr "商品數量的小數點位數"
 
-#: admin/page/html/general.php:24
+#: admin/page/html/general.php:23
 msgid "Item amount precision"
 msgstr "商品金額的小數點位數"
+
+#: includes/invoice.php:45
+msgid "Taiwan"
+msgstr "台灣"
+
+#: woocommerce/admin/settings/settings-invoice.php:66
+msgid "Delay time (hours)"
+msgstr "延遲時間 ( 小時 )"

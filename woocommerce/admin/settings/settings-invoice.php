@@ -63,13 +63,15 @@ return [
         'autoload' => false,
     ],
     [
-        'title' => __('Delay time', 'ry-invoice-for-ezpay'),
+        'title' => __('Delay time (hours)', 'ry-invoice-for-ezpay'),
         'id' => RY_IFEZPAY::OPTION_PREFIX . 'get_delay_time',
         'type' => 'number',
         'default' => '0',
-        'min' => '0',
-        'max' => '336',
-        'step' => '1',
+        'custom_attributes' => [
+            'min' => '0',
+            'max' => '336',
+            'step' => '1',
+        ],
         'desc' => __('After N hours get invoice.', 'ry-invoice-for-ezpay')
             . __('According to WordPress cron job, the actual execution time will be later than the specified time.', 'ry-invoice-for-ezpay'),
         'autoload' => false,
