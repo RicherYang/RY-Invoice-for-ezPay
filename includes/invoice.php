@@ -42,7 +42,7 @@ final class RY_IFEZPAY_Invoice extends RY_IFEZPAY_Abstract_Invoice
             'Status' => 1,
             'Category' => 'B2C',
             'BuyerName' => __('Customer', 'ry-invoice-for-ezpay'),
-            'BuyerAddress' => $invoice_data['address'],
+            'BuyerAddress' => __('Taiwan', 'ry-invoice-for-ezpay'),
             'BuyerEmail' => $invoice_data['email'],
             'CarrierType' => '',
             'CarrierNum' => '',
