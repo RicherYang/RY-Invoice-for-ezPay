@@ -1,6 +1,6 @@
 <?php defined('ABSPATH') or exit; ?>
 
-<h2>紀錄類別</h2>
+<h2><?php esc_html_e('Log Categories', 'ry-invoice-for-ezpay'); ?></h2>
 
 <form action="<?php echo esc_url(admin_url('admin.php')); ?>" method="get">
     <input type="hidden" name="page" value="ry-logs">
@@ -16,11 +16,11 @@
     </select>
 </form>
 
-<h2>紀錄檔案</h2>
+<h2><?php esc_html_e('Log Files', 'ry-invoice-for-ezpay'); ?></h2>
 <form action="<?php echo esc_url(admin_url('admin.php')); ?>" method="get">
     <input type="hidden" name="page" value="ry-logs">
     <input type="hidden" name="group" value="<?php echo esc_attr($current_group); ?>">
-    <select name="log" size="<?php echo esc_attr(min(10, count($log_list))); ?>" style="padding:0 6px;background: #fff;-webkit-appearance:none;" onchange="this.form.submit();" ondblclick="this.form.submit();">
+    <select name="log" size="<?php echo esc_attr(min(10, max(2, count($log_list)))); ?>" style="padding:0 6px;background: #fff;-webkit-appearance:none;" onchange="this.form.submit();" ondblclick="this.form.submit();">
         <?php
         foreach ($log_list as $log_name) {
             printf(

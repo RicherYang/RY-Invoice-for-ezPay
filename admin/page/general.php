@@ -64,7 +64,7 @@ final class RY_IFEZPAY_Admin_Page_General extends RY_Abstract_Admin_Page
 
     public function do_admin_action(string $action): void
     {
-        if ($action !== 'ry-invoice-general') {
+        if ('ry-invoice-general' !== $action) {
             return;
         }
 

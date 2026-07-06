@@ -5,11 +5,11 @@ defined('ABSPATH') or exit;
 if (!class_exists('RY_Logs', false)) {
     class RY_Logs
     {
-        protected static bool $log_enabled = false;
+        protected static array $log_enabled = [];
 
-        public static function set_log(bool $enabled): void
+        public static function set_log(bool $enabled, string $handle = ''): void
         {
-            self::$log_enabled = $enabled;
+            self::$log_enabled[$handle] = $enabled;
         }
 
         public static function get_log_path(string $handle): string
@@ -38,7 +38,7 @@ if (!class_exists('RY_Logs', false)) {
         public static function log(string $handle, string $level, string $message, mixed $context = []): void
         {
             $level = strtoupper($level);
-            if (!self::$log_enabled) {
+            if (!self::$log_enabled[$handle]) {
                 if ($level !== 'ERROR') {
                     return;
                 }

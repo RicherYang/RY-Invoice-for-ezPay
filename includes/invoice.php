@@ -99,8 +99,8 @@ final class RY_IFEZPAY_Invoice extends RY_IFEZPAY_Abstract_Invoice
                 $invoice_item['qty'] = 1;
             }
 
-            $name = mb_strimwidth(str_replace('|', '', strip_tags($invoice_item['name'])), 0, 80, '');
-            $unit = mb_strimwidth(str_replace('|', '', strip_tags($invoice_item['unit'])), 0, 6, '');
+            $name = mb_strimwidth(str_replace('|', '', wp_strip_all_tags($invoice_item['name'])), 0, 80, '');
+            $unit = mb_strimwidth(str_replace('|', '', wp_strip_all_tags($invoice_item['unit'])), 0, 6, '');
             $qty = round($invoice_item['qty'], $general_info['count_precision']);
             $total = $invoice_item['total'];
             if ($post_args['Category'] === 'B2B') {
@@ -127,7 +127,7 @@ final class RY_IFEZPAY_Invoice extends RY_IFEZPAY_Abstract_Invoice
         $post_args['Amt'] = round($post_args['AmtSales'] + $post_args['AmtFree'] + $post_args['AmtZero'], 0);
         $post_args['TaxAmt'] = $post_args['TotalAmt'] - $post_args['Amt'];
         $post_args['Comment'] = apply_filters('ry_invoice-main_remark', $post_args['Comment'], $object_ID);
-        $post_args['Comment'] = mb_strimwidth(strip_tags($post_args['Comment']), 0, 200, '');
+        $post_args['Comment'] = mb_strimwidth(wp_strip_all_tags($post_args['Comment']), 0, 200, '');
 
         foreach ($post_args as $key => $value) {
             if (is_array($value)) {

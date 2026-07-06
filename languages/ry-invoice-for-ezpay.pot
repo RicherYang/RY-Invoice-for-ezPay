@@ -174,12 +174,49 @@ msgstr ""
 msgid "Taiwan"
 msgstr ""
 
-#: includes/ry-general/html/log-info.php:58
+#. translators: %1$s: Plugin name, %2$s: License URL
+#: includes/ry-general/abstract-admin.php:49
+#, php-format
+msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
+msgstr ""
+
+#: includes/ry-general/admin-logs.php:25
+#: includes/ry-general/admin-logs.php:96
+msgid "Logs"
+msgstr ""
+
+#: includes/ry-general/admin-logs.php:141
+msgid "Delete successful."
+msgstr ""
+
+#: includes/ry-general/admin-logs.php:148
+msgid "Delete failed."
+msgstr ""
+
+#. translators: %s: Path of log file
+#: includes/ry-general/html/log-info.php:5
+#, php-format
+msgid "Viewing log file %s"
+msgstr ""
+
+#: includes/ry-general/html/log-info.php:36
+msgid "Details"
+msgstr ""
+
+#: includes/ry-general/html/log-info.php:63
 msgid "Download"
 msgstr ""
 
-#: includes/ry-general/html/log-info.php:66
-msgid "Permanently delete"
+#: includes/ry-general/html/log-info.php:71
+msgid "Delete Permanently"
+msgstr ""
+
+#: includes/ry-general/html/logs-select.php:3
+msgid "Log Categories"
+msgstr ""
+
+#: includes/ry-general/html/logs-select.php:19
+msgid "Log Files"
 msgstr ""
 
 #: woocommerce/admin/invoice.php:62
@@ -438,12 +475,12 @@ msgid "Invalid tax ID number"
 msgstr ""
 
 #: woocommerce/invoice-basic.php:245
-#: woocommerce/invoice.php:242
+#: woocommerce/invoice.php:244
 msgid "Zero total fee without invoice"
 msgstr ""
 
 #: woocommerce/invoice-basic.php:252
-#: woocommerce/invoice.php:248
+#: woocommerce/invoice.php:250
 msgid "Negative total fee can't invoice"
 msgstr ""
 
@@ -463,17 +500,17 @@ msgstr ""
 msgid "Invalid invoice error: %1$s (%2$s)"
 msgstr ""
 
-#: woocommerce/invoice.php:312
-#: woocommerce/invoice.php:325
-#: woocommerce/invoice.php:338
-#: woocommerce/invoice.php:348
+#: woocommerce/invoice.php:314
+#: woocommerce/invoice.php:327
+#: woocommerce/invoice.php:340
+#: woocommerce/invoice.php:350
 msgid "parcel"
 msgstr ""
 
-#: woocommerce/invoice.php:335
+#: woocommerce/invoice.php:337
 msgid "shipping fee"
 msgstr ""
 
-#: woocommerce/invoice.php:345
+#: woocommerce/invoice.php:347
 msgid "return fee"
 msgstr ""

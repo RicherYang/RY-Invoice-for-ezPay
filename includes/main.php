@@ -27,6 +27,9 @@ final class RY_IFEZPAY extends RY_Abstract_Basic
         load_plugin_textdomain('ry-invoice-for-ezpay', false, plugin_basename(dirname(__DIR__)) . '/languages');
         include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/composer/vendor/woocommerce/action-scheduler/action-scheduler.php';
 
+        include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/ry-general/logs.php';
+        RY_Logs::set_log(RY_IFEZPAY::get_option('log', 'no') === 'yes', 'ezpay-invoice');
+
         if (is_admin()) {
             include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/update.php';
             RY_IFEZPAY_Update::update();
@@ -37,9 +40,6 @@ final class RY_IFEZPAY extends RY_Abstract_Basic
 
     public function do_wp_init(): void
     {
-        include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/ry-general/logs.php';
-        RY_Logs::set_log(RY_IFEZPAY::get_option('log', 'no') === 'yes');
-
         include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/functions.php';
         include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/license.php';
         include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/link-server.php';

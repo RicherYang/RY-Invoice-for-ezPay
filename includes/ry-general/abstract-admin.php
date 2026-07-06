@@ -44,7 +44,12 @@ if (!class_exists('RY_Abstract_Admin', false)) {
             }
 
             echo '<div class="notice notice-info is-dismissible">';
-            echo '<p>' . esc_html($this->license::$main_class::PLUGIN_NAME) . ': 你的<a href="' . esc_url(admin_url('admin.php?page=ry-license')) . '">授權</a>尚未啟動！</p>';
+            echo '<p>' . wp_kses(sprintf(
+                /* translators: %1$s: Plugin name, %2$s: License URL */
+                __('%1$s: Your <a href="%2$s">license</a> is not activated yet!', 'ry-invoice-for-ezpay'),
+                '<strong>' . esc_html($this->license::$main_class::PLUGIN_NAME) . '</strong>',
+                esc_url(admin_url('admin.php?page=ry-license'))
+            ), ['strong' => [], 'a' => ['href' => []]]) . '</p>';
             echo '</div>';
         }
 

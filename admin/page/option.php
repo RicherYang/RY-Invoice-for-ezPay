@@ -54,7 +54,7 @@ final class RY_IFEZPAY_Admin_Page_Option extends RY_Abstract_Admin_Page
 
     public function do_admin_action(string $action): void
     {
-        if ($action !== 'ry-invoice-ezpay-option') {
+        if ('ry-invoice-ezpay-option' !== $action) {
             return;
         }
 

@@ -16,13 +16,13 @@ if (!class_exists('RY_Admin_Logs', false)) {
         public static function init_menu(): void
         {
             add_filter('ry-plugin/menu_list', [__CLASS__, 'add_menu'], 9999);
-            add_action('admin_post_ry/admin-logs', [__CLASS__, 'admin_action']);
+            add_action('admin_post_ry-general-admin-logs', [__CLASS__, 'admin_action']);
         }
 
         public static function add_menu(array $menu_list): array
         {
             $menu_list[] = [
-                'name' => '紀錄',
+                'name' => __('Logs', 'ry-invoice-for-ezpay'),
                 'slug' => 'ry-logs',
                 'function' => [__CLASS__, 'pre_show_page'],
             ];
@@ -93,7 +93,7 @@ if (!class_exists('RY_Admin_Logs', false)) {
                 $current_file = '';
             }
 
-            echo '<div class="wrap"><h1>紀錄</h1>';
+            echo '<div class="wrap"><h1>' . esc_html__('Logs', 'ry-invoice-for-ezpay') . '</h1>';
             echo '<div style="display:flex;flex-wrap:wrap;gap:1.25em;">';
 
             $group_list = array_keys($this->log_list);
@@ -103,6 +103,7 @@ if (!class_exists('RY_Admin_Logs', false)) {
             echo '</div>';
 
             if ($current_file !== '') {
+                $nice_file_name = $this->get_nice_file_name($current_file);
                 echo '<div style="flex: 1 0 0%;width:100%;font-size:14px;">';
                 include __DIR__ . '/html/log-info.php';
                 echo '</div>';
@@ -114,11 +115,11 @@ if (!class_exists('RY_Admin_Logs', false)) {
 
         public function do_admin_action(string $action): void
         {
-            if ($action !== 'ry/admin-logs') {
+            if ('ry-general-admin-logs' !== $action) {
                 return;
             }
 
-            if (!wp_verify_nonce($_GET['_wpnonce'] ?? '', 'ry/admin-logs')) {
+            if (!wp_verify_nonce($_GET['_wpnonce'] ?? '', 'ry-general-admin-logs')) {
                 wp_die('Invalid nonce');
             }
 
@@ -129,26 +130,22 @@ if (!class_exists('RY_Admin_Logs', false)) {
                 $current_file = realpath($this->log_path . $this->log_list[$current_group][$current_log]);
                 if (str_starts_with($current_file, $this->log_path)) {
                     if (sanitize_key($_GET['action2'] ?? '') === 'download') {
-                        $file_name = basename($current_file);
-                        $file_name = explode('-', $file_name);
-                        array_pop($file_name);
-                        $file_name = implode('-', $file_name) . '.log';
                         header('Content-Type: text/plain');
-                        header('Content-Disposition: attachment; filename="' . $file_name . '"');
+                        header('Content-Disposition: attachment; filename="' . $this->get_nice_file_name($current_file) . '"');
                         readfile($current_file); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_readfile
                         exit;
                     }
 
                     if (sanitize_key($_GET['action2'] ?? '') === 'delete') {
                         if (wp_delete_file($current_file)) {
-                            $this->add_notice('success', '刪除成功。');
+                            $this->add_notice('success', __('Delete successful.', 'ry-invoice-for-ezpay'));
                             $current_log = '';
 
                             if (count($this->log_list[$current_group]) === 0) {
                                 $current_group = '';
                             }
                         } else {
-                            $this->add_notice('error', '刪除失敗。');
+                            $this->add_notice('error', __('Delete failed.', 'ry-invoice-for-ezpay'));
                         }
                     }
                 }
@@ -160,6 +157,14 @@ if (!class_exists('RY_Admin_Logs', false)) {
                 'log' => $current_log,
             ], admin_url('admin.php')));
             exit;
+        }
+
+        protected function get_nice_file_name($file_path): string
+        {
+            $nice_file_name = basename($file_path);
+            $nice_file_name = explode('-', $nice_file_name);
+            array_pop($nice_file_name);
+            return implode('-', $nice_file_name) . '.log';
         }
     }
 

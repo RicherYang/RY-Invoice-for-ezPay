@@ -1,6 +1,13 @@
 <?php defined('ABSPATH') or exit; ?>
 
-<div style="border:1px solid #ccc;padding:3px;margin-bottom:1em;height:calc(100vh - 200px);overflow:scroll;background-color:#fff;">
+<h2><?php echo wp_kses(sprintf(
+    /* translators: %s: Path of log file */
+    __('Viewing log file %s', 'ry-invoice-for-ezpay'),
+    '<code>' . $nice_file_name . '</code>'
+), ['code' => []]);
+?></h2>
+
+<div style="border:1px solid #ccc;padding:3px;margin-bottom:1em;height:calc(100vh - 250px);overflow:scroll;background-color:#fff;">
     <?php
 $fp = fopen($current_file, 'rb'); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_fopen
 $i = 0;
@@ -26,11 +33,9 @@ while (!feof($fp)) {
                 $log_text .= htmlspecialchars($message_info[0]);
                 try {
                     $context = json_decode($message_info[1], null, 512, JSON_THROW_ON_ERROR);
-                    $log_text .= sprintf(
-                        '<details><summary>%1$s</summary>%2$s</details>',
-                        '詳細資訊',
-                        htmlspecialchars(wp_json_encode($context, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)),
-                    );
+                    $log_text .= '<details><summary>' . __('Details', 'ry-invoice-for-ezpay') . '</summary>'
+                        . htmlspecialchars(wp_json_encode($context, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE))
+                        . '</details>';
                 } catch (\Throwable $th) {
                 }
             } else {
@@ -50,17 +55,17 @@ while (!feof($fp)) {
 </div>
 
 <a href="<?php echo esc_url(add_query_arg([
-    'action' => 'ry/admin-logs',
+    'action' => 'ry-general-admin-logs',
     'action2' => 'download',
     'group' => $current_group,
     'log' => $current_log,
-    '_wpnonce' => wp_create_nonce('ry/admin-logs'),
+    '_wpnonce' => wp_create_nonce('ry-general-admin-logs'),
 ], admin_url('admin-post.php'))); ?>" class="button"><?php esc_html_e('Download', 'ry-invoice-for-ezpay'); ?></a>
 &emsp;
 <a href="<?php echo esc_url(add_query_arg([
-    'action' => 'ry/admin-logs',
+    'action' => 'ry-general-admin-logs',
     'action2' => 'delete',
     'group' => $current_group,
     'log' => $current_log,
-    '_wpnonce' => wp_create_nonce('ry/admin-logs'),
-], admin_url('admin-post.php'))); ?>" class="button"><?php esc_html_e('Permanently delete', 'ry-invoice-for-ezpay'); ?></a>
+    '_wpnonce' => wp_create_nonce('ry-general-admin-logs'),
+], admin_url('admin-post.php'))); ?>" class="button"><?php esc_html_e('Delete Permanently', 'ry-invoice-for-ezpay'); ?></a>
