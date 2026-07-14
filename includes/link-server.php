@@ -21,19 +21,18 @@ final class RY_IFEZPAY_LinkServer extends RY_Abstract_Link_Server
 
     protected function get_base_info(): array
     {
-        return [
+        $info = [
             'plugin' => RY_IFEZPAY_VERSION,
             'php' => PHP_VERSION,
             'wp' => get_bloginfo('version'),
         ];
-    }
+        if (defined('WC_VERSION')) {
+            $info['wc'] = WC_VERSION;
+        }
+        if (defined('TUTOR_VERSION')) {
+            $info['tt'] = TUTOR_VERSION;
+        }
 
-    protected function get_user_agent()
-    {
-        return sprintf(
-            'RY_IFEZPAY %s (WordPress/%s)',
-            RY_IFEZPAY_VERSION,
-            get_bloginfo('version'),
-        );
+        return $info;
     }
 }

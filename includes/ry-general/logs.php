@@ -38,13 +38,13 @@ if (!class_exists('RY_Logs', false)) {
         public static function log(string $handle, string $level, string $message, mixed $context = []): void
         {
             $level = strtoupper($level);
-            if (!self::$log_enabled[$handle]) {
+            if (isset(self::$log_enabled[$handle]) && self::$log_enabled[$handle] === false) {
                 if ($level !== 'ERROR') {
                     return;
                 }
             }
 
-            $add_message = current_time('c') . ' ' . strtoupper($level) . ' ' . $message;
+            $add_message = current_time('c') . ' ' . $level . ' ' . $message;
             if (!empty($context)) {
                 $add_message .= ' **CONTEXT** ' . json_encode($context, JSON_UNESCAPED_UNICODE);
             }

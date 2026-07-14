@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-06-29T20:45:49+08:00\n"
-"PO-Revision-Date: 2026-07-06 10:39+0800\n"
+"PO-Revision-Date: 2026-07-14 22:43+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -485,15 +485,15 @@ msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
 msgstr "%1$s: 你的<a href=\"%2$s\">授權</a>尚未啟用！"
 
 #: includes/ry-general/admin-logs.php:25
-#: includes/ry-general/admin-logs.php:96
+#: includes/ry-general/admin-logs.php:86
 msgid "Logs"
 msgstr "紀錄"
 
-#: includes/ry-general/admin-logs.php:141
+#: includes/ry-general/admin-logs.php:146
 msgid "Delete successful."
 msgstr "刪除成功。"
 
-#: includes/ry-general/admin-logs.php:148
+#: includes/ry-general/admin-logs.php:153
 msgid "Delete failed."
 msgstr "刪除失敗。"
 
@@ -518,3 +518,7 @@ msgstr "紀錄類別"
 #: includes/ry-general/html/logs-select.php:19
 msgid "Log Files"
 msgstr "紀錄檔案"
+
+#: includes/ry-general/admin-logs.php:88
+msgid "No logs found."
+msgstr "没有紀錄檔案。"

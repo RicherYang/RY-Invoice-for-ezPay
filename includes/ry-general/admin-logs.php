@@ -80,7 +80,14 @@ if (!class_exists('RY_Admin_Logs', false)) {
         {
             $current_group = sanitize_title(wp_unslash($_GET['group'] ?? ''));
             if (!isset($this->log_list[$current_group])) {
-                $current_group = array_key_first($this->log_list);
+                $current_group = count($this->log_list) ? array_key_first($this->log_list) : '';
+            }
+
+            echo '<div class="wrap"><h1>' . esc_html__('Logs', 'ry-invoice-for-ezpay') . '</h1>';
+            if ($current_group === '') {
+                echo '<p>' . esc_html__('No logs found.', 'ry-invoice-for-ezpay') . '</p>';
+                echo '</div>';
+                return;
             }
 
             $current_log = sanitize_title(wp_unslash($_GET['log'] ?? ''));
@@ -88,12 +95,6 @@ if (!class_exists('RY_Admin_Logs', false)) {
                 $current_log = array_key_first($this->log_list[$current_group]);
             }
 
-            $current_file = realpath($this->log_path . $this->log_list[$current_group][$current_log]);
-            if (!str_starts_with($current_file, $this->log_path)) {
-                $current_file = '';
-            }
-
-            echo '<div class="wrap"><h1>' . esc_html__('Logs', 'ry-invoice-for-ezpay') . '</h1>';
             echo '<div style="display:flex;flex-wrap:wrap;gap:1.25em;">';
 
             $group_list = array_keys($this->log_list);
@@ -102,6 +103,10 @@ if (!class_exists('RY_Admin_Logs', false)) {
             include __DIR__ . '/html/logs-select.php';
             echo '</div>';
 
+            $current_file = realpath($this->log_path . $this->log_list[$current_group][$current_log]);
+            if (!str_starts_with($current_file, $this->log_path)) {
+                $current_file = '';
+            }
             if ($current_file !== '') {
                 $nice_file_name = $this->get_nice_file_name($current_file);
                 echo '<div style="flex: 1 0 0%;width:100%;font-size:14px;">';

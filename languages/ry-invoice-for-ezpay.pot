@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Invoice for ezPay 2026.7.5\n"
+"Project-Id-Version: RY Invoice for ezPay 2026.7.14\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-invoice-for-ezpay\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -181,15 +181,19 @@ msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
 msgstr ""
 
 #: includes/ry-general/admin-logs.php:25
-#: includes/ry-general/admin-logs.php:96
+#: includes/ry-general/admin-logs.php:86
 msgid "Logs"
 msgstr ""
 
-#: includes/ry-general/admin-logs.php:141
+#: includes/ry-general/admin-logs.php:88
+msgid "No logs found."
+msgstr ""
+
+#: includes/ry-general/admin-logs.php:146
 msgid "Delete successful."
 msgstr ""
 
-#: includes/ry-general/admin-logs.php:148
+#: includes/ry-general/admin-logs.php:153
 msgid "Delete failed."
 msgstr ""
 
