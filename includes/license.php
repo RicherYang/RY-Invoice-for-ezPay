@@ -2,9 +2,9 @@
 
 defined('ABSPATH') or exit;
 
-include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/ry-paid/abstract-license.php';
+use RY\Paid\AbstractLicense;
 
-final class RY_IFEZPAY_License extends RY_Abstract_License
+final class RY_IFEZPAY_License extends AbstractLicense
 {
     public static string $main_class = RY_IFEZPAY::class;
 

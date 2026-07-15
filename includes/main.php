@@ -47,7 +47,6 @@ final class RY_IFEZPAY extends AbstractBasic
         RY_IFEZPAY_Updater::instance();
 
         if (is_admin()) {
-            include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/ry-paid/admin-license.php';
             include_once RY_IFEZPAY_PLUGIN_DIR . 'admin/admin.php';
             RY_IFEZPAY_Admin::instance();
         }

@@ -5,7 +5,8 @@
     },
     "autoload": {
         "psr-4": {
-            "RY\\General\\": "includes/ry-general"
+            "RY\\General\\": "includes/ry-general",
+            "RY\\Paid\\": "includes/ry-paid"
         }
     },
     "config": {

@@ -6,8 +6,6 @@ use RY\General\AbstractAdminPage;
 
 final class RY_IFEZPAY_Admin_Page_General extends AbstractAdminPage
 {
-    protected static $_instance = null;
-
     public static function init_menu(): void
     {
         if (!has_action('load-admin_page_ry-invoice-general')) {

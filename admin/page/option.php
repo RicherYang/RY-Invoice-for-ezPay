@@ -6,8 +6,6 @@ use RY\General\AbstractAdminPage;
 
 final class RY_IFEZPAY_Admin_Page_Option extends AbstractAdminPage
 {
-    protected static $_instance = null;
-
     public static function init_menu(): void
     {
         add_filter('ry-invoice-navs', [__CLASS__, 'add_nav']);
