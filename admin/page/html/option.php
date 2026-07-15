@@ -1,5 +1,10 @@
 <?php defined('ABSPATH') or exit; ?>
 
+<?php
+use RY\General\Logs;
+
+?>
+
 <?php $api_info = RY_IFEZPAY_Invoice::instance()->get_api_info(); ?>
 
 <h2 class="title"><?php esc_html_e('API credentials', 'ry-invoice-for-ezpay'); ?></h2>
@@ -16,7 +21,7 @@
                     <?php echo wp_kses(sprintf(
                         /* translators: %s: Path of log file */
                         __('Log file %s', 'ry-invoice-for-ezpay'),
-                        '<code>' . esc_html(RY_Logs::get_log_path('ezpay-invoice')) . '</code>'
+                        '<code>' . esc_html(Logs::get_log_path('ezpay-invoice')) . '</code>'
                     ), ['code' => []]); ?>
                     <br><?php echo wp_kses(
                         __('<strong>Note:</strong> The log may contain personal information.', 'ry-invoice-for-ezpay'),

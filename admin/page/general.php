@@ -2,7 +2,9 @@
 
 defined('ABSPATH') or exit;
 
-final class RY_IFEZPAY_Admin_Page_General extends RY_Abstract_Admin_Page
+use RY\General\AbstractAdminPage;
+
+final class RY_IFEZPAY_Admin_Page_General extends AbstractAdminPage
 {
     protected static $_instance = null;
 

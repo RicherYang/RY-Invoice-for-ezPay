@@ -1,6 +1,12 @@
 {
+    "name": "ry/invoice-for-ezpay",
     "require": {
         "woocommerce/action-scheduler": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RY\\General\\": "includes/ry-general"
+        }
     },
     "config": {
         "vendor-dir": "includes/vendor",

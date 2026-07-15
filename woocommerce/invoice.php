@@ -2,6 +2,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\General\Logs;
+
 final class RY_IFEZPAY_WC_Invoice
 {
     protected static ?self $_instance = null;
@@ -352,7 +354,7 @@ final class RY_IFEZPAY_WC_Invoice
             ];
         }
 
-        RY_Logs::log('ezpay-invoice', 'info', 'Get WooCommerce #' . $order->get_id(), $invoice_data);
+        Logs::log('ezpay-invoice', 'info', 'Get WooCommerce #' . $order->get_id(), $invoice_data);
         RY_IFEZPAY_Invoice::instance()->get_invoice($invoice_data, $order->get_id());
     }
 
@@ -379,7 +381,7 @@ final class RY_IFEZPAY_WC_Invoice
             'no' => $invoice_number,
             'date' => $order->get_meta('_invoice_date'),
         ];
-        RY_Logs::log('ezpay-invoice', 'info', 'Invalid WooCommerce #' . $order->get_id(), $invoice_data);
+        Logs::log('ezpay-invoice', 'info', 'Invalid WooCommerce #' . $order->get_id(), $invoice_data);
         RY_IFEZPAY_Invoice::instance()->invalid_invoice($invoice_data, $order->get_id());
     }
 }
