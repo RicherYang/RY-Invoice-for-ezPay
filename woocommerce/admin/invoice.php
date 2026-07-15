@@ -6,7 +6,7 @@ use Automattic\WooCommerce\Utilities\OrderUtil;
 
 final class RY_IFEZPAY_WC_Admin_Invoice
 {
-    protected static ?self $_instance = null;
+    private static ?self $_instance = null;
 
     public static function instance(): RY_IFEZPAY_WC_Admin_Invoice
     {

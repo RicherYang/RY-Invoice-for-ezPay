@@ -6,7 +6,7 @@ use RY\Paid\AbstractLinkServer;
 
 final class RY_IFEZPAY_LinkServer extends AbstractLinkServer
 {
-    protected static ?self $_instance = null;
+    private static ?self $_instance = null;
 
     protected string $plugin_slug = 'ry-invoice-for-ezpay';
 

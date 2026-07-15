@@ -8,7 +8,7 @@ final class RY_IFEZPAY_License extends AbstractLicense
 {
     public static string $main_class = RY_IFEZPAY::class;
 
-    protected static ?self $_instance = null;
+    private static ?self $_instance = null;
 
     public static function instance(): RY_IFEZPAY_License
     {

@@ -6,7 +6,7 @@ use RY\General\Logs;
 
 final class RY_IFEZPAY_Invoice extends RY_IFEZPAY_Abstract_Invoice
 {
-    protected static ?self $_instance = null;
+    private static ?self $_instance = null;
 
     private array $api_test_url = [
         'get' => 'https://cinv.ezpay.com.tw/Api/invoice_issue',
