@@ -1,5 +1,6 @@
 {
     "name": "ry/invoice-for-ezpay",
+    "version": "2026.7.16",
     "require": {
         "woocommerce/action-scheduler": "^4.0"
     },

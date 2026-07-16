@@ -17,8 +17,8 @@ final class RY_IFEZPAY_Update
             return;
         }
 
-        if (version_compare($now_version, '2026.7.14', '<')) {
-            RY_IFEZPAY::update_option('version', '2026.7.14', true);
+        if (version_compare($now_version, '2026.7.16', '<')) {
+            RY_IFEZPAY::update_option('version', '2026.7.16', true);
         }
     }
 }

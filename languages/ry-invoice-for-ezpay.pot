@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Invoice for ezPay 2026.7.14\n"
+"Project-Id-Version: RY Invoice for ezPay 2026.7.16\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-invoice-for-ezpay\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,11 +38,11 @@ msgstr ""
 msgid "https://richer.tw/"
 msgstr ""
 
-#: admin/admin.php:68
+#: admin/admin.php:73
 msgid "Not recommended enable two invoice plugins at the same time!"
 msgstr ""
 
-#: admin/admin.php:76
+#: admin/admin.php:81
 msgid "E-Invoice"
 msgstr ""
 
@@ -68,51 +68,51 @@ msgstr ""
 msgid "Item amount precision"
 msgstr ""
 
-#: admin/page/html/option.php:5
+#: admin/page/html/option.php:10
 msgid "API credentials"
 msgstr ""
 
-#: admin/page/html/option.php:9
-#: admin/page/html/option.php:12
+#: admin/page/html/option.php:14
+#: admin/page/html/option.php:17
 msgid "Debug log"
 msgstr ""
 
-#: admin/page/html/option.php:14
+#: admin/page/html/option.php:19
 msgid "Enable log"
 msgstr ""
 
 #. translators: %s: Path of log file
-#: admin/page/html/option.php:18
+#: admin/page/html/option.php:23
 #, php-format
 msgid "Log file %s"
 msgstr ""
 
-#: admin/page/html/option.php:22
+#: admin/page/html/option.php:27
 msgid "<strong>Note:</strong> The log may contain personal information."
 msgstr ""
 
-#: admin/page/html/option.php:30
-#: admin/page/html/option.php:33
+#: admin/page/html/option.php:35
+#: admin/page/html/option.php:38
 msgid "Sandbox"
 msgstr ""
 
-#: admin/page/html/option.php:35
+#: admin/page/html/option.php:40
 msgid "Enable sandbox"
 msgstr ""
 
-#: admin/page/html/option.php:36
+#: admin/page/html/option.php:41
 msgid "Note: For developers use ONLY."
 msgstr ""
 
-#: admin/page/html/option.php:41
+#: admin/page/html/option.php:46
 msgid "MerchantID"
 msgstr ""
 
-#: admin/page/html/option.php:45
+#: admin/page/html/option.php:50
 msgid "HashKey"
 msgstr ""
 
-#: admin/page/html/option.php:49
+#: admin/page/html/option.php:54
 msgid "HashIV"
 msgstr ""
 
@@ -166,61 +166,61 @@ msgctxt "carruer type"
 msgid "phone_barcode"
 msgstr ""
 
-#: includes/invoice.php:44
+#: includes/invoice.php:46
 msgid "Customer"
 msgstr ""
 
-#: includes/invoice.php:45
+#: includes/invoice.php:47
 msgid "Taiwan"
 msgstr ""
 
 #. translators: %1$s: Plugin name, %2$s: License URL
-#: includes/ry-general/abstract-admin.php:49
+#: includes/ry-general/AbstractAdmin.php:52
 #, php-format
 msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
 msgstr ""
 
-#: includes/ry-general/admin-logs.php:25
-#: includes/ry-general/admin-logs.php:86
-msgid "Logs"
-msgstr ""
-
-#: includes/ry-general/admin-logs.php:88
-msgid "No logs found."
-msgstr ""
-
-#: includes/ry-general/admin-logs.php:146
-msgid "Delete successful."
-msgstr ""
-
-#: includes/ry-general/admin-logs.php:153
-msgid "Delete failed."
-msgstr ""
-
 #. translators: %s: Path of log file
-#: includes/ry-general/html/log-info.php:5
+#: includes/ry-general/Page/html/log-info.php:5
 #, php-format
 msgid "Viewing log file %s"
 msgstr ""
 
-#: includes/ry-general/html/log-info.php:36
+#: includes/ry-general/Page/html/log-info.php:36
 msgid "Details"
 msgstr ""
 
-#: includes/ry-general/html/log-info.php:63
+#: includes/ry-general/Page/html/log-info.php:63
 msgid "Download"
 msgstr ""
 
-#: includes/ry-general/html/log-info.php:71
+#: includes/ry-general/Page/html/log-info.php:71
 msgid "Delete Permanently"
 msgstr ""
 
-#: includes/ry-general/html/logs-select.php:3
+#: includes/ry-general/Page/html/logs-select.php:3
 msgid "Log Categories"
 msgstr ""
 
-#: includes/ry-general/html/logs-select.php:19
+#: includes/ry-general/Page/html/logs-select.php:19
 msgid "Log Files"
+msgstr ""
+
+#: includes/ry-general/Page/Logs.php:24
+#: includes/ry-general/Page/Logs.php:85
+msgid "Logs"
+msgstr ""
+
+#: includes/ry-general/Page/Logs.php:87
+msgid "No logs found."
+msgstr ""
+
+#: includes/ry-general/Page/Logs.php:145
+msgid "Delete successful."
+msgstr ""
+
+#: includes/ry-general/Page/Logs.php:152
+msgid "Delete failed."
 msgstr ""
 
 #: woocommerce/admin/invoice.php:62
@@ -250,8 +250,8 @@ msgstr[1] ""
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:102
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:106
 #: woocommerce/invoice-basic.php:225
-#: woocommerce/invoice.php:146
-#: woocommerce/invoice.php:202
+#: woocommerce/invoice.php:148
+#: woocommerce/invoice.php:204
 msgid "Invoice number"
 msgstr ""
 
@@ -312,7 +312,7 @@ msgstr ""
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:60
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:107
 #: woocommerce/invoice-basic.php:230
-#: woocommerce/invoice.php:147
+#: woocommerce/invoice.php:149
 msgid "Invoice random number"
 msgstr ""
 
@@ -333,7 +333,7 @@ msgid "Expected get time"
 msgstr ""
 
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:137
-#: woocommerce/invoice.php:177
+#: woocommerce/invoice.php:179
 msgid "Invalid invoice"
 msgstr ""
 
@@ -479,42 +479,42 @@ msgid "Invalid tax ID number"
 msgstr ""
 
 #: woocommerce/invoice-basic.php:245
-#: woocommerce/invoice.php:244
+#: woocommerce/invoice.php:246
 msgid "Zero total fee without invoice"
 msgstr ""
 
 #: woocommerce/invoice-basic.php:252
-#: woocommerce/invoice.php:250
+#: woocommerce/invoice.php:252
 msgid "Negative total fee can't invoice"
 msgstr ""
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/invoice.php:134
+#: woocommerce/invoice.php:136
 #, php-format
 msgid "Issue invoice error: %1$s (%2$s)"
 msgstr ""
 
-#: woocommerce/invoice.php:148
+#: woocommerce/invoice.php:150
 msgid "Invoice create time"
 msgstr ""
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/invoice.php:168
+#: woocommerce/invoice.php:170
 #, php-format
 msgid "Invalid invoice error: %1$s (%2$s)"
 msgstr ""
 
-#: woocommerce/invoice.php:314
-#: woocommerce/invoice.php:327
-#: woocommerce/invoice.php:340
-#: woocommerce/invoice.php:350
+#: woocommerce/invoice.php:316
+#: woocommerce/invoice.php:329
+#: woocommerce/invoice.php:342
+#: woocommerce/invoice.php:352
 msgid "parcel"
 msgstr ""
 
-#: woocommerce/invoice.php:337
+#: woocommerce/invoice.php:339
 msgid "shipping fee"
 msgstr ""
 
-#: woocommerce/invoice.php:347
+#: woocommerce/invoice.php:349
 msgid "return fee"
 msgstr ""
