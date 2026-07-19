@@ -18,12 +18,7 @@ use RY\General\Logs;
                 <label for="log"><input name="log" type="checkbox" id="log" value="yes" <?php checked(RY_IFEZPAY::get_option('log', 'no') === 'yes'); ?>>
                     <?php esc_html_e('Enable log', 'ry-invoice-for-ezpay'); ?></label>
                 <p class="description">
-                    <?php echo wp_kses(sprintf(
-                        /* translators: %s: Path of log file */
-                        __('Log file %s', 'ry-invoice-for-ezpay'),
-                        '<code>' . esc_html(Logs::get_log_path('ezpay-invoice')) . '</code>'
-                    ), ['code' => []]); ?>
-                    <br><?php echo wp_kses(
+                    <?php echo wp_kses(
                         __('<strong>Note:</strong> The log may contain personal information.', 'ry-invoice-for-ezpay'),
                         ['strong' => []]
                     ); ?>

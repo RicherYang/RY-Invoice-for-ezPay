@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Invoice for ezPay 2026.7.16\n"
+"Project-Id-Version: RY Invoice for ezPay 2026.7.19\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-invoice-for-ezpay\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,38 +81,32 @@ msgstr ""
 msgid "Enable log"
 msgstr ""
 
-#. translators: %s: Path of log file
-#: admin/page/html/option.php:23
-#, php-format
-msgid "Log file %s"
-msgstr ""
-
-#: admin/page/html/option.php:27
+#: admin/page/html/option.php:22
 msgid "<strong>Note:</strong> The log may contain personal information."
 msgstr ""
 
-#: admin/page/html/option.php:35
-#: admin/page/html/option.php:38
+#: admin/page/html/option.php:30
+#: admin/page/html/option.php:33
 msgid "Sandbox"
 msgstr ""
 
-#: admin/page/html/option.php:40
+#: admin/page/html/option.php:35
 msgid "Enable sandbox"
 msgstr ""
 
-#: admin/page/html/option.php:41
+#: admin/page/html/option.php:36
 msgid "Note: For developers use ONLY."
 msgstr ""
 
-#: admin/page/html/option.php:46
+#: admin/page/html/option.php:41
 msgid "MerchantID"
 msgstr ""
 
-#: admin/page/html/option.php:50
+#: admin/page/html/option.php:45
 msgid "HashKey"
 msgstr ""
 
-#: admin/page/html/option.php:54
+#: admin/page/html/option.php:49
 msgid "HashIV"
 msgstr ""
 
@@ -207,19 +201,19 @@ msgid "Log Files"
 msgstr ""
 
 #: includes/ry-general/Page/Logs.php:24
-#: includes/ry-general/Page/Logs.php:85
+#: includes/ry-general/Page/Logs.php:95
 msgid "Logs"
 msgstr ""
 
-#: includes/ry-general/Page/Logs.php:87
+#: includes/ry-general/Page/Logs.php:97
 msgid "No logs found."
 msgstr ""
 
-#: includes/ry-general/Page/Logs.php:145
+#: includes/ry-general/Page/Logs.php:155
 msgid "Delete successful."
 msgstr ""
 
-#: includes/ry-general/Page/Logs.php:152
+#: includes/ry-general/Page/Logs.php:162
 msgid "Delete failed."
 msgstr ""
 
@@ -250,8 +244,8 @@ msgstr[1] ""
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:102
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:106
 #: woocommerce/invoice-basic.php:225
-#: woocommerce/invoice.php:148
-#: woocommerce/invoice.php:204
+#: woocommerce/invoice.php:153
+#: woocommerce/invoice.php:209
 msgid "Invoice number"
 msgstr ""
 
@@ -312,7 +306,7 @@ msgstr ""
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:60
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:107
 #: woocommerce/invoice-basic.php:230
-#: woocommerce/invoice.php:149
+#: woocommerce/invoice.php:154
 msgid "Invoice random number"
 msgstr ""
 
@@ -333,7 +327,7 @@ msgid "Expected get time"
 msgstr ""
 
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:137
-#: woocommerce/invoice.php:179
+#: woocommerce/invoice.php:184
 msgid "Invalid invoice"
 msgstr ""
 
@@ -479,42 +473,42 @@ msgid "Invalid tax ID number"
 msgstr ""
 
 #: woocommerce/invoice-basic.php:245
-#: woocommerce/invoice.php:246
+#: woocommerce/invoice.php:251
 msgid "Zero total fee without invoice"
 msgstr ""
 
 #: woocommerce/invoice-basic.php:252
-#: woocommerce/invoice.php:252
+#: woocommerce/invoice.php:257
 msgid "Negative total fee can't invoice"
 msgstr ""
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/invoice.php:136
+#: woocommerce/invoice.php:141
 #, php-format
 msgid "Issue invoice error: %1$s (%2$s)"
 msgstr ""
 
-#: woocommerce/invoice.php:150
+#: woocommerce/invoice.php:155
 msgid "Invoice create time"
 msgstr ""
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/invoice.php:170
+#: woocommerce/invoice.php:175
 #, php-format
 msgid "Invalid invoice error: %1$s (%2$s)"
 msgstr ""
 
-#: woocommerce/invoice.php:316
-#: woocommerce/invoice.php:329
-#: woocommerce/invoice.php:342
-#: woocommerce/invoice.php:352
+#: woocommerce/invoice.php:321
+#: woocommerce/invoice.php:334
+#: woocommerce/invoice.php:347
+#: woocommerce/invoice.php:357
 msgid "parcel"
 msgstr ""
 
-#: woocommerce/invoice.php:339
+#: woocommerce/invoice.php:344
 msgid "shipping fee"
 msgstr ""
 
-#: woocommerce/invoice.php:349
+#: woocommerce/invoice.php:354
 msgid "return fee"
 msgstr ""

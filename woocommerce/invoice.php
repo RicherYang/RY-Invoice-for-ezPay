@@ -80,6 +80,10 @@ final class RY_IFEZPAY_WC_Invoice
             }
         }
 
+        if (!empty($order->get_meta('_invoice_number'))) {
+            return;
+        }
+
         if (!as_has_scheduled_action(RY_IFEZPAY::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice')) {
             $delay_time = (int) RY_IFEZPAY::get_option('get_delay_time', '0');
             if ($delay_time < 0) {
@@ -101,20 +105,21 @@ final class RY_IFEZPAY_WC_Invoice
             return false;
         }
 
-        $invoice_number = $order->get_meta('_invoice_number');
-        if ($invoice_number) {
-            switch ($invoice_number) {
-                case 'wait':
-                case 'zero':
-                case 'negative':
-                    as_unschedule_action(RY_IFEZPAY::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice');
-                    $order->delete_meta_data('_invoice_number');
-                    $order->save();
-                    break;
-                default:
-                    as_schedule_single_action(time() + MINUTE_IN_SECONDS * 2, RY_IFEZPAY::OPTION_PREFIX . 'auto_invalid_invoice', [$order->get_id()], 'ry-invoice');
-                    break;
-            }
+        if (empty($order->get_meta('_invoice_number'))) {
+            return;
+        }
+
+        switch ($order->get_meta('_invoice_number')) {
+            case 'wait':
+            case 'zero':
+            case 'negative':
+                as_unschedule_action(RY_IFEZPAY::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice');
+                $order->delete_meta_data('_invoice_number');
+                $order->save();
+                break;
+            default:
+                as_schedule_single_action(time() + MINUTE_IN_SECONDS * 2, RY_IFEZPAY::OPTION_PREFIX . 'auto_invalid_invoice', [$order->get_id()], 'ry-invoice');
+                break;
         }
     }
 

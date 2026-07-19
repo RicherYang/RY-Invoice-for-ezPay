@@ -50,8 +50,8 @@ msgstr "RY Tools"
 msgid "API credentials"
 msgstr "API 憑證"
 
-#: admin/page/html/option.php:35
-#: admin/page/html/option.php:38
+#: admin/page/html/option.php:30
+#: admin/page/html/option.php:33
 msgid "Sandbox"
 msgstr "測試模式"
 
@@ -62,11 +62,11 @@ msgstr "測試模式"
 msgid "Tax ID number"
 msgstr "公司統一編號"
 
-#: admin/page/html/option.php:41
+#: admin/page/html/option.php:36
 msgid "Note: For developers use ONLY."
 msgstr "注意：僅供開發者使用。"
 
-#: admin/page/html/option.php:40
+#: admin/page/html/option.php:35
 msgid "Enable sandbox"
 msgstr "啟用測試模式"
 
@@ -149,12 +149,12 @@ msgid "Invalid donate number"
 msgstr "無效的愛心碼"
 
 #: woocommerce/invoice-basic.php:245
-#: woocommerce/invoice.php:246
+#: woocommerce/invoice.php:251
 msgid "Zero total fee without invoice"
 msgstr "總額零元不開立發票"
 
 #: woocommerce/invoice-basic.php:252
-#: woocommerce/invoice.php:252
+#: woocommerce/invoice.php:257
 msgid "Negative total fee can't invoice"
 msgstr "總額負數不開立發票"
 
@@ -165,15 +165,15 @@ msgstr "總額負數不開立發票"
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:102
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:106
 #: woocommerce/invoice-basic.php:225
-#: woocommerce/invoice.php:148
-#: woocommerce/invoice.php:204
+#: woocommerce/invoice.php:153
+#: woocommerce/invoice.php:209
 msgid "Invoice number"
 msgstr "發票號碼"
 
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:60
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:107
 #: woocommerce/invoice-basic.php:230
-#: woocommerce/invoice.php:149
+#: woocommerce/invoice.php:154
 msgid "Invoice random number"
 msgstr "發票隨機碼"
 
@@ -301,7 +301,7 @@ msgid "Issue invoice"
 msgstr "開立發票"
 
 #: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:137
-#: woocommerce/invoice.php:179
+#: woocommerce/invoice.php:184
 msgid "Invalid invoice"
 msgstr "作廢發票"
 
@@ -318,27 +318,27 @@ msgid "s"
 msgstr "秒"
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/invoice.php:136
+#: woocommerce/invoice.php:141
 #, php-format
 msgid "Issue invoice error: %1$s (%2$s)"
 msgstr "開立發票錯誤：%1$s (%2$s)"
 
-#: woocommerce/invoice.php:150
+#: woocommerce/invoice.php:155
 msgid "Invoice create time"
 msgstr "發票開立時間"
 
-#: woocommerce/invoice.php:316
-#: woocommerce/invoice.php:329
-#: woocommerce/invoice.php:342
-#: woocommerce/invoice.php:352
+#: woocommerce/invoice.php:321
+#: woocommerce/invoice.php:334
+#: woocommerce/invoice.php:347
+#: woocommerce/invoice.php:357
 msgid "parcel"
 msgstr "批"
 
-#: woocommerce/invoice.php:339
+#: woocommerce/invoice.php:344
 msgid "shipping fee"
 msgstr "運費"
 
-#: woocommerce/invoice.php:349
+#: woocommerce/invoice.php:354
 msgid "return fee"
 msgstr "退款"
 
@@ -403,20 +403,14 @@ msgid "Customer"
 msgstr "消費者"
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/invoice.php:170
+#: woocommerce/invoice.php:175
 #, php-format
 msgid "Invalid invoice error: %1$s (%2$s)"
 msgstr "作廢發票錯誤：%1$s (%2$s)"
 
-#: admin/page/html/option.php:27
+#: admin/page/html/option.php:22
 msgid "<strong>Note:</strong> The log may contain personal information."
 msgstr "<strong>注意</strong>：紀錄可能包含個人資料。"
-
-#. translators: %s: Path of log file
-#: admin/page/html/option.php:23
-#, php-format
-msgid "Log file %s"
-msgstr "紀錄檔 %s"
 
 #: woocommerce/admin/settings/settings-invoice.php:90
 msgid "Trade no prefix"
@@ -450,15 +444,15 @@ msgstr "雲端發票 (速買配)"
 msgid "ezPay invoice"
 msgstr "ezPay 電子發票"
 
-#: admin/page/html/option.php:46
+#: admin/page/html/option.php:41
 msgid "MerchantID"
 msgstr "商店代號 ( MerchantID )"
 
-#: admin/page/html/option.php:50
+#: admin/page/html/option.php:45
 msgid "HashKey"
 msgstr "HashKey"
 
-#: admin/page/html/option.php:54
+#: admin/page/html/option.php:49
 msgid "HashIV"
 msgstr "HashIV"
 
@@ -485,15 +479,15 @@ msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
 msgstr "%1$s: 你的<a href=\"%2$s\">授權</a>尚未啟用！"
 
 #: includes/ry-general/Page/Logs.php:24
-#: includes/ry-general/Page/Logs.php:85
+#: includes/ry-general/Page/Logs.php:95
 msgid "Logs"
 msgstr "紀錄"
 
-#: includes/ry-general/Page/Logs.php:145
+#: includes/ry-general/Page/Logs.php:155
 msgid "Delete successful."
 msgstr "刪除成功。"
 
-#: includes/ry-general/Page/Logs.php:152
+#: includes/ry-general/Page/Logs.php:162
 msgid "Delete failed."
 msgstr "刪除失敗。"
 
@@ -519,6 +513,6 @@ msgstr "紀錄類別"
 msgid "Log Files"
 msgstr "紀錄檔案"
 
-#: includes/ry-general/Page/Logs.php:87
+#: includes/ry-general/Page/Logs.php:97
 msgid "No logs found."
 msgstr "没有紀錄檔案。"
