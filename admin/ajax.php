@@ -1,5 +1,7 @@
 <?php
 
+use RY\Invoice\Ezpay\WooCommerce\Invoice;
+
 defined('ABSPATH') or exit;
 
 final class RY_IFEZPAY_Admin_Ajax
@@ -33,7 +35,7 @@ final class RY_IFEZPAY_Admin_Ajax
         if (function_exists('wc_get_order')) {
             $order = wc_get_order($object_ID);
             if ($order) {
-                RY_IFEZPAY_WC_Invoice::instance()->get_invoice($order);
+                Invoice::instance()->get_invoice($order);
             }
         }
 
@@ -50,7 +52,7 @@ final class RY_IFEZPAY_Admin_Ajax
         if (function_exists('wc_get_order')) {
             $order = wc_get_order($object_ID);
             if ($order) {
-                RY_IFEZPAY_WC_Invoice::instance()->cancel_invoice($order);
+                Invoice::instance()->cancel_invoice($order);
             }
         }
 
@@ -67,7 +69,7 @@ final class RY_IFEZPAY_Admin_Ajax
         if (function_exists('wc_get_order')) {
             $order = wc_get_order($object_ID);
             if ($order) {
-                RY_IFEZPAY_WC_Invoice::instance()->invalid_invoice($order);
+                Invoice::instance()->invalid_invoice($order);
             }
         }
 

@@ -217,298 +217,298 @@ msgstr ""
 msgid "Delete failed."
 msgstr ""
 
-#: woocommerce/admin/invoice.php:62
+#: woocommerce/Admin/Admin.php:51
 msgid "Issue invoice.<br>Please wait."
 msgstr ""
 
-#: woocommerce/admin/invoice.php:63
+#: woocommerce/Admin/Admin.php:52
 msgid "Cancel get invoice.<br>Please wait."
 msgstr ""
 
-#: woocommerce/admin/invoice.php:64
+#: woocommerce/Admin/Admin.php:53
 msgid "Invalid invoice.<br>Please wait."
 msgstr ""
 
+#: woocommerce/Admin/MetaBoxes/Info.php:13
+#: woocommerce/Admin/MetaBoxes/Info.php:116
+#: woocommerce/Fields.php:37
+#: woocommerce/Fields.php:264
+msgid "Invoice type"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:24
+#: woocommerce/Admin/MetaBoxes/Info.php:119
+#: woocommerce/Fields.php:49
+msgid "Carruer type"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:35
+#: woocommerce/Admin/MetaBoxes/Info.php:122
+#: woocommerce/Fields.php:60
+#: woocommerce/Fields.php:275
+msgid "Carruer number"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:40
+#: woocommerce/Admin/MetaBoxes/Info.php:127
+#: woocommerce/Fields.php:65
+#: woocommerce/Fields.php:283
+msgid "Tax ID number"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:45
+#: woocommerce/Admin/MetaBoxes/Info.php:131
+#: woocommerce/Fields.php:70
+#: woocommerce/Fields.php:290
+msgid "Donate number"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:57
+#: woocommerce/Admin/MetaBoxes/Info.php:91
+#: woocommerce/Admin/MetaBoxes/Info.php:100
+#: woocommerce/Admin/MetaBoxes/Info.php:104
+#: woocommerce/Admin/MetaBoxes/Info.php:108
+#: woocommerce/Admin/Order.php:99
+#: woocommerce/Fields.php:227
+#: woocommerce/Invoice.php:152
+#: woocommerce/Invoice.php:208
+msgid "Invoice number"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:62
+#: woocommerce/Admin/MetaBoxes/Info.php:109
+#: woocommerce/Fields.php:232
+#: woocommerce/Invoice.php:153
+msgid "Invoice random number"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:68
+#: woocommerce/Admin/MetaBoxes/Info.php:110
+#: woocommerce/Fields.php:237
+msgid "Invoice date"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:82
+#: woocommerce/templates/checkout/form-invoice.php:17
+#: woocommerce/templates/order/order-invoice-info.php:18
+msgid "Invoice info"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:91
+#: woocommerce/Admin/Order.php:119
+msgid "Wait get invoice"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:95
+msgid "Expected get time"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:100
+#: woocommerce/Admin/Order.php:120
+msgid "Zero no invoice"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:104
+#: woocommerce/Admin/Order.php:121
+msgid "Negative no invoice"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:139
+#: woocommerce/Invoice.php:183
+msgid "Invalid invoice"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:143
+msgid "Cancel get"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:147
+#: woocommerce/Admin/Order.php:130
+msgid "Issue invoice"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:174
+msgid "h"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:175
+msgid "m"
+msgstr ""
+
+#: woocommerce/Admin/MetaBoxes/Info.php:176
+msgid "s"
+msgstr ""
+
 #. translators: %s: count
-#: woocommerce/admin/invoice.php:117
+#: woocommerce/Admin/Order.php:90
 #, php-format
 msgid "%s order issue invoice."
 msgid_plural "%s orders issue invoice."
 msgstr[0] ""
 msgstr[1] ""
 
-#: woocommerce/admin/invoice.php:126
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:55
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:89
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:98
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:102
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:106
-#: woocommerce/invoice-basic.php:225
-#: woocommerce/invoice.php:153
-#: woocommerce/invoice.php:209
-msgid "Invoice number"
-msgstr ""
-
-#: woocommerce/admin/invoice.php:146
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:89
-msgid "Wait get invoice"
-msgstr ""
-
-#: woocommerce/admin/invoice.php:147
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:98
-msgid "Zero no invoice"
-msgstr ""
-
-#: woocommerce/admin/invoice.php:148
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:102
-msgid "Negative no invoice"
-msgstr ""
-
-#: woocommerce/admin/invoice.php:157
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:145
-msgid "Issue invoice"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:11
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:114
-#: woocommerce/invoice-basic.php:35
-#: woocommerce/invoice-basic.php:262
-msgid "Invoice type"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:22
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:117
-#: woocommerce/invoice-basic.php:47
-msgid "Carruer type"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:33
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:120
-#: woocommerce/invoice-basic.php:58
-#: woocommerce/invoice-basic.php:273
-msgid "Carruer number"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:38
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:125
-#: woocommerce/invoice-basic.php:63
-#: woocommerce/invoice-basic.php:281
-msgid "Tax ID number"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:43
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:129
-#: woocommerce/invoice-basic.php:68
-#: woocommerce/invoice-basic.php:288
-msgid "Donate number"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:60
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:107
-#: woocommerce/invoice-basic.php:230
-#: woocommerce/invoice.php:154
-msgid "Invoice random number"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:66
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:108
-#: woocommerce/invoice-basic.php:235
-msgid "Invoice date"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:80
-#: woocommerce/templates/checkout/form-invoice.php:17
-#: woocommerce/templates/order/order-invoice-info.php:18
-msgid "Invoice info"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:93
-msgid "Expected get time"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:137
-#: woocommerce/invoice.php:184
-msgid "Invalid invoice"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:141
-msgid "Cancel get"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:172
-msgid "h"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:173
-msgid "m"
-msgstr ""
-
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:174
-msgid "s"
-msgstr ""
-
-#: woocommerce/admin/settings/invoice.php:31
-#: woocommerce/admin/settings/invoice.php:34
-msgid "ezPay invoice"
-msgstr ""
-
-#: woocommerce/admin/settings/invoice.php:51
-msgid "Trade no prefix only letters and numbers allowed, and maximum length is 3 characters."
-msgstr ""
-
-#: woocommerce/admin/settings/ry-tools-settings.php:16
+#: woocommerce/Admin/Settings.php:12
 msgid "RY Tools"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:14
+#: woocommerce/Admin/Settings/Invoice.php:33
+#: woocommerce/Admin/Settings/Invoice.php:36
+msgid "ezPay invoice"
+msgstr ""
+
+#: woocommerce/Admin/Settings/Invoice.php:54
 msgid "Base options"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:19
+#: woocommerce/Admin/Settings/Invoice.php:59
 msgid "Show invoice number"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:23
+#: woocommerce/Admin/Settings/Invoice.php:63
 msgid "Show invoice number in Frontend order list"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:26
+#: woocommerce/Admin/Settings/Invoice.php:66
 msgid "Move billing company"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:30
+#: woocommerce/Admin/Settings/Invoice.php:70
 msgid "Move billing company to invoice area"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:37
+#: woocommerce/Admin/Settings/Invoice.php:77
 msgid "Invoice options"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:42
+#: woocommerce/Admin/Settings/Invoice.php:82
 msgid "Get mode"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:47
+#: woocommerce/Admin/Settings/Invoice.php:87
 msgctxt "get mode"
 msgid "manual"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:48
+#: woocommerce/Admin/Settings/Invoice.php:88
 msgctxt "get mode"
 msgid "auto ( when order paid )"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:49
+#: woocommerce/Admin/Settings/Invoice.php:89
 msgctxt "get mode"
 msgid "auto ( when order completed )"
 msgstr ""
 
 #. translators: %s: paid status
-#: woocommerce/admin/settings/settings-invoice.php:53
+#: woocommerce/Admin/Settings/Invoice.php:93
 #, php-format
 msgid "Order paid status: %s"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:58
+#: woocommerce/Admin/Settings/Invoice.php:98
 msgid "Skip foreign orders"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:62
+#: woocommerce/Admin/Settings/Invoice.php:102
 msgid "Disable auto get invoice for order billing country and shipping country are not in Taiwan."
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:66
+#: woocommerce/Admin/Settings/Invoice.php:106
 msgid "Delay time (hours)"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:75
+#: woocommerce/Admin/Settings/Invoice.php:115
 msgid "After N hours get invoice."
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:76
+#: woocommerce/Admin/Settings/Invoice.php:116
 msgid "According to WordPress cron job, the actual execution time will be later than the specified time."
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:80
+#: woocommerce/Admin/Settings/Invoice.php:120
 msgid "Invalid mode"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:85
+#: woocommerce/Admin/Settings/Invoice.php:125
 msgctxt "invalid mode"
 msgid "manual"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:86
+#: woocommerce/Admin/Settings/Invoice.php:126
 msgctxt "invalid mode"
 msgid "auto ( when order status cancelled OR refunded )"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:90
+#: woocommerce/Admin/Settings/Invoice.php:130
 msgid "Trade no prefix"
 msgstr ""
 
-#: woocommerce/admin/settings/settings-invoice.php:93
+#: woocommerce/Admin/Settings/Invoice.php:133
 msgid "The prefix string of trade no. Only letters and numbers allowed."
 msgstr ""
 
-#: woocommerce/invoice-basic.php:49
+#: woocommerce/Admin/Settings/Invoice.php:149
+msgid "Trade no prefix only letters and numbers allowed, and maximum length is 3 characters."
+msgstr ""
+
+#: woocommerce/Fields.php:51
 msgid " (send paper when win)"
 msgstr ""
 
-#: woocommerce/invoice-basic.php:77
+#: woocommerce/Fields.php:79
 msgid "Company name"
 msgstr ""
 
-#: woocommerce/invoice-basic.php:148
-#: woocommerce/invoice-basic.php:155
+#: woocommerce/Fields.php:150
+#: woocommerce/Fields.php:157
 msgid "Invalid carruer number"
 msgstr ""
 
-#: woocommerce/invoice-basic.php:164
+#: woocommerce/Fields.php:166
 msgid "Invalid donate number"
 msgstr ""
 
-#: woocommerce/invoice-basic.php:187
+#: woocommerce/Fields.php:189
 msgid "Invalid tax ID number"
 msgstr ""
 
-#: woocommerce/invoice-basic.php:245
-#: woocommerce/invoice.php:251
+#: woocommerce/Fields.php:247
+#: woocommerce/Invoice.php:250
 msgid "Zero total fee without invoice"
 msgstr ""
 
-#: woocommerce/invoice-basic.php:252
-#: woocommerce/invoice.php:257
+#: woocommerce/Fields.php:254
+#: woocommerce/Invoice.php:256
 msgid "Negative total fee can't invoice"
 msgstr ""
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/invoice.php:141
+#: woocommerce/Invoice.php:140
 #, php-format
 msgid "Issue invoice error: %1$s (%2$s)"
 msgstr ""
 
-#: woocommerce/invoice.php:155
+#: woocommerce/Invoice.php:154
 msgid "Invoice create time"
 msgstr ""
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/invoice.php:175
+#: woocommerce/Invoice.php:174
 #, php-format
 msgid "Invalid invoice error: %1$s (%2$s)"
 msgstr ""
 
-#: woocommerce/invoice.php:321
-#: woocommerce/invoice.php:334
-#: woocommerce/invoice.php:347
-#: woocommerce/invoice.php:357
+#: woocommerce/Invoice.php:320
+#: woocommerce/Invoice.php:333
+#: woocommerce/Invoice.php:346
+#: woocommerce/Invoice.php:356
 msgid "parcel"
 msgstr ""
 
-#: woocommerce/invoice.php:344
+#: woocommerce/Invoice.php:343
 msgid "shipping fee"
 msgstr ""
 
-#: woocommerce/invoice.php:354
+#: woocommerce/Invoice.php:353
 msgid "return fee"
 msgstr ""

@@ -4,6 +4,8 @@ defined('ABSPATH') or exit;
 
 use RY\General\AbstractBasic;
 use RY\General\Logs;
+use RY\Invoice\Ezpay\WooCommerce\Fields;
+use RY\Invoice\Ezpay\WooCommerce\Invoice;
 
 final class RY_IFEZPAY extends AbstractBasic
 {
@@ -60,12 +62,11 @@ final class RY_IFEZPAY extends AbstractBasic
         }
 
         if (has_action('woocommerce_init')) {
-            include_once RY_IFEZPAY_PLUGIN_DIR . 'woocommerce/invoice-basic.php';
-            RY_IFEZPAY_WC_Invoice_Basic::instance();
+            Fields::instance();
 
             if (RY_IFEZPAY_License::instance()->is_activated()) {
                 include_once RY_IFEZPAY_PLUGIN_DIR . 'woocommerce/invoice.php';
-                RY_IFEZPAY_WC_Invoice::instance();
+                Invoice::instance();
             }
         }
     }

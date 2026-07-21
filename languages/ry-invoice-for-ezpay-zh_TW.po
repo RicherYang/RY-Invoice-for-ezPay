@@ -42,7 +42,7 @@ msgstr "Richer Yang"
 msgid "E-Invoice"
 msgstr "電子發票"
 
-#: woocommerce/admin/settings/ry-tools-settings.php:16
+#: woocommerce/Admin/Settings.php:12
 msgid "RY Tools"
 msgstr "RY Tools"
 
@@ -55,10 +55,10 @@ msgstr "API 憑證"
 msgid "Sandbox"
 msgstr "測試模式"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:38
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:125
-#: woocommerce/invoice-basic.php:63
-#: woocommerce/invoice-basic.php:281
+#: woocommerce/Admin/MetaBoxes/Info.php:40
+#: woocommerce/Admin/MetaBoxes/Info.php:127
+#: woocommerce/Fields.php:65
+#: woocommerce/Fields.php:283
 msgid "Tax ID number"
 msgstr "公司統一編號"
 
@@ -70,10 +70,10 @@ msgstr "注意：僅供開發者使用。"
 msgid "Enable sandbox"
 msgstr "啟用測試模式"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:11
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:114
-#: woocommerce/invoice-basic.php:35
-#: woocommerce/invoice-basic.php:262
+#: woocommerce/Admin/MetaBoxes/Info.php:13
+#: woocommerce/Admin/MetaBoxes/Info.php:116
+#: woocommerce/Fields.php:37
+#: woocommerce/Fields.php:264
 msgid "Invoice type"
 msgstr "發票類型"
 
@@ -92,9 +92,9 @@ msgctxt "invoice type"
 msgid "donate"
 msgstr "捐贈"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:22
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:117
-#: woocommerce/invoice-basic.php:47
+#: woocommerce/Admin/MetaBoxes/Info.php:24
+#: woocommerce/Admin/MetaBoxes/Info.php:119
+#: woocommerce/Fields.php:49
 msgid "Carruer type"
 msgstr "載具類型"
 
@@ -103,7 +103,7 @@ msgctxt "carruer type"
 msgid "amego_host"
 msgstr "雲端發票 (光貿)"
 
-#: woocommerce/invoice-basic.php:49
+#: woocommerce/Fields.php:51
 msgid " (send paper when win)"
 msgstr " (中獎時寄送紙本發票)"
 
@@ -117,69 +117,69 @@ msgctxt "carruer type"
 msgid "phone_barcode"
 msgstr "手機條碼"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:33
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:120
-#: woocommerce/invoice-basic.php:58
-#: woocommerce/invoice-basic.php:273
+#: woocommerce/Admin/MetaBoxes/Info.php:35
+#: woocommerce/Admin/MetaBoxes/Info.php:122
+#: woocommerce/Fields.php:60
+#: woocommerce/Fields.php:275
 msgid "Carruer number"
 msgstr "載具編號"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:43
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:129
-#: woocommerce/invoice-basic.php:68
-#: woocommerce/invoice-basic.php:288
+#: woocommerce/Admin/MetaBoxes/Info.php:45
+#: woocommerce/Admin/MetaBoxes/Info.php:131
+#: woocommerce/Fields.php:70
+#: woocommerce/Fields.php:290
 msgid "Donate number"
 msgstr "捐贈愛心碼"
 
-#: woocommerce/invoice-basic.php:77
+#: woocommerce/Fields.php:79
 msgid "Company name"
 msgstr "公司名稱"
 
-#: woocommerce/invoice-basic.php:148
-#: woocommerce/invoice-basic.php:155
+#: woocommerce/Fields.php:150
+#: woocommerce/Fields.php:157
 msgid "Invalid carruer number"
 msgstr "無效的載具編號"
 
-#: woocommerce/invoice-basic.php:187
+#: woocommerce/Fields.php:189
 msgid "Invalid tax ID number"
 msgstr "無效的統一編號"
 
-#: woocommerce/invoice-basic.php:164
+#: woocommerce/Fields.php:166
 msgid "Invalid donate number"
 msgstr "無效的愛心碼"
 
-#: woocommerce/invoice-basic.php:245
-#: woocommerce/invoice.php:251
+#: woocommerce/Fields.php:247
+#: woocommerce/Invoice.php:250
 msgid "Zero total fee without invoice"
 msgstr "總額零元不開立發票"
 
-#: woocommerce/invoice-basic.php:252
-#: woocommerce/invoice.php:257
+#: woocommerce/Fields.php:254
+#: woocommerce/Invoice.php:256
 msgid "Negative total fee can't invoice"
 msgstr "總額負數不開立發票"
 
-#: woocommerce/admin/invoice.php:126
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:55
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:89
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:98
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:102
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:106
-#: woocommerce/invoice-basic.php:225
-#: woocommerce/invoice.php:153
-#: woocommerce/invoice.php:209
+#: woocommerce/Admin/MetaBoxes/Info.php:57
+#: woocommerce/Admin/MetaBoxes/Info.php:91
+#: woocommerce/Admin/MetaBoxes/Info.php:100
+#: woocommerce/Admin/MetaBoxes/Info.php:104
+#: woocommerce/Admin/MetaBoxes/Info.php:108
+#: woocommerce/Admin/Order.php:99
+#: woocommerce/Fields.php:227
+#: woocommerce/Invoice.php:152
+#: woocommerce/Invoice.php:208
 msgid "Invoice number"
 msgstr "發票號碼"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:60
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:107
-#: woocommerce/invoice-basic.php:230
-#: woocommerce/invoice.php:154
+#: woocommerce/Admin/MetaBoxes/Info.php:62
+#: woocommerce/Admin/MetaBoxes/Info.php:109
+#: woocommerce/Fields.php:232
+#: woocommerce/Invoice.php:153
 msgid "Invoice random number"
 msgstr "發票隨機碼"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:66
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:108
-#: woocommerce/invoice-basic.php:235
+#: woocommerce/Admin/MetaBoxes/Info.php:68
+#: woocommerce/Admin/MetaBoxes/Info.php:110
+#: woocommerce/Fields.php:237
 msgid "Invoice date"
 msgstr "發票開立時間"
 
@@ -193,152 +193,152 @@ msgctxt "carruer type"
 msgid "ecpay_host"
 msgstr "雲端發票 (綠界)"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:80
+#: woocommerce/Admin/MetaBoxes/Info.php:82
 #: woocommerce/templates/checkout/form-invoice.php:17
 #: woocommerce/templates/order/order-invoice-info.php:18
 msgid "Invoice info"
 msgstr "發票資訊"
 
-#: woocommerce/admin/settings/settings-invoice.php:14
+#: woocommerce/Admin/Settings/Invoice.php:54
 msgid "Base options"
 msgstr "基本設定"
 
-#: woocommerce/admin/settings/settings-invoice.php:19
+#: woocommerce/Admin/Settings/Invoice.php:59
 msgid "Show invoice number"
 msgstr "顯示發票號碼"
 
-#: woocommerce/admin/settings/settings-invoice.php:23
+#: woocommerce/Admin/Settings/Invoice.php:63
 msgid "Show invoice number in Frontend order list"
 msgstr "於前台訂單列表中顯示發票號碼"
 
-#: woocommerce/admin/settings/settings-invoice.php:26
+#: woocommerce/Admin/Settings/Invoice.php:66
 msgid "Move billing company"
 msgstr "移動帳單公司資訊"
 
-#: woocommerce/admin/settings/settings-invoice.php:30
+#: woocommerce/Admin/Settings/Invoice.php:70
 msgid "Move billing company to invoice area"
 msgstr "移動帳單公司資訊到發票資訊區域"
 
-#: woocommerce/admin/settings/settings-invoice.php:37
+#: woocommerce/Admin/Settings/Invoice.php:77
 msgid "Invoice options"
 msgstr "電子發票設定"
 
-#: woocommerce/admin/settings/settings-invoice.php:42
+#: woocommerce/Admin/Settings/Invoice.php:82
 msgid "Get mode"
 msgstr "開立發票模式"
 
-#: woocommerce/admin/settings/settings-invoice.php:47
+#: woocommerce/Admin/Settings/Invoice.php:87
 msgctxt "get mode"
 msgid "manual"
 msgstr "手動"
 
-#: woocommerce/admin/settings/settings-invoice.php:48
+#: woocommerce/Admin/Settings/Invoice.php:88
 msgctxt "get mode"
 msgid "auto ( when order paid )"
 msgstr "自動 (當訂單為完成付款)"
 
-#: woocommerce/admin/settings/settings-invoice.php:49
+#: woocommerce/Admin/Settings/Invoice.php:89
 msgctxt "get mode"
 msgid "auto ( when order completed )"
 msgstr "自動 (當訂單狀態為完成)"
 
 #. translators: %s: paid status
-#: woocommerce/admin/settings/settings-invoice.php:53
+#: woocommerce/Admin/Settings/Invoice.php:93
 #, php-format
 msgid "Order paid status: %s"
 msgstr "完成付款訂單狀態：%s"
 
-#: woocommerce/admin/settings/settings-invoice.php:58
+#: woocommerce/Admin/Settings/Invoice.php:98
 msgid "Skip foreign orders"
 msgstr "忽略國外訂單"
 
-#: woocommerce/admin/settings/settings-invoice.php:62
+#: woocommerce/Admin/Settings/Invoice.php:102
 msgid "Disable auto get invoice for order billing country and shipping country are not in Taiwan."
 msgstr "當帳單地址與運送地址不是台灣的時候，停止自動開立發票。"
 
-#: woocommerce/admin/settings/settings-invoice.php:80
+#: woocommerce/Admin/Settings/Invoice.php:120
 msgid "Invalid mode"
 msgstr "作廢發票模式"
 
-#: woocommerce/admin/settings/settings-invoice.php:85
+#: woocommerce/Admin/Settings/Invoice.php:125
 msgctxt "invalid mode"
 msgid "manual"
 msgstr "手動"
 
-#: woocommerce/admin/settings/settings-invoice.php:86
+#: woocommerce/Admin/Settings/Invoice.php:126
 msgctxt "invalid mode"
 msgid "auto ( when order status cancelled OR refunded )"
 msgstr "自動 (當訂單狀態為取消或退費)"
 
-#: woocommerce/admin/invoice.php:62
+#: woocommerce/Admin/Admin.php:51
 msgid "Issue invoice.<br>Please wait."
 msgstr "開立發票中。<br>請耐心等待。"
 
-#: woocommerce/admin/invoice.php:64
+#: woocommerce/Admin/Admin.php:53
 msgid "Invalid invoice.<br>Please wait."
 msgstr "作廢發票中。<br>請耐心等待。"
 
 #. translators: %s: count
-#: woocommerce/admin/invoice.php:117
+#: woocommerce/Admin/Order.php:90
 #, php-format
 msgid "%s order issue invoice."
 msgid_plural "%s orders issue invoice."
 msgstr[0] "%s 筆訂單開立發票。"
 
-#: woocommerce/admin/invoice.php:147
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:98
+#: woocommerce/Admin/MetaBoxes/Info.php:100
+#: woocommerce/Admin/Order.php:120
 msgid "Zero no invoice"
 msgstr "零元不開立"
 
-#: woocommerce/admin/invoice.php:148
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:102
+#: woocommerce/Admin/MetaBoxes/Info.php:104
+#: woocommerce/Admin/Order.php:121
 msgid "Negative no invoice"
 msgstr "負數不開立"
 
-#: woocommerce/admin/invoice.php:157
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:145
+#: woocommerce/Admin/MetaBoxes/Info.php:147
+#: woocommerce/Admin/Order.php:130
 msgid "Issue invoice"
 msgstr "開立發票"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:137
-#: woocommerce/invoice.php:184
+#: woocommerce/Admin/MetaBoxes/Info.php:139
+#: woocommerce/Invoice.php:183
 msgid "Invalid invoice"
 msgstr "作廢發票"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:172
+#: woocommerce/Admin/MetaBoxes/Info.php:174
 msgid "h"
 msgstr "時"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:173
+#: woocommerce/Admin/MetaBoxes/Info.php:175
 msgid "m"
 msgstr "分"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:174
+#: woocommerce/Admin/MetaBoxes/Info.php:176
 msgid "s"
 msgstr "秒"
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/invoice.php:141
+#: woocommerce/Invoice.php:140
 #, php-format
 msgid "Issue invoice error: %1$s (%2$s)"
 msgstr "開立發票錯誤：%1$s (%2$s)"
 
-#: woocommerce/invoice.php:155
+#: woocommerce/Invoice.php:154
 msgid "Invoice create time"
 msgstr "發票開立時間"
 
-#: woocommerce/invoice.php:321
-#: woocommerce/invoice.php:334
-#: woocommerce/invoice.php:347
-#: woocommerce/invoice.php:357
+#: woocommerce/Invoice.php:320
+#: woocommerce/Invoice.php:333
+#: woocommerce/Invoice.php:346
+#: woocommerce/Invoice.php:356
 msgid "parcel"
 msgstr "批"
 
-#: woocommerce/invoice.php:344
+#: woocommerce/Invoice.php:343
 msgid "shipping fee"
 msgstr "運費"
 
-#: woocommerce/invoice.php:354
+#: woocommerce/Invoice.php:353
 msgid "return fee"
 msgstr "退款"
 
@@ -360,28 +360,28 @@ msgstr "不建議同時啟用兩個發票外掛！"
 msgid "Settings saved."
 msgstr "設定已儲存。"
 
-#: woocommerce/admin/settings/settings-invoice.php:75
+#: woocommerce/Admin/Settings/Invoice.php:115
 msgid "After N hours get invoice."
 msgstr "在 N 小時候執行開立。"
 
-#: woocommerce/admin/settings/settings-invoice.php:76
+#: woocommerce/Admin/Settings/Invoice.php:116
 msgid "According to WordPress cron job, the actual execution time will be later than the specified time."
 msgstr "基於 WordPress 的排程系統，實際執行時間將比指定的時間晚。"
 
-#: woocommerce/admin/invoice.php:146
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:89
+#: woocommerce/Admin/MetaBoxes/Info.php:91
+#: woocommerce/Admin/Order.php:119
 msgid "Wait get invoice"
 msgstr "待開立發票"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:93
+#: woocommerce/Admin/MetaBoxes/Info.php:95
 msgid "Expected get time"
 msgstr "預計開立時間"
 
-#: woocommerce/admin/invoice.php:63
+#: woocommerce/Admin/Admin.php:52
 msgid "Cancel get invoice.<br>Please wait."
 msgstr "取消開立中。<br>請耐心等待。"
 
-#: woocommerce/admin/meta-boxes/class-wc-meta-box-invoice-data.php:141
+#: woocommerce/Admin/MetaBoxes/Info.php:143
 msgid "Cancel get"
 msgstr "取消開立"
 
@@ -403,7 +403,7 @@ msgid "Customer"
 msgstr "消費者"
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/invoice.php:175
+#: woocommerce/Invoice.php:174
 #, php-format
 msgid "Invalid invoice error: %1$s (%2$s)"
 msgstr "作廢發票錯誤：%1$s (%2$s)"
@@ -412,15 +412,15 @@ msgstr "作廢發票錯誤：%1$s (%2$s)"
 msgid "<strong>Note:</strong> The log may contain personal information."
 msgstr "<strong>注意</strong>：紀錄可能包含個人資料。"
 
-#: woocommerce/admin/settings/settings-invoice.php:90
+#: woocommerce/Admin/Settings/Invoice.php:130
 msgid "Trade no prefix"
 msgstr "交易編號前綴字"
 
-#: woocommerce/admin/settings/settings-invoice.php:93
+#: woocommerce/Admin/Settings/Invoice.php:133
 msgid "The prefix string of trade no. Only letters and numbers allowed."
 msgstr "交易編號前綴字符串。只允許使用英文字母與數字。"
 
-#: woocommerce/admin/settings/invoice.php:51
+#: woocommerce/Admin/Settings/Invoice.php:149
 msgid "Trade no prefix only letters and numbers allowed, and maximum length is 3 characters."
 msgstr "交易編號前綴字只允許使用英文字母與數字，且不得超過 3 個字元。"
 
@@ -439,8 +439,8 @@ msgctxt "carruer type"
 msgid "smilepay_host"
 msgstr "雲端發票 (速買配)"
 
-#: woocommerce/admin/settings/invoice.php:31
-#: woocommerce/admin/settings/invoice.php:34
+#: woocommerce/Admin/Settings/Invoice.php:33
+#: woocommerce/Admin/Settings/Invoice.php:36
 msgid "ezPay invoice"
 msgstr "ezPay 電子發票"
 
@@ -468,7 +468,7 @@ msgstr "商品金額的小數點位數"
 msgid "Taiwan"
 msgstr "台灣"
 
-#: woocommerce/admin/settings/settings-invoice.php:66
+#: woocommerce/Admin/Settings/Invoice.php:106
 msgid "Delay time (hours)"
 msgstr "延遲時間 ( 小時 )"
 
