@@ -53,12 +53,12 @@ final class General extends AbstractAdminPage
         echo '<div class="wrap">';
 
         $show_type = 'ry-invoice-general';
-        include RY_IFEZPAY_PLUGIN_DIR . 'admin/page/html/nav.php';
+        include __DIR__ . '/html/nav.php';
 
         echo '<form method="post" action="admin-post.php">';
         echo '<input type="hidden" name="action" value="ry-invoice-general">';
         wp_nonce_field('ry-invoice-general');
-        include RY_IFEZPAY_PLUGIN_DIR . 'admin/page/html/general.php';
+        include __DIR__ . '/html/general.php';
         submit_button();
         echo '</form>';
 

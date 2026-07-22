@@ -3,6 +3,7 @@
 defined('ABSPATH') or exit;
 
 use RY\General\AbstractBasic;
+use RY\General\ActionScheduler;
 use RY\General\Logs;
 use RY\Invoice\Ezpay\Admin\Admin;
 use RY\Invoice\Ezpay\Cron;
@@ -34,6 +35,7 @@ final class RY_IFEZPAY extends AbstractBasic
     {
         load_plugin_textdomain('ry-invoice-for-ezpay', false, plugin_basename(dirname(__DIR__)) . '/languages');
         include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/vendor/woocommerce/action-scheduler/action-scheduler.php';
+        ActionScheduler::instance();
 
         Logs::set_log(RY_IFEZPAY::get_option('log', 'no') === 'yes', 'ezpay-invoice');
 
