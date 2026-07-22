@@ -1,17 +1,23 @@
 <?php
 
+namespace RY\Invoice\Ezpay\Admin;
+
 defined('ABSPATH') or exit;
 
 use RY\General\AbstractAdmin;
-use RY\Paid\Page\License;
+use RY\Invoice\Ezpay\Admin\Ajax;
+use RY\Invoice\Ezpay\Admin\Page\General as PageGeneral;
+use RY\Invoice\Ezpay\Admin\Page\Option as PageOption;
+use RY\Invoice\Ezpay\License;
+use RY\Paid\Page\License as PageLicense;
 
-final class RY_IFEZPAY_Admin extends AbstractAdmin
+final class Admin extends AbstractAdmin
 {
     private static ?self $_instance = null;
 
-    protected RY_IFEZPAY_License $license;
+    protected License $license;
 
-    public static function instance(): RY_IFEZPAY_Admin
+    public static function instance(): Admin
     {
         if (null === self::$_instance) {
             self::$_instance = new self();
@@ -23,11 +29,11 @@ final class RY_IFEZPAY_Admin extends AbstractAdmin
 
     protected function do_init(): void
     {
-        License::init_menu();
+        PageLicense::init_menu();
 
         parent::do_init();
 
-        $this->license = RY_IFEZPAY_License::instance();
+        $this->license = License::instance();
         add_filter('ry-plugin/license_list', [$this, 'add_license']);
         add_filter('enable_ry_invoice', [$this, 'add_enable_ry_invoice']);
         add_action('admin_notices', [$this, 'show_invoice_check']);
@@ -35,11 +41,10 @@ final class RY_IFEZPAY_Admin extends AbstractAdmin
         if ($this->license->is_activated()) {
             $this->license->check_expire_cron();
 
-            include_once RY_IFEZPAY_PLUGIN_DIR . 'admin/page/general.php';
-            include_once RY_IFEZPAY_PLUGIN_DIR . 'admin/page/option.php';
+            PageGeneral::init_menu();
+            PageOption::init_menu();
 
-            include_once RY_IFEZPAY_PLUGIN_DIR . 'admin/ajax.php';
-            RY_IFEZPAY_Admin_Ajax::instance();
+            Ajax::instance();
 
             add_filter('ry-plugin/menu_list', [$this, 'add_menu']);
             add_action('admin_enqueue_scripts', [$this, 'enqueue_scripts']);
@@ -58,7 +63,7 @@ final class RY_IFEZPAY_Admin extends AbstractAdmin
         return $license_list;
     }
 
-    public function add_enable_ry_invoice($enable)
+    public function add_enable_ry_invoice(array $enable): array
     {
         $enable[] = 'ezpay';
 

@@ -2,6 +2,10 @@
 
 namespace RY\Invoice\Ezpay\WooCommerce\Admin\MetaBoxes;
 
+defined('ABSPATH') or exit;
+
+use RY\Invoice\Ezpay\Utils;
+
 final class Info
 {
     private static array $fields;
@@ -15,9 +19,9 @@ final class Info
                 'class' => 'select short',
                 'type' => 'select',
                 'options' => [
-                    'personal' => ry_ifezpay_invoice_type_to_name('personal'),
-                    'company' => ry_ifezpay_invoice_type_to_name('company'),
-                    'donate' => ry_ifezpay_invoice_type_to_name('donate'),
+                    'personal' => Utils::invoice_type_to_name('personal'),
+                    'company' => Utils::invoice_type_to_name('company'),
+                    'donate' => Utils::invoice_type_to_name('donate'),
                 ],
             ],
             'carruer_type' => [
@@ -26,9 +30,9 @@ final class Info
                 'class' => 'select short',
                 'type' => 'select',
                 'options' => [
-                    'ezpay_host' => ry_ifezpay_carruer_type_to_name('ezpay_host'),
-                    'MOICA' => ry_ifezpay_carruer_type_to_name('MOICA'),
-                    'phone_barcode' => ry_ifezpay_carruer_type_to_name('phone_barcode'),
+                    'ezpay_host' => Utils::carruer_type_to_name('ezpay_host'),
+                    'MOICA' => Utils::carruer_type_to_name('MOICA'),
+                    'phone_barcode' => Utils::carruer_type_to_name('phone_barcode'),
                 ],
             ],
             'carruer_no' => [
@@ -47,9 +51,9 @@ final class Info
                 'type' => 'text',
             ],
         ];
-        $invoice_type = $order->get_meta('_invoice_type');
-        if (!isset(self::$fields['carruer_type']['options'][$invoice_type])) {
-            self::$fields['carruer_type']['options'][$invoice_type] = ry_ifezpay_carruer_type_to_name($invoice_type);
+        $carruer_type = $order->get_meta('_invoice_carruer_type');
+        if (!isset(self::$fields['carruer_type']['options'][$carruer_type])) {
+            self::$fields['carruer_type']['options'][$carruer_type] = Utils::carruer_type_to_name($carruer_type);
         }
 
         if ($order->is_paid()) {
@@ -113,10 +117,10 @@ final class Info
             } ?>
             <?php } ?>
 
-            <strong><?php esc_html_e('Invoice type', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html(ry_ifezpay_invoice_type_to_name($invoice_type)); ?><br>
+            <strong><?php esc_html_e('Invoice type', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html(Utils::invoice_type_to_name($invoice_type)); ?><br>
 
             <?php if ($invoice_type === 'personal') { ?>
-            <strong><?php esc_html_e('Carruer type', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html(ry_ifezpay_carruer_type_to_name($carruer_type)); ?><br>
+            <strong><?php esc_html_e('Carruer type', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html(Utils::carruer_type_to_name($carruer_type)); ?><br>
 
             <?php if (in_array($carruer_type, ['MOICA', 'phone_barcode'])) { ?>
             <strong><?php esc_html_e('Carruer number', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html($order->get_meta('_invoice_carruer_no')); ?><br>

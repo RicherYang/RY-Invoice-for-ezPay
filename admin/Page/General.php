@@ -1,10 +1,13 @@
 <?php
 
+namespace RY\Invoice\Ezpay\Admin\Page;
+
 defined('ABSPATH') or exit;
 
 use RY\General\AbstractAdminPage;
+use RY\Invoice\Ezpay\Admin\Admin;
 
-final class RY_IFEZPAY_Admin_Page_General extends AbstractAdminPage
+final class General extends AbstractAdminPage
 {
     public static function init_menu(): void
     {
@@ -33,7 +36,7 @@ final class RY_IFEZPAY_Admin_Page_General extends AbstractAdminPage
 
         if ($_wp_menu_nopriv) {
             $_wp_menu_nopriv['ry-invoice-general'] = true;
-            $_wp_real_parent_file['ry-invoice-general'] = RY_IFEZPAY_Admin::instance()->main_slug;
+            $_wp_real_parent_file['ry-invoice-general'] = Admin::instance()->main_slug;
             $submenu_file = 'ry-invoice';
         }
 
@@ -77,11 +80,9 @@ final class RY_IFEZPAY_Admin_Page_General extends AbstractAdminPage
             'amount_precision' => intval($_POST['amount_precision'] ?? ''),
         ];
 
-        RY_IFEZPAY::update_option('general', $general_info, false);
+        \RY_IFEZPAY::update_option('general', $general_info, false);
         $this->add_notice('success', __('Settings saved.', 'ry-invoice-for-ezpay'));
 
         wp_safe_redirect(admin_url('admin.php?page=ry-invoice-general'));
     }
 }
-
-RY_IFEZPAY_Admin_Page_General::init_menu();

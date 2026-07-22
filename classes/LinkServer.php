@@ -1,16 +1,18 @@
 <?php
 
+namespace RY\Invoice\Ezpay;
+
 defined('ABSPATH') or exit;
 
 use RY\Paid\AbstractLinkServer;
 
-final class RY_IFEZPAY_LinkServer extends AbstractLinkServer
+final class LinkServer extends AbstractLinkServer
 {
     private static ?self $_instance = null;
 
     protected string $plugin_slug = 'ry-invoice-for-ezpay';
 
-    public static function instance(): RY_IFEZPAY_LinkServer
+    public static function instance(): LinkServer
     {
         if (null === self::$_instance) {
             self::$_instance = new self();

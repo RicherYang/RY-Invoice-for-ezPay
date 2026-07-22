@@ -4,6 +4,11 @@ defined('ABSPATH') or exit;
 
 use RY\General\AbstractBasic;
 use RY\General\Logs;
+use RY\Invoice\Ezpay\Admin\Admin;
+use RY\Invoice\Ezpay\Cron;
+use RY\Invoice\Ezpay\License;
+use RY\Invoice\Ezpay\Update;
+use RY\Invoice\Ezpay\Updater;
 use RY\Invoice\Ezpay\WooCommerce\Fields;
 use RY\Invoice\Ezpay\WooCommerce\Invoice;
 
@@ -33,8 +38,7 @@ final class RY_IFEZPAY extends AbstractBasic
         Logs::set_log(RY_IFEZPAY::get_option('log', 'no') === 'yes', 'ezpay-invoice');
 
         if (is_admin()) {
-            include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/update.php';
-            RY_IFEZPAY_Update::update();
+            Update::update();
         }
 
         add_action('init', [$this, 'do_wp_init'], 9);
@@ -42,30 +46,20 @@ final class RY_IFEZPAY extends AbstractBasic
 
     public function do_wp_init(): void
     {
-        include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/functions.php';
-        include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/license.php';
-        include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/link-server.php';
-        include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/updater.php';
-        RY_IFEZPAY_Updater::instance();
+        Updater::instance();
 
         if (is_admin()) {
-            include_once RY_IFEZPAY_PLUGIN_DIR . 'admin/admin.php';
-            RY_IFEZPAY_Admin::instance();
+            Admin::instance();
         }
 
-        if (RY_IFEZPAY_License::instance()->is_activated()) {
-            include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/abstracts/abstract-ezpay.php';
-            include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/invoice.php';
-
-            include_once RY_IFEZPAY_PLUGIN_DIR . 'includes/cron.php';
-            RY_IFEZPAY_Cron::add_action();
+        if (License::instance()->is_activated()) {
+            Cron::add_action();
         }
 
         if (has_action('woocommerce_init')) {
             Fields::instance();
 
-            if (RY_IFEZPAY_License::instance()->is_activated()) {
-                include_once RY_IFEZPAY_PLUGIN_DIR . 'woocommerce/invoice.php';
+            if (License::instance()->is_activated()) {
                 Invoice::instance();
             }
         }

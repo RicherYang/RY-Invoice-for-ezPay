@@ -5,6 +5,7 @@ namespace RY\Invoice\Ezpay\WooCommerce;
 defined('ABSPATH') or exit;
 
 use RY\General\Logs;
+use RY\Invoice\Ezpay\LinkProvider;
 use RY\Invoice\Ezpay\WooCommerce\Admin\Admin;
 
 final class Invoice
@@ -359,7 +360,7 @@ final class Invoice
         }
 
         Logs::log('ezpay-invoice', 'info', 'Get WooCommerce #' . $order->get_id(), $invoice_data);
-        \RY_IFEZPAY_Invoice::instance()->get_invoice($invoice_data, $order->get_id());
+        LinkProvider::instance()->get_invoice($invoice_data, $order->get_id());
     }
 
     public function cancel_invoice($order)
@@ -386,6 +387,6 @@ final class Invoice
             'date' => $order->get_meta('_invoice_date'),
         ];
         Logs::log('ezpay-invoice', 'info', 'Invalid WooCommerce #' . $order->get_id(), $invoice_data);
-        \RY_IFEZPAY_Invoice::instance()->invalid_invoice($invoice_data, $order->get_id());
+        LinkProvider::instance()->invalid_invoice($invoice_data, $order->get_id());
     }
 }

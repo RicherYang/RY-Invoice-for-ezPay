@@ -1,12 +1,16 @@
 <?php
 
+namespace RY\Invoice\Ezpay;
+
 defined('ABSPATH') or exit;
 
-final class RY_IFEZPAY_Updater
+use RY\Invoice\Ezpay\LinkServer;
+
+final class Updater
 {
     private static ?self $_instance = null;
 
-    public static function instance(): RY_IFEZPAY_Updater
+    public static function instance(): Updater
     {
         if (null === self::$_instance) {
             self::$_instance = new self();
@@ -25,11 +29,11 @@ final class RY_IFEZPAY_Updater
 
     public function update_plugin($update, $plugin_data)
     {
-        if (RY_IFEZPAY::PLUGIN_NAME !== $plugin_data['Name']) {
+        if (\RY_IFEZPAY::PLUGIN_NAME !== $plugin_data['Name']) {
             return $update;
         }
 
-        return RY_IFEZPAY_LinkServer::instance()->check_version();
+        return LinkServer::instance()->check_version();
     }
 
     public static function modify_plugin_details($result, $action, $args)
@@ -42,7 +46,7 @@ final class RY_IFEZPAY_Updater
             return $result;
         }
 
-        $response = RY_IFEZPAY_LinkServer::instance()->get_info();
+        $response = LinkServer::instance()->get_info();
         if (!empty($response)) {
             return (object) $response;
         }

@@ -8,6 +8,8 @@
         "psr-4": {
             "RY\\General\\": "includes/ry-general",
             "RY\\Paid\\": "includes/ry-paid",
+            "RY\\Invoice\\Ezpay\\": "classes",
+            "RY\\Invoice\\Ezpay\\Admin\\": "admin",
             "RY\\Invoice\\Ezpay\\WooCommerce\\": "woocommerce"
         }
     },
