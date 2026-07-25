@@ -38,11 +38,11 @@ msgstr ""
 msgid "https://richer.tw/"
 msgstr ""
 
-#: admin/Admin.php:78
+#: admin/Admin.php:75
 msgid "Not recommended enable two invoice plugins at the same time!"
 msgstr ""
 
-#: admin/Admin.php:86
+#: admin/Admin.php:83
 msgid "E-Invoice"
 msgstr ""
 
@@ -168,10 +168,20 @@ msgctxt "carruer type"
 msgid "phone_barcode"
 msgstr ""
 
-#. translators: %1$s: Plugin name, %2$s: License URL
-#: includes/ry-general/AbstractAdmin.php:52
+#: includes/ry-general/ActionScheduler/ListTable.php:30
+msgid "async"
+msgstr ""
+
+#. translators: %s: date interval
+#: includes/ry-general/ActionScheduler/ListTable.php:45
 #, php-format
-msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
+msgid " (%s ago)"
+msgstr ""
+
+#. translators: %s: date interval
+#: includes/ry-general/ActionScheduler/ListTable.php:48
+#, php-format
+msgid " (%s)"
 msgstr ""
 
 #. translators: %s: Path of log file
@@ -192,29 +202,45 @@ msgstr ""
 msgid "Delete Permanently"
 msgstr ""
 
+#. translators: %d: Number of days
+#: includes/ry-general/Page/html/log-info.php:75
+#, php-format
+msgid "Log file will delete after %d days"
+msgstr ""
+
 #: includes/ry-general/Page/html/logs-select.php:3
 msgid "Log Categories"
 msgstr ""
 
-#: includes/ry-general/Page/html/logs-select.php:19
+#: includes/ry-general/Page/html/logs-select.php:18
 msgid "Log Files"
 msgstr ""
 
-#: includes/ry-general/Page/Logs.php:24
-#: includes/ry-general/Page/Logs.php:95
+#: includes/ry-general/Page/html/logs-select.php:35
+msgid "Dir size:"
+msgstr ""
+
+#: includes/ry-general/Page/Logs.php:27
+#: includes/ry-general/Page/Logs.php:73
 msgid "Logs"
 msgstr ""
 
-#: includes/ry-general/Page/Logs.php:97
+#: includes/ry-general/Page/Logs.php:75
 msgid "No logs found."
 msgstr ""
 
-#: includes/ry-general/Page/Logs.php:155
+#: includes/ry-general/Page/Logs.php:134
 msgid "Delete successful."
 msgstr ""
 
-#: includes/ry-general/Page/Logs.php:162
+#: includes/ry-general/Page/Logs.php:141
 msgid "Delete failed."
+msgstr ""
+
+#. translators: %1$s: Plugin name, %2$s: License URL
+#: includes/ry-paid/AbstractAdmin.php:33
+#, php-format
+msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
 msgstr ""
 
 #: woocommerce/Admin/Admin.php:55

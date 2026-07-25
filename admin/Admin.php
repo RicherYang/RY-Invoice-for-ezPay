@@ -4,12 +4,11 @@ namespace RY\Invoice\Ezpay\Admin;
 
 defined('ABSPATH') or exit;
 
-use RY\General\AbstractAdmin;
 use RY\Invoice\Ezpay\Admin\Ajax;
 use RY\Invoice\Ezpay\Admin\Page\General as PageGeneral;
 use RY\Invoice\Ezpay\Admin\Page\Option as PageOption;
 use RY\Invoice\Ezpay\License;
-use RY\Paid\Page\License as PageLicense;
+use RY\Paid\V20260724\AbstractAdmin;
 
 final class Admin extends AbstractAdmin
 {
@@ -29,8 +28,6 @@ final class Admin extends AbstractAdmin
 
     protected function do_init(): void
     {
-        PageLicense::init_menu();
-
         parent::do_init();
 
         $this->license = License::instance();
