@@ -82,16 +82,39 @@ final class Admin extends AbstractAdmin
         $menu_list[] = [
             'name' => __('E-Invoice', 'ry-invoice-for-ezpay'),
             'slug' => 'ry-invoice',
-            'function' => [$this, 'goto_page'],
+            'function' => [$this, 'show_page'],
         ];
 
         return $menu_list;
     }
 
-    public function goto_page()
+    public function show_page(): void
     {
-        echo '<script>location.href="' . esc_url(admin_url('admin.php?page=ry-invoice-general')) . '";</script>';
-        exit;
+        $navs = apply_filters('ry_invoice-navs', []);
+        $show_type = wp_unslash($_GET['type'] ?? 'general');
+        if ($show_type !== sanitize_key($show_type)) {
+            $show_type = '';
+        }
+
+        echo '<div class="wrap">';
+
+        echo '<nav class="nav-tab-wrapper wp-clearfix">';
+        foreach ($navs as $nav) {
+            printf(
+                '<a href="%1$s" class="nav-tab %2$s">%3$s</a>',
+                esc_url(add_query_arg([
+                    'page' => 'ry-invoice',
+                    'type' => $nav['type'],
+                ], admin_url('admin.php'))),
+                $show_type === $nav['type'] ? 'nav-tab-active' : '',
+                esc_html($nav['name'])
+            );
+        }
+        echo '</nav>';
+
+        do_action('ry_invoice-show_page-' . $show_type);
+
+        echo '</div>';
     }
 
     public function enqueue_scripts()

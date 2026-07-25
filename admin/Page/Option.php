@@ -5,15 +5,13 @@ namespace RY\Invoice\Ezpay\Admin\Page;
 defined('ABSPATH') or exit;
 
 use RY\General\V20260724\AbstractAdminPage;
-use RY\Invoice\Ezpay\Admin\Admin;
 
 final class Option extends AbstractAdminPage
 {
     public static function init_menu(): void
     {
-        add_filter('ry-invoice-navs', [__CLASS__, 'add_nav']);
-        add_submenu_page('', __('ezPay options', 'ry-invoice-for-ezpay'), '', 'manage_options', 'ry-invoice-ezpay-option', [__CLASS__, 'pre_show_page']);
-        add_action('load-admin_page_ry-invoice-ezpay-option', [__CLASS__, 'instance']);
+        add_filter('ry_invoice-navs', [__CLASS__, 'add_nav']);
+        add_action('ry_invoice-show_page-ezpay-option', [__CLASS__, 'pre_show_page']);
         add_action('admin_post_ry-invoice-ezpay-option', [__CLASS__, 'admin_action']);
     }
 
@@ -21,38 +19,22 @@ final class Option extends AbstractAdminPage
     {
         $navs[] = [
             'name' => __('ezPay options', 'ry-invoice-for-ezpay'),
-            'slug' => 'ry-invoice-ezpay-option',
+            'type' => 'ezpay-option',
         ];
 
         return $navs;
     }
 
-    protected function do_init(): void
-    {
-        global $_wp_menu_nopriv, $_wp_real_parent_file, $submenu_file;
-
-        if ($_wp_menu_nopriv) {
-            $_wp_menu_nopriv['ry-invoice-ezpay-option'] = true;
-            $_wp_real_parent_file['ry-invoice-ezpay-option'] = Admin::instance()->main_slug;
-            $submenu_file = 'ry-invoice';
-        }
-    }
+    protected function do_init(): void {}
 
     public function output_page(): void
     {
-        echo '<div class="wrap">';
-
-        $show_type = 'ry-invoice-ezpay-option';
-        include __DIR__ . '/html/nav.php';
-
         echo '<form method="post" action="admin-post.php">';
         echo '<input type="hidden" name="action" value="ry-invoice-ezpay-option">';
         wp_nonce_field('ry-invoice-ezpay-option');
         include __DIR__ . '/html/option.php';
         submit_button();
         echo '</form>';
-
-        echo '</div>';
     }
 
     public function do_admin_action(string $action): void
@@ -76,6 +58,6 @@ final class Option extends AbstractAdminPage
         \RY_IFEZPAY::update_option('apiinfo', $api_info, false);
         $this->add_notice('success', __('Settings saved.', 'ry-invoice-for-ezpay'));
 
-        wp_safe_redirect(admin_url('admin.php?page=ry-invoice-ezpay-option'));
+        wp_safe_redirect(admin_url('admin.php?page=ry-invoice&type=ezpay-option'));
     }
 }

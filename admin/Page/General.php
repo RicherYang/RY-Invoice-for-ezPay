@@ -5,16 +5,14 @@ namespace RY\Invoice\Ezpay\Admin\Page;
 defined('ABSPATH') or exit;
 
 use RY\General\V20260724\AbstractAdminPage;
-use RY\Invoice\Ezpay\Admin\Admin;
 
 final class General extends AbstractAdminPage
 {
     public static function init_menu(): void
     {
-        if (!has_action('load-admin_page_ry-invoice-general')) {
-            add_filter('ry-invoice-navs', [__CLASS__, 'add_nav']);
-            add_submenu_page('', __('General', 'ry-invoice-for-ezpay'), '', 'manage_options', 'ry-invoice-general', [__CLASS__, 'pre_show_page']);
-            add_action('load-admin_page_ry-invoice-general', [__CLASS__, 'instance']);
+        if (!has_action('ry_invoice-show_page-general')) {
+            add_filter('ry_invoice-navs', [__CLASS__, 'add_nav']);
+            add_action('ry_invoice-show_page-general', [__CLASS__, 'pre_show_page']);
         }
 
         add_action('admin_post_ry-invoice-general', [__CLASS__, 'admin_action']);
@@ -24,45 +22,22 @@ final class General extends AbstractAdminPage
     {
         $navs[] = [
             'name' => __('General', 'ry-invoice-for-ezpay'),
-            'slug' => 'ry-invoice-general',
+            'type' => 'general',
         ];
 
         return $navs;
     }
 
-    protected function do_init(): void
-    {
-        global $_wp_menu_nopriv, $_wp_real_parent_file, $submenu_file;
-
-        if ($_wp_menu_nopriv) {
-            $_wp_menu_nopriv['ry-invoice-general'] = true;
-            $_wp_real_parent_file['ry-invoice-general'] = Admin::instance()->main_slug;
-            $submenu_file = 'ry-invoice';
-        }
-
-        add_action('admin_enqueue_scripts', [$this, 'add_scripts'], 11);
-    }
-
-    public function add_scripts()
-    {
-        wp_enqueue_script('ry-invoice-admin-invoice');
-    }
+    protected function do_init(): void {}
 
     public function output_page(): void
     {
-        echo '<div class="wrap">';
-
-        $show_type = 'ry-invoice-general';
-        include __DIR__ . '/html/nav.php';
-
         echo '<form method="post" action="admin-post.php">';
         echo '<input type="hidden" name="action" value="ry-invoice-general">';
         wp_nonce_field('ry-invoice-general');
         include __DIR__ . '/html/general.php';
         submit_button();
         echo '</form>';
-
-        echo '</div>';
     }
 
     public function do_admin_action(string $action): void
@@ -83,6 +58,6 @@ final class General extends AbstractAdminPage
         \RY_IFEZPAY::update_option('general', $general_info, false);
         $this->add_notice('success', __('Settings saved.', 'ry-invoice-for-ezpay'));
 
-        wp_safe_redirect(admin_url('admin.php?page=ry-invoice-general'));
+        wp_safe_redirect(admin_url('admin.php?page=ry-invoice&type=general'));
     }
 }
