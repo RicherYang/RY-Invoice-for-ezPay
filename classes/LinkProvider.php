@@ -207,7 +207,7 @@ final class LinkProvider
         return $general_info;
     }
 
-    public function get_api_info()
+    public function get_api_info($load_test = true)
     {
         $api_info = \RY_IFEZPAY::get_option('apiinfo', []);
         if (!is_array($api_info)) {
