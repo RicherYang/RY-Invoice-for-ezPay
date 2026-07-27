@@ -4,7 +4,7 @@ namespace RY\Invoice\Ezpay;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260724\Logs;
+use RY\General\V20260727\Logs;
 
 final class Update
 {
@@ -21,7 +21,7 @@ final class Update
             return;
         }
 
-        if (version_compare($now_version, '2026.7.19', '<')) {
+        if (version_compare($now_version, '2026.7.27', '<')) {
             $old_dir = WP_CONTENT_DIR . '/ry-logs';
             if (is_dir($old_dir)) {
                 $new_dir = Logs::get_log_directory();
@@ -32,7 +32,7 @@ final class Update
             }
             add_action('init', [Logs::class, 'set_cron_job']);
 
-            \RY_IFEZPAY::update_option('version', '2026.7.19', true);
+            \RY_IFEZPAY::update_option('version', '2026.7.27', true);
         }
     }
 }

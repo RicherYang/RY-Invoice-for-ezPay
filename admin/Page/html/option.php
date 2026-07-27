@@ -1,6 +1,7 @@
 <?php defined('ABSPATH') or exit; ?>
 
 <?php
+use RY\General\V20260727\Utils;
 use RY\Invoice\Ezpay\LinkProvider;
 
 ?>
@@ -15,7 +16,7 @@ use RY\Invoice\Ezpay\LinkProvider;
         <td>
             <fieldset>
                 <legend class="screen-reader-text"><span><?php esc_html_e('Debug log', 'ry-invoice-for-ezpay'); ?></span></legend>
-                <label for="log"><input name="log" type="checkbox" id="log" value="yes" <?php checked(RY_IFEZPAY::get_option('log', 'no') === 'yes'); ?>>
+                <label for="log"><input name="log" type="checkbox" id="log" value="yes" <?php checked(Utils::string_to_bool(RY_IFEZPAY::get_option('log', 'no'))); ?>>
                     <?php esc_html_e('Enable log', 'ry-invoice-for-ezpay'); ?></label>
                 <p class="description">
                     <?php echo wp_kses(

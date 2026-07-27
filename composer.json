@@ -1,13 +1,13 @@
 {
     "name": "ry/invoice-for-ezpay",
-    "version": "2026.7.16",
+    "version": "2026.7.27",
     "require": {
         "woocommerce/action-scheduler": "^4.0"
     },
     "autoload": {
         "psr-4": {
-            "RY\\General\\V20260724\\": "includes/ry-general",
-            "RY\\Paid\\V20260724\\": "includes/ry-paid",
+            "RY\\General\\V20260727\\": "includes/ry-general",
+            "RY\\Paid\\V20260727\\": "includes/ry-paid",
             "RY\\Invoice\\Ezpay\\": "classes",
             "RY\\Invoice\\Ezpay\\Admin\\": "admin",
             "RY\\Invoice\\Ezpay\\WooCommerce\\": "woocommerce"

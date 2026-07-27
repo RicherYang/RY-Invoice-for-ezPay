@@ -4,7 +4,8 @@ namespace RY\Invoice\Ezpay\Admin\Page;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260724\AbstractAdminPage;
+use RY\General\V20260727\AbstractAdminPage;
+use RY\General\V20260727\Utils;
 
 final class Option extends AbstractAdminPage
 {
@@ -47,10 +48,9 @@ final class Option extends AbstractAdminPage
             wp_die('Invalid nonce');
         }
 
-        $log = sanitize_locale_name($_POST['log'] ?? '') === 'yes' ? 'yes' : 'no';
-        \RY_IFEZPAY::update_option('log', $log);
+        \RY_IFAMEGO::update_option('log', Utils::bool_to_string($_POST['log'] ?? ''));
         $api_info = [
-            'testmode' => sanitize_locale_name($_POST['testmode'] ?? '') === 'yes' ? 'yes' : 'no',
+            'testmode' => Utils::bool_to_string($_POST['testmode'] ?? ''),
             'MerchantID' => sanitize_locale_name($_POST['MerchantID'] ?? ''),
             'HashKey' => sanitize_locale_name($_POST['HashKey'] ?? ''),
             'HashIV' => sanitize_locale_name($_POST['HashIV'] ?? ''),

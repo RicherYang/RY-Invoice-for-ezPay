@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Invoice for ezPay 2026.7.19\n"
+"Project-Id-Version: RY Invoice for ezPay 2026.7.27\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-invoice-for-ezpay\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,13 +46,15 @@ msgstr ""
 msgid "E-Invoice"
 msgstr ""
 
-#: admin/Page/General.php:16
-#: admin/Page/General.php:26
-msgid "General"
+#: admin/Page/General.php:24
+#: includes/ry-general/Page/Option.php:21
+#: includes/ry-general/Page/Option.php:35
+msgid "Options"
 msgstr ""
 
-#: admin/Page/General.php:84
-#: admin/Page/Option.php:77
+#: admin/Page/General.php:59
+#: admin/Page/Option.php:59
+#: includes/ry-general/Page/Option.php:64
 msgid "Settings saved."
 msgstr ""
 
@@ -68,58 +70,57 @@ msgstr ""
 msgid "Item amount precision"
 msgstr ""
 
-#: admin/Page/html/option.php:10
+#: admin/Page/html/option.php:11
 msgid "API credentials"
 msgstr ""
 
-#: admin/Page/html/option.php:14
-#: admin/Page/html/option.php:17
+#: admin/Page/html/option.php:15
+#: admin/Page/html/option.php:18
 msgid "Debug log"
 msgstr ""
 
-#: admin/Page/html/option.php:19
+#: admin/Page/html/option.php:20
 msgid "Enable log"
 msgstr ""
 
-#: admin/Page/html/option.php:22
+#: admin/Page/html/option.php:23
 msgid "<strong>Note:</strong> The log may contain personal information."
 msgstr ""
 
-#: admin/Page/html/option.php:30
-#: admin/Page/html/option.php:33
+#: admin/Page/html/option.php:31
+#: admin/Page/html/option.php:34
 msgid "Sandbox"
 msgstr ""
 
-#: admin/Page/html/option.php:35
+#: admin/Page/html/option.php:36
 msgid "Enable sandbox"
 msgstr ""
 
-#: admin/Page/html/option.php:36
+#: admin/Page/html/option.php:37
 msgid "Note: For developers use ONLY."
 msgstr ""
 
-#: admin/Page/html/option.php:41
+#: admin/Page/html/option.php:42
 msgid "MerchantID"
 msgstr ""
 
-#: admin/Page/html/option.php:45
+#: admin/Page/html/option.php:46
 msgid "HashKey"
 msgstr ""
 
-#: admin/Page/html/option.php:49
+#: admin/Page/html/option.php:50
 msgid "HashIV"
 msgstr ""
 
-#: admin/Page/Option.php:15
-#: admin/Page/Option.php:23
+#: admin/Page/Option.php:22
 msgid "ezPay options"
 msgstr ""
 
-#: classes/LinkProvider.php:48
+#: classes/LinkProvider.php:49
 msgid "Customer"
 msgstr ""
 
-#: classes/LinkProvider.php:49
+#: classes/LinkProvider.php:50
 msgid "Taiwan"
 msgstr ""
 
@@ -220,20 +221,34 @@ msgstr ""
 msgid "Dir size:"
 msgstr ""
 
+#: includes/ry-general/Page/html/options.php:10
+#: includes/ry-general/Page/html/options.php:13
+msgid "Enable tracking"
+msgstr ""
+
+#: includes/ry-general/Page/html/options.php:15
+msgid "Allow usage of RY Plugin to be tracked"
+msgstr ""
+
+#: includes/ry-general/Page/html/options.php:18
+#, php-format
+msgid "Read about what usage data is tracked at: %s ."
+msgstr ""
+
 #: includes/ry-general/Page/Logs.php:27
-#: includes/ry-general/Page/Logs.php:73
+#: includes/ry-general/Page/Logs.php:75
 msgid "Logs"
 msgstr ""
 
-#: includes/ry-general/Page/Logs.php:75
+#: includes/ry-general/Page/Logs.php:77
 msgid "No logs found."
 msgstr ""
 
-#: includes/ry-general/Page/Logs.php:134
+#: includes/ry-general/Page/Logs.php:136
 msgid "Delete successful."
 msgstr ""
 
-#: includes/ry-general/Page/Logs.php:141
+#: includes/ry-general/Page/Logs.php:143
 msgid "Delete failed."
 msgstr ""
 
@@ -294,7 +309,7 @@ msgstr ""
 #: woocommerce/Admin/MetaBoxes/Info.php:104
 #: woocommerce/Admin/MetaBoxes/Info.php:108
 #: woocommerce/Admin/MetaBoxes/Info.php:112
-#: woocommerce/Admin/Order.php:99
+#: woocommerce/Admin/Order.php:100
 #: woocommerce/Fields.php:229
 #: woocommerce/Invoice.php:153
 #: woocommerce/Invoice.php:209
@@ -321,7 +336,7 @@ msgid "Invoice info"
 msgstr ""
 
 #: woocommerce/Admin/MetaBoxes/Info.php:95
-#: woocommerce/Admin/Order.php:119
+#: woocommerce/Admin/Order.php:120
 msgid "Wait get invoice"
 msgstr ""
 
@@ -330,12 +345,12 @@ msgid "Expected get time"
 msgstr ""
 
 #: woocommerce/Admin/MetaBoxes/Info.php:104
-#: woocommerce/Admin/Order.php:120
+#: woocommerce/Admin/Order.php:121
 msgid "Zero no invoice"
 msgstr ""
 
 #: woocommerce/Admin/MetaBoxes/Info.php:108
-#: woocommerce/Admin/Order.php:121
+#: woocommerce/Admin/Order.php:122
 msgid "Negative no invoice"
 msgstr ""
 
@@ -349,7 +364,7 @@ msgid "Cancel get"
 msgstr ""
 
 #: woocommerce/Admin/MetaBoxes/Info.php:151
-#: woocommerce/Admin/Order.php:130
+#: woocommerce/Admin/Order.php:131
 msgid "Issue invoice"
 msgstr ""
 
@@ -366,7 +381,7 @@ msgid "s"
 msgstr ""
 
 #. translators: %s: count
-#: woocommerce/Admin/Order.php:90
+#: woocommerce/Admin/Order.php:91
 #, php-format
 msgid "%s order issue invoice."
 msgid_plural "%s orders issue invoice."

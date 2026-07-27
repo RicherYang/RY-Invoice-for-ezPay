@@ -4,7 +4,7 @@ namespace RY\Invoice\Ezpay\WooCommerce;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260724\Logs;
+use RY\General\V20260727\Logs;
 use RY\Invoice\Ezpay\LinkProvider;
 use RY\Invoice\Ezpay\WooCommerce\Admin\Admin;
 

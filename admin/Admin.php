@@ -8,7 +8,7 @@ use RY\Invoice\Ezpay\Admin\Ajax;
 use RY\Invoice\Ezpay\Admin\Page\General as PageGeneral;
 use RY\Invoice\Ezpay\Admin\Page\Option as PageOption;
 use RY\Invoice\Ezpay\License;
-use RY\Paid\V20260724\AbstractAdmin;
+use RY\Paid\V20260727\AbstractAdmin;
 
 final class Admin extends AbstractAdmin
 {
@@ -82,6 +82,7 @@ final class Admin extends AbstractAdmin
         $menu_list[] = [
             'name' => __('E-Invoice', 'ry-invoice-for-ezpay'),
             'slug' => 'ry-invoice',
+            'capability' => 'manage_options',
             'function' => [$this, 'show_page'],
         ];
 
