@@ -4,6 +4,7 @@ namespace RY\Invoice\Ezpay\Admin;
 
 defined('ABSPATH') or exit;
 
+use RY\Invoice\Ezpay\Main;
 use RY\Invoice\Ezpay\WooCommerce\Invoice;
 
 final class Ajax
@@ -32,7 +33,7 @@ final class Ajax
         check_ajax_referer('get-invoice');
 
         $object_ID = intval($_POST['id'] ?? '');
-        as_unschedule_action(\RY_IFEZPAY::OPTION_PREFIX . 'auto_get_invoice', [$object_ID], 'ry-invoice');
+        as_unschedule_action(Main::OPTION_PREFIX . 'auto_get_invoice', [$object_ID], 'ry-invoice');
 
         if (function_exists('wc_get_order')) {
             $order = wc_get_order($object_ID);
@@ -49,7 +50,7 @@ final class Ajax
         check_ajax_referer('cancel-invoice');
 
         $object_ID = intval($_POST['id'] ?? '');
-        as_unschedule_action(\RY_IFEZPAY::OPTION_PREFIX . 'auto_get_invoice', [$object_ID], 'ry-invoice');
+        as_unschedule_action(Main::OPTION_PREFIX . 'auto_get_invoice', [$object_ID], 'ry-invoice');
 
         if (function_exists('wc_get_order')) {
             $order = wc_get_order($object_ID);
@@ -66,7 +67,7 @@ final class Ajax
         check_ajax_referer('invalid-invoice');
 
         $object_ID = intval($_POST['id'] ?? '');
-        as_unschedule_action(\RY_IFEZPAY::OPTION_PREFIX . 'auto_get_invoice', [$object_ID], 'ry-invoice');
+        as_unschedule_action(Main::OPTION_PREFIX . 'auto_get_invoice', [$object_ID], 'ry-invoice');
 
         if (function_exists('wc_get_order')) {
             $order = wc_get_order($object_ID);

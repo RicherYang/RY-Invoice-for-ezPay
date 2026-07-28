@@ -1,19 +1,16 @@
 <?php
 
+namespace RY\Invoice\Ezpay;
+
 defined('ABSPATH') or exit;
 
 use RY\General\V20260727\AbstractBasic;
 use RY\General\V20260727\Logs;
 use RY\Invoice\Ezpay\Admin\Admin;
-use RY\Invoice\Ezpay\Cron;
-use RY\Invoice\Ezpay\License;
-use RY\Invoice\Ezpay\LinkServer;
-use RY\Invoice\Ezpay\Update;
-use RY\Invoice\Ezpay\Updater;
 use RY\Invoice\Ezpay\WooCommerce\Fields;
 use RY\Invoice\Ezpay\WooCommerce\Invoice;
 
-final class RY_IFEZPAY extends AbstractBasic
+final class Main extends AbstractBasic
 {
     public const OPTION_PREFIX = 'RY_IFEZPAY_';
 
@@ -21,7 +18,7 @@ final class RY_IFEZPAY extends AbstractBasic
 
     private static ?self $_instance = null;
 
-    public static function instance(): RY_IFEZPAY
+    public static function instance(): Main
     {
         if (null === self::$_instance) {
             self::$_instance = new self();
@@ -35,7 +32,7 @@ final class RY_IFEZPAY extends AbstractBasic
     {
         load_plugin_textdomain('ry-invoice-for-ezpay', false, plugin_basename(dirname(__DIR__)) . '/languages');
 
-        Logs::set_log(RY_IFEZPAY::get_option('log', 'no') === 'yes', 'ezpay-invoice');
+        Logs::set_log(Main::get_option('log', 'no') === 'yes', 'ezpay-invoice');
 
         if (is_admin()) {
             Update::update();

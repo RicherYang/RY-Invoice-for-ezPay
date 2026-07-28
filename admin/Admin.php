@@ -4,7 +4,6 @@ namespace RY\Invoice\Ezpay\Admin;
 
 defined('ABSPATH') or exit;
 
-use RY\Invoice\Ezpay\Admin\Ajax;
 use RY\Invoice\Ezpay\Admin\Page\General as PageGeneral;
 use RY\Invoice\Ezpay\Admin\Page\Option as PageOption;
 use RY\Invoice\Ezpay\License;

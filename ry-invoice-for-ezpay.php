@@ -18,6 +18,8 @@
 
 defined('ABSPATH') or exit;
 
+use RY\Invoice\Ezpay\Main;
+
 define('RY_IFEZPAY_VERSION', '2026.7.27');
 define('RY_IFEZPAY_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('RY_IFEZPAY_PLUGIN_DIR', plugin_dir_path(__FILE__));
@@ -25,14 +27,8 @@ define('RY_IFEZPAY_PLUGIN_BASENAME', plugin_basename(__FILE__));
 define('RY_IFEZPAY_PLUGIN_LANGUAGES_DIR', plugin_dir_path(__FILE__) . '/languages');
 
 require_once RY_IFEZPAY_PLUGIN_DIR . 'includes/vendor/autoload.php';
-require_once RY_IFEZPAY_PLUGIN_DIR . 'includes/main.php';
 
-register_activation_hook(__FILE__, ['RY_IFEZPAY', 'plugin_activation']);
-register_deactivation_hook(__FILE__, ['RY_IFEZPAY', 'plugin_deactivation']);
+register_activation_hook(__FILE__, [Main::class, 'plugin_activation']);
+register_deactivation_hook(__FILE__, [Main::class, 'plugin_deactivation']);
 
-function RY_IFEZPAY(): RY_IFEZPAY
-{
-    return RY_IFEZPAY::instance();
-}
-
-RY_IFEZPAY();
+Main::instance();

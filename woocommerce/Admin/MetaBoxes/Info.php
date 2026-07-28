@@ -5,6 +5,7 @@ namespace RY\Invoice\Ezpay\WooCommerce\Admin\MetaBoxes;
 defined('ABSPATH') or exit;
 
 use RY\Invoice\Ezpay\Utils;
+use RY\Invoice\Ezpay\Main;
 
 final class Info
 {
@@ -93,7 +94,7 @@ final class Info
             <?php switch ($invoice_number) {
                 case 'wait': ?>
             <strong><?php esc_html_e('Invoice number', 'ry-invoice-for-ezpay'); ?>:</strong> <?php esc_html_e('Wait get invoice', 'ry-invoice-for-ezpay'); ?><br>
-            <?php $next_time = as_next_scheduled_action(\RY_IFEZPAY::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice'); ?>
+            <?php $next_time = as_next_scheduled_action(Main::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice'); ?>
             <?php if ($next_time > 0) {
                 $next_time = as_get_datetime_object($next_time)->setTimezone(wp_timezone()); ?>
             <strong><?php esc_html_e('Expected get time', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html($next_time->format('Y-m-d H:i')); ?><br>

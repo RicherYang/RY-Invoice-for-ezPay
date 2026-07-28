@@ -4,8 +4,6 @@ namespace RY\Invoice\Ezpay;
 
 defined('ABSPATH') or exit;
 
-use RY\Invoice\Ezpay\LinkServer;
-
 final class Updater
 {
     private static ?self $_instance = null;
@@ -29,7 +27,7 @@ final class Updater
 
     public function update_plugin($update, $plugin_data)
     {
-        if (\RY_IFEZPAY::PLUGIN_NAME !== $plugin_data['Name']) {
+        if (Main::PLUGIN_NAME !== $plugin_data['Name']) {
             return $update;
         }
 

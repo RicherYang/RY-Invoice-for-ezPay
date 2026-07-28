@@ -6,6 +6,7 @@ defined('ABSPATH') or exit;
 
 use RY\General\V20260727\Logs;
 use RY\Invoice\Ezpay\LinkProvider;
+use RY\Invoice\Ezpay\Main;
 use RY\Invoice\Ezpay\WooCommerce\Admin\Admin;
 
 final class Invoice
@@ -24,7 +25,7 @@ final class Invoice
 
     protected function do_init(): void
     {
-        $auto_get_statuses = match (\RY_IFEZPAY::get_option('get_mode')) {
+        $auto_get_statuses = match (Main::get_option('get_mode')) {
             'auto_paid' => wc_get_is_paid_statuses(),
             'auto_completed' => ['completed'],
             default => [],
@@ -33,7 +34,7 @@ final class Invoice
             add_action('woocommerce_order_status_' . $status, [$this, 'auto_get_invoice']);
         }
 
-        if (\RY_IFEZPAY::get_option('invalid_mode') === 'auto_cancel') {
+        if (Main::get_option('invalid_mode') === 'auto_cancel') {
             add_action('woocommerce_order_status_cancelled', [$this, 'auto_delete_invoice']);
             add_action('woocommerce_order_status_refunded', [$this, 'auto_delete_invoice']);
         }
@@ -45,7 +46,7 @@ final class Invoice
             Admin::instance();
         } else {
             add_filter('default_checkout_invoice_company_name', [$this, 'set_default_invoice_company_name']);
-            if (\RY_IFEZPAY::get_option('show_invoice_number', 'no') === 'yes') {
+            if (Main::get_option('show_invoice_number', 'no') === 'yes') {
                 add_filter('woocommerce_account_orders_columns', [$this, 'add_invoice_column']);
                 add_action('woocommerce_my_account_my_orders_column_invoice-number', [$this, 'show_invoice_column']);
             }
@@ -68,7 +69,7 @@ final class Invoice
             }
         }
 
-        if (\RY_IFEZPAY::get_option('skip_foreign_order', 'no') === 'yes') {
+        if (Main::get_option('skip_foreign_order', 'no') === 'yes') {
             if ('TW' !== $order->get_billing_country()) {
                 if ($order->needs_shipping_address()) {
                     if ('TW' !== $order->get_shipping_country()) {
@@ -84,8 +85,8 @@ final class Invoice
             return;
         }
 
-        if (!as_has_scheduled_action(\RY_IFEZPAY::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice')) {
-            $delay_time = (int) \RY_IFEZPAY::get_option('get_delay_time', '0');
+        if (!as_has_scheduled_action(Main::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice')) {
+            $delay_time = (int) Main::get_option('get_delay_time', '0');
             if ($delay_time < 0) {
                 $delay_time = 0;
             }
@@ -94,7 +95,7 @@ final class Invoice
             }
             $order->update_meta_data('_invoice_number', 'wait');
             $order->save();
-            as_schedule_single_action(time() + MINUTE_IN_SECONDS * 2 + HOUR_IN_SECONDS * $delay_time, \RY_IFEZPAY::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice');
+            as_schedule_single_action(time() + MINUTE_IN_SECONDS * 2 + HOUR_IN_SECONDS * $delay_time, Main::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice');
         }
     }
 
@@ -113,12 +114,12 @@ final class Invoice
             case 'wait':
             case 'zero':
             case 'negative':
-                as_unschedule_action(\RY_IFEZPAY::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice');
+                as_unschedule_action(Main::OPTION_PREFIX . 'auto_get_invoice', [$order->get_id()], 'ry-invoice');
                 $order->delete_meta_data('_invoice_number');
                 $order->save();
                 break;
             default:
-                as_schedule_single_action(time() + MINUTE_IN_SECONDS * 2, \RY_IFEZPAY::OPTION_PREFIX . 'auto_invalid_invoice', [$order->get_id()], 'ry-invoice');
+                as_schedule_single_action(time() + MINUTE_IN_SECONDS * 2, Main::OPTION_PREFIX . 'auto_invalid_invoice', [$order->get_id()], 'ry-invoice');
                 break;
         }
     }
@@ -240,7 +241,7 @@ final class Invoice
 
         $invoice_data = [
             'no' => $order->get_order_number(),
-            'prefix' => \RY_IFEZPAY::get_option('prefix', ''),
+            'prefix' => Main::get_option('prefix', ''),
             'email' => $order->get_billing_email(),
             'total' => $order->get_total() - $order->get_total_refunded(),
         ];

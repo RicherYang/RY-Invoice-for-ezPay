@@ -6,6 +6,7 @@ defined('ABSPATH') or exit;
 
 use RY\General\V20260727\AbstractAdminPage;
 use RY\General\V20260727\Utils;
+use RY\Invoice\Ezpay\Main;
 
 final class Option extends AbstractAdminPage
 {
@@ -48,14 +49,14 @@ final class Option extends AbstractAdminPage
             wp_die('Invalid nonce');
         }
 
-        \RY_IFAMEGO::update_option('log', Utils::bool_to_string($_POST['log'] ?? ''));
+        Main::update_option('log', Utils::bool_to_string($_POST['log'] ?? ''));
         $api_info = [
             'testmode' => Utils::bool_to_string($_POST['testmode'] ?? ''),
             'MerchantID' => sanitize_locale_name($_POST['MerchantID'] ?? ''),
             'HashKey' => sanitize_locale_name($_POST['HashKey'] ?? ''),
             'HashIV' => sanitize_locale_name($_POST['HashIV'] ?? ''),
         ];
-        \RY_IFEZPAY::update_option('apiinfo', $api_info, false);
+        Main::update_option('apiinfo', $api_info, false);
         $this->add_notice('success', __('Settings saved.', 'ry-invoice-for-ezpay'));
 
         wp_safe_redirect(admin_url('admin.php?page=ry-invoice&type=ezpay-option'));
