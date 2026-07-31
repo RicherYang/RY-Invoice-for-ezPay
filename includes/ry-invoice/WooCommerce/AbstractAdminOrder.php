@@ -9,6 +9,8 @@ use RY\Invoice\V20260729\Utils;
 
 abstract class AbstractAdminOrder
 {
+    protected string $type = '';
+
     public function __construct()
     {
         add_action('woocommerce_update_order', [$this, 'save_order_update']);
@@ -145,6 +147,8 @@ abstract class AbstractAdminOrder
 
     protected function get_fields($order)
     {
+        $host_type = $this->type . '_host';
+
         $fields = [
             'type' => [
                 'label' => __('Invoice type', 'ry-invoice-for-ezpay'),
@@ -163,7 +167,7 @@ abstract class AbstractAdminOrder
                 'class' => 'select short',
                 'type' => 'select',
                 'options' => [
-                    'amego_host' => Utils::carruer_type_to_name('amego_host'),
+                    $host_type => Utils::carruer_type_to_name($host_type),
                     'MOICA' => Utils::carruer_type_to_name('MOICA'),
                     'phone_barcode' => Utils::carruer_type_to_name('phone_barcode'),
                 ],
@@ -273,15 +277,15 @@ abstract class AbstractAdminOrder
     <div class="ivoice_action_column">
         <?php
         if (preg_match('/^[A-Z]{2}[0-9]{8}$/', $invoice_number)) {
-            echo '<button type="button" class="button ajax-amego-invoice" data-action="invalid" data-orderid="' . esc_attr($order->get_id()) . '">'
+            echo '<button type="button" class="button ajax-' . esc_attr($this->type) . '-invoice" data-action="invalid" data-orderid="' . esc_attr($order->get_id()) . '">'
                 . esc_html__('Invalid invoice', 'ry-invoice-for-ezpay')
                 . '</button>';
         } elseif ($invoice_number === 'wait') {
-            echo '<button type="button" class="button ajax-amego-invoice" data-action="cancel" data-orderid="' . esc_attr($order->get_id()) . '">'
+            echo '<button type="button" class="button ajax-' . esc_attr($this->type) . '-invoice" data-action="cancel" data-orderid="' . esc_attr($order->get_id()) . '">'
                 . esc_html__('Cancel get', 'ry-invoice-for-ezpay')
                 . '</button>';
         } elseif ($order->is_paid()) {
-            echo '<button type="button" class="button ajax-amego-invoice" data-action="get" data-orderid="' . esc_attr($order->get_id()) . '">'
+            echo '<button type="button" class="button ajax-' . esc_attr($this->type) . '-invoice" data-action="get" data-orderid="' . esc_attr($order->get_id()) . '">'
                 . esc_html__('Issue invoice', 'ry-invoice-for-ezpay')
                 . '</button>';
         }

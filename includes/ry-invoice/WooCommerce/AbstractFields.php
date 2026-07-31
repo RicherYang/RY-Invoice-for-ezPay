@@ -8,7 +8,7 @@ use RY\Invoice\V20260729\Utils;
 
 abstract class AbstractFields
 {
-    protected string $host_type = '';
+    protected string $type = '';
 
     public function __construct()
     {
@@ -22,6 +22,8 @@ abstract class AbstractFields
 
     public function add_invoice_info($fields)
     {
+        $host_type = $this->type . '_host';
+
         $fields['invoice'] = [
             'invoice_type' => [
                 'type' => 'select',
@@ -39,11 +41,11 @@ abstract class AbstractFields
                 'type' => 'select',
                 'label' => __('Carruer type', 'ry-invoice-for-ezpay'),
                 'options' => [
-                    $this->host_type => Utils::carruer_type_to_name($this->host_type) . __(' (send paper when win)', 'ry-invoice-for-ezpay'),
+                    $host_type => Utils::carruer_type_to_name($host_type) . __(' (send paper when win)', 'ry-invoice-for-ezpay'),
                     'MOICA' => Utils::carruer_type_to_name('MOICA'),
                     'phone_barcode' => Utils::carruer_type_to_name('phone_barcode'),
                 ],
-                'default' => $this->host_type,
+                'default' => $host_type,
                 'required' => true,
                 'priority' => 10,
             ],
@@ -87,7 +89,7 @@ abstract class AbstractFields
             switch ($invoice_type) {
                 case 'personal':
                     switch ($invoice_carruer_type) {
-                        case $this->host_type:
+                        case $host_type:
                             $fields['invoice']['invoice_carruer_no']['required'] = false;
                             $fields['invoice']['invoice_no']['required'] = false;
                             $fields['invoice']['invoice_company_name']['required'] = false;
@@ -175,8 +177,10 @@ abstract class AbstractFields
 
     public function save_order_invoice($order, $data)
     {
+        $host_type = $this->type . '_host';
+
         $order->update_meta_data('_invoice_type', $data['invoice_type'] ?? 'personal');
-        $order->update_meta_data('_invoice_carruer_type', $data['invoice_carruer_type'] ?? $this->host_type);
+        $order->update_meta_data('_invoice_carruer_type', $data['invoice_carruer_type'] ?? $host_type);
         foreach (['invoice_carruer_no', 'invoice_no', 'invoice_donate_no'] as $key) {
             if (isset($data[$key]) && !empty($data[$key])) {
                 $order->update_meta_data('_' . $key, $data[$key]);

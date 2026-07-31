@@ -12,6 +12,8 @@ final class Order extends AbstractAdminOrder
 {
     private static ?self $_instance = null;
 
+    protected string $type = 'ezpay';
+
     public static function instance(): Order
     {
         if (null === self::$_instance) {
