@@ -59,14 +59,14 @@ final class Invoice
                 ],
                 [
                     'title' => __('Show invoice number', 'ry-invoice-for-ezpay'),
-                    'id' => Main::OPTION_PREFIX . 'show_invoice_number',
+                    'id' => Main::get_prefix_name('show_invoice_number'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Show invoice number in Frontend order list', 'ry-invoice-for-ezpay'),
                 ],
                 [
                     'title' => __('Move billing company', 'ry-invoice-for-ezpay'),
-                    'id' => Main::OPTION_PREFIX . 'move_billing_company',
+                    'id' => Main::get_prefix_name('move_billing_company'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Move billing company to invoice area', 'ry-invoice-for-ezpay'),
@@ -82,7 +82,7 @@ final class Invoice
                 ],
                 [
                     'title' => __('Get mode', 'ry-invoice-for-ezpay'),
-                    'id' => Main::OPTION_PREFIX . 'get_mode',
+                    'id' => Main::get_prefix_name('get_mode'),
                     'type' => 'select',
                     'default' => 'manual',
                     'options' => [
@@ -98,7 +98,7 @@ final class Invoice
                 ],
                 [
                     'title' => __('Skip foreign orders', 'ry-invoice-for-ezpay'),
-                    'id' => Main::OPTION_PREFIX . 'skip_foreign_order',
+                    'id' => Main::get_prefix_name('skip_foreign_order'),
                     'type' => 'checkbox',
                     'default' => 'no',
                     'desc' => __('Disable auto get invoice for order billing country and shipping country are not in Taiwan.', 'ry-invoice-for-ezpay'),
@@ -106,7 +106,7 @@ final class Invoice
                 ],
                 [
                     'title' => __('Delay time (hours)', 'ry-invoice-for-ezpay'),
-                    'id' => Main::OPTION_PREFIX . 'get_delay_time',
+                    'id' => Main::get_prefix_name('get_delay_time'),
                     'type' => 'number',
                     'default' => '0',
                     'custom_attributes' => [
@@ -120,7 +120,7 @@ final class Invoice
                 ],
                 [
                     'title' => __('Invalid mode', 'ry-invoice-for-ezpay'),
-                    'id' => Main::OPTION_PREFIX . 'invalid_mode',
+                    'id' => Main::get_prefix_name('invalid_mode'),
                     'type' => 'select',
                     'default' => 'manual',
                     'options' => [
@@ -130,7 +130,7 @@ final class Invoice
                 ],
                 [
                     'title' => __('Trade no prefix', 'ry-invoice-for-ezpay'),
-                    'id' => Main::OPTION_PREFIX . 'prefix',
+                    'id' => Main::get_prefix_name('prefix'),
                     'type' => 'text',
                     'desc' => __('The prefix string of trade no. Only letters and numbers allowed.', 'ry-invoice-for-ezpay'),
                     'desc_tip' => true,

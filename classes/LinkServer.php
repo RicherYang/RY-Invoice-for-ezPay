@@ -4,7 +4,7 @@ namespace RY\Invoice\Ezpay;
 
 defined('ABSPATH') or exit;
 
-use RY\Paid\V20260727\AbstractLinkServer;
+use RY\Paid\V20260729\AbstractLinkServer;
 
 final class LinkServer extends AbstractLinkServer
 {

@@ -33,7 +33,7 @@ final class Ajax
         check_ajax_referer('get-invoice');
 
         $object_ID = intval($_POST['id'] ?? '');
-        as_unschedule_action(Main::OPTION_PREFIX . 'auto_get_invoice', [$object_ID], 'ry-invoice');
+        as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$object_ID], 'ry-invoice');
 
         if (function_exists('wc_get_order')) {
             $order = wc_get_order($object_ID);
@@ -50,7 +50,7 @@ final class Ajax
         check_ajax_referer('cancel-invoice');
 
         $object_ID = intval($_POST['id'] ?? '');
-        as_unschedule_action(Main::OPTION_PREFIX . 'auto_get_invoice', [$object_ID], 'ry-invoice');
+        as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$object_ID], 'ry-invoice');
 
         if (function_exists('wc_get_order')) {
             $order = wc_get_order($object_ID);
@@ -67,7 +67,7 @@ final class Ajax
         check_ajax_referer('invalid-invoice');
 
         $object_ID = intval($_POST['id'] ?? '');
-        as_unschedule_action(Main::OPTION_PREFIX . 'auto_get_invoice', [$object_ID], 'ry-invoice');
+        as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$object_ID], 'ry-invoice');
 
         if (function_exists('wc_get_order')) {
             $order = wc_get_order($object_ID);

@@ -4,10 +4,11 @@ namespace RY\Invoice\Ezpay;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260727\Logs;
-use RY\General\V20260727\Utils;
+use RY\General\V20260729\Logs;
+use RY\General\V20260729\Utils;
+use RY\Invoice\V20260729\AbstractLinkProvider;
 
-final class LinkProvider
+final class LinkProvider extends AbstractLinkProvider
 {
     private static ?self $_instance = null;
 
@@ -35,7 +36,7 @@ final class LinkProvider
 
     public function get_invoice($invoice_data, $object_ID)
     {
-        $general_info = $this->get_info();
+        $general_info = $this::get_info();
         $api_info = $this->get_api_info();
 
         $now = new \DateTime('now', new \DateTimeZone('Asia/Taipei'));
@@ -109,13 +110,10 @@ final class LinkProvider
             $qty = round($invoice_item['qty'], $general_info['count_precision']);
             $total = $invoice_item['total'];
             if ($post_args['Category'] === 'B2B') {
-                $total = round($total / 1.05, 0);
-                $unit_price = round($total / $qty, $general_info['count_precision']);
-                $total = round($unit_price * $qty, $general_info['count_precision']);
-            } else {
-                $unit_price = round($total / $qty, $general_info['count_precision']);
-                $total = round($unit_price * $qty, $general_info['count_precision']);
+                $total = $total / 1.05;
             }
+            $unit_price = round($total / $qty, $general_info['amount_precision']);
+            $total = round($unit_price * $qty, $general_info['amount_precision']);
 
             match($invoice_item['tax']) {
                 1 => $post_args['AmtSales'] += $total,
@@ -129,7 +127,7 @@ final class LinkProvider
         }
 
         $post_args['AmtSales'] = round($post_args['AmtSales'], 0);
-        $post_args['Amt'] = round($post_args['AmtSales'] + $post_args['AmtFree'] + $post_args['AmtZero'], 0);
+        $post_args['Amt'] = $post_args['AmtSales'] + $post_args['AmtFree'] + $post_args['AmtZero'];
         $post_args['TaxAmt'] = $post_args['TotalAmt'] - $post_args['Amt'];
         $post_args['Comment'] = apply_filters('ry_invoice-main_remark', $post_args['Comment'], $object_ID);
         $post_args['Comment'] = mb_strimwidth($this->clean_string($post_args['Comment']), 0, 200, '');
@@ -191,23 +189,6 @@ final class LinkProvider
         }
     }
 
-    public function get_info()
-    {
-        $general_info = Main::get_option('general', []);
-        if (!is_array($general_info)) {
-            $general_info = [];
-        }
-
-        $general_info = array_merge([
-            'count_precision' => 3,
-            'amount_precision' => 7,
-        ], $general_info);
-        $general_info['count_precision'] = (int) $general_info['count_precision'];
-        $general_info['amount_precision'] = (int) $general_info['amount_precision'];
-
-        return $general_info;
-    }
-
     public function get_api_info($load_test = true)
     {
         $api_info = Main::get_option('apiinfo', []);
@@ -227,17 +208,10 @@ final class LinkProvider
 
     protected function generate_trade_no($object_ID, $order_prefix = '')
     {
-        $trade_no = $order_prefix . $object_ID . 'T' . random_int(0, 9) . strrev((string) time());
+        $trade_no = parent::generate_trade_no($object_ID, $order_prefix);
         $trade_no = apply_filters('ry_invoice_ezpay-trade_no', $trade_no, $object_ID, $order_prefix);
 
         return substr($trade_no, 0, 18);
-    }
-
-    protected function clean_string(string $string)
-    {
-        $string = wp_strip_all_tags($string);
-        $string = trim(str_replace(["\r", "\n", "\t"], '', $string));
-        return str_replace(['|', '<', '>', '&', ':', '\'', '"', '`'], '', $string);
     }
 
     protected function link_server(string $url, array $args, string $MerchantID, string $HashKey, string $HashIV, int $timeout = 30)

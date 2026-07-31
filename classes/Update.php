@@ -4,7 +4,7 @@ namespace RY\Invoice\Ezpay;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260727\Logs;
+use RY\General\V20260729\Logs;
 
 final class Update
 {
@@ -30,9 +30,22 @@ final class Update
                 }
                 @rmdir($old_dir);
             }
-            add_action('init', [Logs::class, 'set_cron_job']);
 
             Main::update_option('version', '2026.7.27', true);
+        }
+
+        if (version_compare($now_version, '2026.7.31', '<')) {
+            $info = Main::get_option('general', []);
+            if (!empty($info)) {
+                update_option('RY_Invoice_general', $info, false);
+            }
+            Main::delete_option('general');
+
+            add_action('init', function () {
+                as_unschedule_all_actions('RY_log_action');
+            });
+
+            Main::update_option('version', '2026.7.31', true);
         }
     }
 }

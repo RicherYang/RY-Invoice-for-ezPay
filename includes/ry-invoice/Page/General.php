@@ -1,11 +1,11 @@
 <?php
 
-namespace RY\Invoice\Ezpay\Admin\Page;
+namespace RY\Invoice\V20260729\Page;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260727\AbstractAdminPage;
-use RY\Invoice\Ezpay\Main;
+use RY\General\V20260729\AbstractAdminPage;
+use RY\General\V20260729\Utils;
 
 final class General extends AbstractAdminPage
 {
@@ -33,32 +33,36 @@ final class General extends AbstractAdminPage
 
     public function output_page(): void
     {
-        echo '<form method="post" action="admin-post.php">';
-        echo '<input type="hidden" name="action" value="ry-invoice-general">';
-        wp_nonce_field('ry-invoice-general');
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
         include __DIR__ . '/html/general.php';
-        submit_button();
+        Utils::the_action_form_button('invoice-general', 'save-option', __('Save Changes', 'ry-invoice-for-ezpay'), 'submit', 'button-primary');
         echo '</form>';
     }
 
-    public function do_admin_action(string $action): void
+    protected function do_admin_action(string $action, string $real_action): void
     {
         if ('ry-invoice-general' !== $action) {
             return;
         }
 
-        if (!wp_verify_nonce($_POST['_wpnonce'] ?? '', 'ry-invoice-general')) {
-            wp_die('Invalid nonce');
+        if ($real_action !== '' && is_callable([$this, $real_action])) {
+            $this->$real_action();
         }
+
+        wp_safe_redirect(admin_url('admin.php?page=ry-invoice&type=general'));
+        exit;
+    }
+
+    private function save_option(): void
+    {
+        check_ajax_referer('save-option', '_ajax_nonce');
 
         $general_info = [
             'count_precision' => intval($_POST['count_precision'] ?? ''),
             'amount_precision' => intval($_POST['amount_precision'] ?? ''),
         ];
 
-        Main::update_option('general', $general_info, false);
+        update_option('RY_Invoice_general', $general_info, false);
         $this->add_notice('success', __('Settings saved.', 'ry-invoice-for-ezpay'));
-
-        wp_safe_redirect(admin_url('admin.php?page=ry-invoice&type=general'));
     }
 }

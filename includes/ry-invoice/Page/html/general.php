@@ -1,11 +1,11 @@
 <?php defined('ABSPATH') or exit; ?>
 
 <?php
-use RY\Invoice\Ezpay\LinkProvider;
+use RY\Invoice\V20260729\AbstractLinkProvider;
 
 ?>
 
-<?php $general_info = LinkProvider::instance()->get_info(); ?>
+<?php $general_info = AbstractLinkProvider::get_info(); ?>
 
 <h2 class="title"><?php esc_html_e('General options', 'ry-invoice-for-ezpay'); ?></h2>
 

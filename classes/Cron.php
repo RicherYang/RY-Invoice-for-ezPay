@@ -10,10 +10,10 @@ final class Cron
 {
     public static function add_action(): void
     {
-        add_action(Main::OPTION_PREFIX . 'check_expire', [__CLASS__, 'check_expire']);
+        add_action(Main::get_prefix_name('check_expire'), [__CLASS__, 'check_expire']);
 
-        add_action(Main::OPTION_PREFIX . 'auto_get_invoice', [__CLASS__, 'get_invoice']);
-        add_action(Main::OPTION_PREFIX . 'auto_invalid_invoice', [__CLASS__, 'invalid_invoice']);
+        add_action(Main::get_prefix_name('auto_get_invoice'), [__CLASS__, 'get_invoice']);
+        add_action(Main::get_prefix_name('auto_invalid_invoice'), [__CLASS__, 'invalid_invoice']);
     }
 
     public static function check_expire(): void

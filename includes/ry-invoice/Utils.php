@@ -1,6 +1,6 @@
 <?php
 
-namespace RY\Invoice\Ezpay;
+namespace RY\Invoice\V20260729;
 
 defined('ABSPATH') or exit;
 

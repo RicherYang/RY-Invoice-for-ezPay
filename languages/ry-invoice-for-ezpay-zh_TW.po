@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-06-29T20:45:49+08:00\n"
-"PO-Revision-Date: 2026-07-26 23:12+0800\n"
+"PO-Revision-Date: 2026-07-31 12:15+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -38,7 +38,7 @@ msgstr "https://ry-plugin.com/ry-invoice-for-ezpay"
 msgid "Richer Yang"
 msgstr "Richer Yang"
 
-#: admin/Admin.php:83
+#: admin/Admin.php:80
 msgid "E-Invoice"
 msgstr "電子發票"
 
@@ -46,226 +46,226 @@ msgstr "電子發票"
 msgid "RY Tools"
 msgstr "RY Tools"
 
-#: admin/Page/html/option.php:11
+#: admin/Page/html/option.php:12
 msgid "API credentials"
 msgstr "API 憑證"
 
-#: admin/Page/html/option.php:31
-#: admin/Page/html/option.php:34
+#: admin/Page/html/option.php:32
+#: admin/Page/html/option.php:35
 msgid "Sandbox"
 msgstr "測試模式"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:44
-#: woocommerce/Admin/MetaBoxes/Info.php:131
-#: woocommerce/Fields.php:67
-#: woocommerce/Fields.php:285
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:177
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:265
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:56
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:259
 msgid "Tax ID number"
 msgstr "公司統一編號"
 
-#: admin/Page/html/option.php:37
+#: admin/Page/html/option.php:38
 msgid "Note: For developers use ONLY."
 msgstr "注意：僅供開發者使用。"
 
-#: admin/Page/html/option.php:36
+#: admin/Page/html/option.php:37
 msgid "Enable sandbox"
 msgstr "啟用測試模式"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:17
-#: woocommerce/Admin/MetaBoxes/Info.php:120
-#: woocommerce/Fields.php:39
-#: woocommerce/Fields.php:266
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:150
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:254
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:28
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:240
 msgid "Invoice type"
 msgstr "發票類型"
 
-#: classes/Utils.php:14
+#: includes/ry-invoice/Utils.php:14
 msgctxt "invoice type"
 msgid "personal"
 msgstr "個人"
 
-#: classes/Utils.php:15
+#: includes/ry-invoice/Utils.php:15
 msgctxt "invoice type"
 msgid "company"
 msgstr "公司"
 
-#: classes/Utils.php:16
+#: includes/ry-invoice/Utils.php:16
 msgctxt "invoice type"
 msgid "donate"
 msgstr "捐贈"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:28
-#: woocommerce/Admin/MetaBoxes/Info.php:123
-#: woocommerce/Fields.php:51
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:161
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:257
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:40
 msgid "Carruer type"
 msgstr "載具類型"
 
-#: classes/Utils.php:28
+#: includes/ry-invoice/Utils.php:28
 msgctxt "carruer type"
 msgid "amego_host"
 msgstr "雲端發票 (光貿)"
 
-#: woocommerce/Fields.php:53
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:42
 msgid " (send paper when win)"
 msgstr " (中獎時寄送紙本發票)"
 
-#: classes/Utils.php:32
+#: includes/ry-invoice/Utils.php:32
 msgctxt "carruer type"
 msgid "MOICA"
 msgstr "自然人憑證"
 
-#: classes/Utils.php:33
+#: includes/ry-invoice/Utils.php:33
 msgctxt "carruer type"
 msgid "phone_barcode"
 msgstr "手機條碼"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:39
-#: woocommerce/Admin/MetaBoxes/Info.php:126
-#: woocommerce/Fields.php:62
-#: woocommerce/Fields.php:277
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:172
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:260
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:51
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:251
 msgid "Carruer number"
 msgstr "載具編號"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:49
-#: woocommerce/Admin/MetaBoxes/Info.php:135
-#: woocommerce/Fields.php:72
-#: woocommerce/Fields.php:292
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:182
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:269
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:61
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:266
 msgid "Donate number"
 msgstr "捐贈愛心碼"
 
-#: woocommerce/Fields.php:81
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:70
 msgid "Company name"
 msgstr "公司名稱"
 
-#: woocommerce/Fields.php:152
-#: woocommerce/Fields.php:159
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:130
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:137
 msgid "Invalid carruer number"
 msgstr "無效的載具編號"
 
-#: woocommerce/Fields.php:191
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:169
 msgid "Invalid tax ID number"
 msgstr "無效的統一編號"
 
-#: woocommerce/Fields.php:168
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:146
 msgid "Invalid donate number"
 msgstr "無效的愛心碼"
 
-#: woocommerce/Fields.php:249
-#: woocommerce/Invoice.php:251
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:223
+#: woocommerce/Invoice.php:252
 msgid "Zero total fee without invoice"
 msgstr "總額零元不開立發票"
 
-#: woocommerce/Fields.php:256
-#: woocommerce/Invoice.php:257
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:230
+#: woocommerce/Invoice.php:258
 msgid "Negative total fee can't invoice"
 msgstr "總額負數不開立發票"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:61
-#: woocommerce/Admin/MetaBoxes/Info.php:95
-#: woocommerce/Admin/MetaBoxes/Info.php:104
-#: woocommerce/Admin/MetaBoxes/Info.php:108
-#: woocommerce/Admin/MetaBoxes/Info.php:112
-#: woocommerce/Admin/Order.php:100
-#: woocommerce/Fields.php:229
-#: woocommerce/Invoice.php:153
-#: woocommerce/Invoice.php:209
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:87
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:194
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:230
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:238
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:242
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:246
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:203
+#: woocommerce/Invoice.php:154
+#: woocommerce/Invoice.php:210
 msgid "Invoice number"
 msgstr "發票號碼"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:66
-#: woocommerce/Admin/MetaBoxes/Info.php:113
-#: woocommerce/Fields.php:234
-#: woocommerce/Invoice.php:154
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:199
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:247
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:208
+#: woocommerce/Invoice.php:155
 msgid "Invoice random number"
 msgstr "發票隨機碼"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:72
-#: woocommerce/Admin/MetaBoxes/Info.php:114
-#: woocommerce/Fields.php:239
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:205
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:248
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:213
 msgid "Invoice date"
 msgstr "發票開立時間"
 
-#: classes/Utils.php:29
+#: includes/ry-invoice/Utils.php:29
 msgctxt "carruer type"
 msgid "ezpay_host"
 msgstr "雲端發票 (ezPay)"
 
-#: classes/Utils.php:30
+#: includes/ry-invoice/Utils.php:30
 msgctxt "carruer type"
 msgid "ecpay_host"
 msgstr "雲端發票 (綠界)"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:86
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:221
 #: woocommerce/templates/checkout/form-invoice.php:17
 #: woocommerce/templates/order/order-invoice-info.php:18
 msgid "Invoice info"
 msgstr "發票資訊"
 
-#: woocommerce/Admin/Settings/Invoice.php:54
+#: woocommerce/Admin/Settings/Invoice.php:56
 msgid "Base options"
 msgstr "基本設定"
 
-#: woocommerce/Admin/Settings/Invoice.php:59
+#: woocommerce/Admin/Settings/Invoice.php:61
 msgid "Show invoice number"
 msgstr "顯示發票號碼"
 
-#: woocommerce/Admin/Settings/Invoice.php:63
+#: woocommerce/Admin/Settings/Invoice.php:65
 msgid "Show invoice number in Frontend order list"
 msgstr "於前台訂單列表中顯示發票號碼"
 
-#: woocommerce/Admin/Settings/Invoice.php:66
+#: woocommerce/Admin/Settings/Invoice.php:68
 msgid "Move billing company"
 msgstr "移動帳單公司資訊"
 
-#: woocommerce/Admin/Settings/Invoice.php:70
+#: woocommerce/Admin/Settings/Invoice.php:72
 msgid "Move billing company to invoice area"
 msgstr "移動帳單公司資訊到發票資訊區域"
 
-#: woocommerce/Admin/Settings/Invoice.php:77
+#: woocommerce/Admin/Settings/Invoice.php:79
 msgid "Invoice options"
 msgstr "電子發票設定"
 
-#: woocommerce/Admin/Settings/Invoice.php:82
+#: woocommerce/Admin/Settings/Invoice.php:84
 msgid "Get mode"
 msgstr "開立發票模式"
 
-#: woocommerce/Admin/Settings/Invoice.php:87
+#: woocommerce/Admin/Settings/Invoice.php:89
 msgctxt "get mode"
 msgid "manual"
 msgstr "手動"
 
-#: woocommerce/Admin/Settings/Invoice.php:88
+#: woocommerce/Admin/Settings/Invoice.php:90
 msgctxt "get mode"
 msgid "auto ( when order paid )"
 msgstr "自動 (當訂單為完成付款)"
 
-#: woocommerce/Admin/Settings/Invoice.php:89
+#: woocommerce/Admin/Settings/Invoice.php:91
 msgctxt "get mode"
 msgid "auto ( when order completed )"
 msgstr "自動 (當訂單狀態為完成)"
 
 #. translators: %s: paid status
-#: woocommerce/Admin/Settings/Invoice.php:93
+#: woocommerce/Admin/Settings/Invoice.php:95
 #, php-format
 msgid "Order paid status: %s"
 msgstr "完成付款訂單狀態：%s"
 
-#: woocommerce/Admin/Settings/Invoice.php:98
+#: woocommerce/Admin/Settings/Invoice.php:100
 msgid "Skip foreign orders"
 msgstr "忽略國外訂單"
 
-#: woocommerce/Admin/Settings/Invoice.php:102
+#: woocommerce/Admin/Settings/Invoice.php:104
 msgid "Disable auto get invoice for order billing country and shipping country are not in Taiwan."
 msgstr "當帳單地址與運送地址不是台灣的時候，停止自動開立發票。"
 
-#: woocommerce/Admin/Settings/Invoice.php:120
+#: woocommerce/Admin/Settings/Invoice.php:122
 msgid "Invalid mode"
 msgstr "作廢發票模式"
 
-#: woocommerce/Admin/Settings/Invoice.php:125
+#: woocommerce/Admin/Settings/Invoice.php:127
 msgctxt "invalid mode"
 msgid "manual"
 msgstr "手動"
 
-#: woocommerce/Admin/Settings/Invoice.php:126
+#: woocommerce/Admin/Settings/Invoice.php:128
 msgctxt "invalid mode"
 msgid "auto ( when order status cancelled OR refunded )"
 msgstr "自動 (當訂單狀態為取消或退費)"
@@ -279,97 +279,97 @@ msgid "Invalid invoice.<br>Please wait."
 msgstr "作廢發票中。<br>請耐心等待。"
 
 #. translators: %s: count
-#: woocommerce/Admin/Order.php:91
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:78
 #, php-format
 msgid "%s order issue invoice."
 msgid_plural "%s orders issue invoice."
 msgstr[0] "%s 筆訂單開立發票。"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:104
-#: woocommerce/Admin/Order.php:121
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:108
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:238
 msgid "Zero no invoice"
 msgstr "零元不開立"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:108
-#: woocommerce/Admin/Order.php:122
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:109
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:242
 msgid "Negative no invoice"
 msgstr "負數不開立"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:151
-#: woocommerce/Admin/Order.php:131
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:118
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:285
 msgid "Issue invoice"
 msgstr "開立發票"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:143
-#: woocommerce/Invoice.php:184
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:277
+#: woocommerce/Invoice.php:185
 msgid "Invalid invoice"
 msgstr "作廢發票"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:178
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:312
 msgid "h"
 msgstr "時"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:179
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:313
 msgid "m"
 msgstr "分"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:180
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:314
 msgid "s"
 msgstr "秒"
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/Invoice.php:141
+#: woocommerce/Invoice.php:142
 #, php-format
 msgid "Issue invoice error: %1$s (%2$s)"
 msgstr "開立發票錯誤：%1$s (%2$s)"
 
-#: woocommerce/Invoice.php:155
+#: woocommerce/Invoice.php:156
 msgid "Invoice create time"
 msgstr "發票開立時間"
 
-#: woocommerce/Invoice.php:321
-#: woocommerce/Invoice.php:334
-#: woocommerce/Invoice.php:347
-#: woocommerce/Invoice.php:357
+#: woocommerce/Invoice.php:322
+#: woocommerce/Invoice.php:335
+#: woocommerce/Invoice.php:348
+#: woocommerce/Invoice.php:358
 msgid "parcel"
 msgstr "批"
 
-#: woocommerce/Invoice.php:344
+#: woocommerce/Invoice.php:345
 msgid "shipping fee"
 msgstr "運費"
 
-#: woocommerce/Invoice.php:354
+#: woocommerce/Invoice.php:355
 msgid "return fee"
 msgstr "退款"
 
-#: admin/Page/html/general.php:10
+#: includes/ry-invoice/Page/html/general.php:10
 msgid "General options"
 msgstr "一般設定"
 
-#: admin/Admin.php:75
+#: admin/Admin.php:72
 msgid "Not recommended enable two invoice plugins at the same time!"
 msgstr "不建議同時啟用兩個發票外掛！"
 
-#: admin/Page/General.php:59
-#: admin/Page/Option.php:59
-#: includes/ry-general/Page/Option.php:64
+#: admin/Page/Option.php:66
+#: includes/ry-general/Page/Option.php:72
+#: includes/ry-invoice/Page/General.php:66
 msgid "Settings saved."
 msgstr "設定已儲存。"
 
-#: woocommerce/Admin/Settings/Invoice.php:115
+#: woocommerce/Admin/Settings/Invoice.php:117
 msgid "After N hours get invoice."
 msgstr "在 N 小時候執行開立。"
 
-#: woocommerce/Admin/Settings/Invoice.php:116
+#: woocommerce/Admin/Settings/Invoice.php:118
 msgid "According to WordPress cron job, the actual execution time will be later than the specified time."
 msgstr "基於 WordPress 的排程系統，實際執行時間將比指定的時間晚。"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:95
-#: woocommerce/Admin/Order.php:120
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:107
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:230
 msgid "Wait get invoice"
 msgstr "待開立發票"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:99
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:233
 msgid "Expected get time"
 msgstr "預計開立時間"
 
@@ -377,46 +377,46 @@ msgstr "預計開立時間"
 msgid "Cancel get invoice.<br>Please wait."
 msgstr "取消開立中。<br>請耐心等待。"
 
-#: woocommerce/Admin/MetaBoxes/Info.php:147
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:281
 msgid "Cancel get"
 msgstr "取消開立"
 
-#: includes/ry-general/Page/html/log-info.php:63
+#: includes/ry-general/Page/html/log-info.php:65
 msgid "Download"
 msgstr "下載"
 
-#: admin/Page/html/option.php:15
-#: admin/Page/html/option.php:18
+#: admin/Page/html/option.php:16
+#: admin/Page/html/option.php:19
 msgid "Debug log"
 msgstr "除錯記錄"
 
-#: admin/Page/html/option.php:20
+#: admin/Page/html/option.php:21
 msgid "Enable log"
 msgstr "啓用記錄"
 
-#: classes/LinkProvider.php:49
+#: classes/LinkProvider.php:50
 msgid "Customer"
 msgstr "消費者"
 
 #. translators: %1$s Error messade, %2$s Status code
-#: woocommerce/Invoice.php:175
+#: woocommerce/Invoice.php:176
 #, php-format
 msgid "Invalid invoice error: %1$s (%2$s)"
 msgstr "作廢發票錯誤：%1$s (%2$s)"
 
-#: admin/Page/html/option.php:23
+#: admin/Page/html/option.php:24
 msgid "<strong>Note:</strong> The log may contain personal information."
 msgstr "<strong>注意</strong>：紀錄可能包含個人資料。"
 
-#: woocommerce/Admin/Settings/Invoice.php:130
+#: woocommerce/Admin/Settings/Invoice.php:132
 msgid "Trade no prefix"
 msgstr "交易編號前綴字"
 
-#: woocommerce/Admin/Settings/Invoice.php:133
+#: woocommerce/Admin/Settings/Invoice.php:135
 msgid "The prefix string of trade no. Only letters and numbers allowed."
 msgstr "交易編號前綴字符串。只允許使用英文字母與數字。"
 
-#: woocommerce/Admin/Settings/Invoice.php:149
+#: woocommerce/Admin/Settings/Invoice.php:151
 msgid "Trade no prefix only letters and numbers allowed, and maximum length is 3 characters."
 msgstr "交易編號前綴字只允許使用英文字母與數字，且不得超過 3 個字元。"
 
@@ -425,45 +425,45 @@ msgstr "交易編號前綴字只允許使用英文字母與數字，且不得超
 msgid "ezPay E-invoice, support WooCommerce."
 msgstr "ezPay 電子發票，支援 WooCommerce。"
 
-#: admin/Page/Option.php:22
+#: admin/Page/Option.php:23
 msgid "ezPay options"
 msgstr "ezPay 設定"
 
-#: classes/Utils.php:31
+#: includes/ry-invoice/Utils.php:31
 msgctxt "carruer type"
 msgid "smilepay_host"
 msgstr "雲端發票 (速買配)"
 
-#: woocommerce/Admin/Settings/Invoice.php:33
-#: woocommerce/Admin/Settings/Invoice.php:36
+#: woocommerce/Admin/Settings/Invoice.php:35
+#: woocommerce/Admin/Settings/Invoice.php:38
 msgid "ezPay invoice"
 msgstr "ezPay 電子發票"
 
-#: admin/Page/html/option.php:42
+#: admin/Page/html/option.php:43
 msgid "MerchantID"
 msgstr "商店代號 ( MerchantID )"
 
-#: admin/Page/html/option.php:46
+#: admin/Page/html/option.php:47
 msgid "HashKey"
 msgstr "HashKey"
 
-#: admin/Page/html/option.php:50
+#: admin/Page/html/option.php:51
 msgid "HashIV"
 msgstr "HashIV"
 
-#: admin/Page/html/general.php:14
+#: includes/ry-invoice/Page/html/general.php:14
 msgid "Item count precision"
 msgstr "商品數量的小數點位數"
 
-#: admin/Page/html/general.php:28
+#: includes/ry-invoice/Page/html/general.php:28
 msgid "Item amount precision"
 msgstr "商品金額的小數點位數"
 
-#: classes/LinkProvider.php:50
+#: classes/LinkProvider.php:51
 msgid "Taiwan"
 msgstr "台灣"
 
-#: woocommerce/Admin/Settings/Invoice.php:106
+#: woocommerce/Admin/Settings/Invoice.php:108
 msgid "Delay time (hours)"
 msgstr "延遲時間 ( 小時 )"
 
@@ -473,30 +473,30 @@ msgstr "延遲時間 ( 小時 )"
 msgid "%1$s: Your <a href=\"%2$s\">license</a> is not activated yet!"
 msgstr "%1$s: 你的<a href=\"%2$s\">授權</a>尚未啟用！"
 
-#: includes/ry-general/Page/Logs.php:27
-#: includes/ry-general/Page/Logs.php:75
+#: includes/ry-general/Page/Logs.php:29
+#: includes/ry-general/Page/Logs.php:78
 msgid "Logs"
 msgstr "紀錄"
 
-#: includes/ry-general/Page/Logs.php:136
+#: includes/ry-general/Page/Logs.php:158
 msgid "Delete successful."
 msgstr "刪除成功。"
 
-#: includes/ry-general/Page/Logs.php:143
+#: includes/ry-general/Page/Logs.php:165
 msgid "Delete failed."
 msgstr "刪除失敗。"
 
 #. translators: %s: Path of log file
-#: includes/ry-general/Page/html/log-info.php:5
+#: includes/ry-general/Page/html/log-info.php:10
 #, php-format
 msgid "Viewing log file %s"
 msgstr "檢視紀錄檔 %s"
 
-#: includes/ry-general/Page/html/log-info.php:36
+#: includes/ry-general/Page/html/log-info.php:41
 msgid "Details"
 msgstr "詳細資訊"
 
-#: includes/ry-general/Page/html/log-info.php:71
+#: includes/ry-general/Page/html/log-info.php:70
 msgid "Delete Permanently"
 msgstr "永久刪除"
 
@@ -508,7 +508,7 @@ msgstr "紀錄類別"
 msgid "Log Files"
 msgstr "紀錄檔案"
 
-#: includes/ry-general/Page/Logs.php:77
+#: includes/ry-general/Page/Logs.php:80
 msgid "No logs found."
 msgstr "没有紀錄檔案。"
 
@@ -529,7 +529,7 @@ msgid " (%s)"
 msgstr " (%s)"
 
 #. translators: %d: Number of days
-#: includes/ry-general/Page/html/log-info.php:75
+#: includes/ry-general/Page/html/log-info.php:74
 #, php-format
 msgid "Log file will delete after %d days"
 msgstr "紀錄檔案將在 %d 天後刪除"
@@ -538,9 +538,9 @@ msgstr "紀錄檔案將在 %d 天後刪除"
 msgid "Dir size:"
 msgstr "目錄大小："
 
-#: admin/Page/General.php:24
-#: includes/ry-general/Page/Option.php:21
-#: includes/ry-general/Page/Option.php:35
+#: includes/ry-general/Page/Option.php:23
+#: includes/ry-general/Page/Option.php:37
+#: includes/ry-invoice/Page/General.php:25
 msgid "Options"
 msgstr "設定"
 
@@ -557,3 +557,10 @@ msgstr "允許 RY Plugin 追蹤使用情況"
 #, php-format
 msgid "Read about what usage data is tracked at: %s ."
 msgstr "閱讀 %s 以理解我們追蹤那些數據。"
+
+#: admin/Page/Option.php:36
+#: includes/ry-general/Page/Option.php:41
+#: includes/ry-invoice/Page/General.php:38
+#: includes/ry-paid/Page/License.php:75
+msgid "Save Changes"
+msgstr "儲存設定"

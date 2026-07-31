@@ -4,10 +4,10 @@ namespace RY\Invoice\Ezpay\Admin;
 
 defined('ABSPATH') or exit;
 
-use RY\Invoice\Ezpay\Admin\Page\General as PageGeneral;
 use RY\Invoice\Ezpay\Admin\Page\Option as PageOption;
 use RY\Invoice\Ezpay\License;
-use RY\Paid\V20260727\AbstractAdmin;
+use RY\Invoice\V20260729\Page\General as PageGeneral;
+use RY\Paid\V20260729\AbstractAdmin;
 
 final class Admin extends AbstractAdmin
 {
@@ -27,8 +27,6 @@ final class Admin extends AbstractAdmin
 
     protected function do_init(): void
     {
-        parent::do_init();
-
         $this->license = License::instance();
         add_filter('ry-plugin/license_list', [$this, 'add_license']);
         add_filter('enable_ry_invoice', [$this, 'add_enable_ry_invoice']);
