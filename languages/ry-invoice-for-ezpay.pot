@@ -60,7 +60,7 @@ msgid "Enable log"
 msgstr ""
 
 #: admin/Page/html/option.php:24
-msgid "<strong>Note:</strong> The log may contain personal information."
+msgid "Unable to disable error level log. <strong>Note:</strong> The log may contain personal information."
 msgstr ""
 
 #: admin/Page/html/option.php:32
@@ -72,19 +72,19 @@ msgstr ""
 msgid "Enable sandbox"
 msgstr ""
 
-#: admin/Page/html/option.php:38
-msgid "Note: For developers use ONLY."
+#: admin/Page/html/option.php:40
+msgid "<strong>Note:</strong> For developers use ONLY."
 msgstr ""
 
-#: admin/Page/html/option.php:43
+#: admin/Page/html/option.php:48
 msgid "MerchantID"
 msgstr ""
 
-#: admin/Page/html/option.php:47
+#: admin/Page/html/option.php:52
 msgid "HashKey"
 msgstr ""
 
-#: admin/Page/html/option.php:51
+#: admin/Page/html/option.php:56
 msgid "HashIV"
 msgstr ""
 
@@ -260,150 +260,150 @@ msgid "phone_barcode"
 msgstr ""
 
 #. translators: %s: count
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:78
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:80
 #, php-format
 msgid "%s order issue invoice."
 msgid_plural "%s orders issue invoice."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:87
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:194
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:230
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:238
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:89
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:198
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:234
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:242
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:246
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:203
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:250
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:207
 #: woocommerce/Invoice.php:154
 #: woocommerce/Invoice.php:210
 msgid "Invoice number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:107
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:230
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:109
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:234
 msgid "Wait get invoice"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:108
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:238
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:110
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:242
 msgid "Zero no invoice"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:109
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:242
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:111
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:246
 msgid "Negative no invoice"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:118
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:285
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:120
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:289
 msgid "Issue invoice"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:150
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:254
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:28
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:240
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:154
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:258
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:30
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:244
 msgid "Invoice type"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:161
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:257
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:40
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:165
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:261
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:42
 msgid "Carruer type"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:172
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:260
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:51
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:251
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:176
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:264
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:53
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:255
 msgid "Carruer number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:177
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:265
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:56
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:259
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:181
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:269
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:58
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:263
 msgid "Tax ID number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:182
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:269
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:61
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:266
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:186
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:273
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:63
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:270
 msgid "Donate number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:199
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:247
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:208
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:203
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:251
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:212
 #: woocommerce/Invoice.php:155
 msgid "Invoice random number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:205
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:248
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:213
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:209
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:252
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:217
 msgid "Invoice date"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:221
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:225
 #: woocommerce/templates/checkout/form-invoice.php:17
 #: woocommerce/templates/order/order-invoice-info.php:18
 msgid "Invoice info"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:233
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:237
 msgid "Expected get time"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:277
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:281
 #: woocommerce/Invoice.php:185
 msgid "Invalid invoice"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:281
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:285
 msgid "Cancel get"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:312
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:316
 msgid "h"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:313
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:317
 msgid "m"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:314
+#: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:318
 msgid "s"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:42
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:44
 msgid " (send paper when win)"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:70
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:72
 msgid "Company name"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:130
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:137
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:132
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:139
 msgid "Invalid carruer number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:146
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:148
 msgid "Invalid donate number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:169
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:171
 msgid "Invalid tax ID number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:223
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:227
 #: woocommerce/Invoice.php:252
 msgid "Zero total fee without invoice"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:230
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:234
 #: woocommerce/Invoice.php:258
 msgid "Negative total fee can't invoice"
 msgstr ""

@@ -1,7 +1,7 @@
 <?php defined('ABSPATH') or exit; ?>
 
 <?php
-use RY\General\V20260729\Utils;
+use RY\General\V20260801\Utils;
 use RY\Invoice\Ezpay\LinkProvider;
 use RY\Invoice\Ezpay\Main;
 
@@ -21,7 +21,7 @@ use RY\Invoice\Ezpay\Main;
                     <?php esc_html_e('Enable log', 'ry-invoice-for-ezpay'); ?></label>
                 <p class="description">
                     <?php echo wp_kses(
-                        __('<strong>Note:</strong> The log may contain personal information.', 'ry-invoice-for-ezpay'),
+                        __('Unable to disable error level log. <strong>Note:</strong> The log may contain personal information.', 'ry-invoice-for-ezpay'),
                         ['strong' => []]
                     ); ?>
                 </p>
@@ -35,7 +35,12 @@ use RY\Invoice\Ezpay\Main;
                 <legend class="screen-reader-text"><span><?php esc_html_e('Sandbox', 'ry-invoice-for-ezpay'); ?></span></legend>
                 <label for="testmode"><input name="testmode" type="checkbox" id="testmode" value="yes" <?php checked($api_info['testmode']); ?>>
                     <?php esc_html_e('Enable sandbox', 'ry-invoice-for-ezpay'); ?></label>
-                <p class="description"><?php esc_html_e('Note: For developers use ONLY.', 'ry-invoice-for-ezpay'); ?></p>
+                <p class="description">
+                    <?php echo wp_kses(
+                        __('<strong>Note:</strong> For developers use ONLY.', 'ry-invoice-for-ezpay'),
+                        ['strong' => []]
+                    ); ?>
+                </p>
             </fieldset>
         </td>
     </tr>
