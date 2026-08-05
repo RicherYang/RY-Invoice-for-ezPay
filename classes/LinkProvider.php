@@ -6,7 +6,7 @@ defined('ABSPATH') or exit;
 
 use RY\General\V20260801\Logs;
 use RY\General\V20260801\Utils;
-use RY\Invoice\V20260729\AbstractLinkProvider;
+use RY\Invoice\V20260805\AbstractLinkProvider;
 
 final class LinkProvider extends AbstractLinkProvider
 {
@@ -15,11 +15,13 @@ final class LinkProvider extends AbstractLinkProvider
     private array $api_test_url = [
         'get' => 'https://cinv.ezpay.com.tw/Api/invoice_issue',
         'invalid' => 'https://cinv.ezpay.com.tw/Api/invoice_invalid',
+        'track' => 'https://cinv.ezpay.com.tw/Api_number_management/searchNumber',
     ];
 
     private array $api_url = [
         'get' => 'https://inv.ezpay.com.tw/Api/invoice_issue',
         'invalid' => 'https://inv.ezpay.com.tw/Api/invoice_invalid',
+        'track' => 'https://inv.ezpay.com.tw/Api_number_management/searchNumber',
     ];
 
     public static function instance(): LinkProvider
@@ -189,6 +191,30 @@ final class LinkProvider extends AbstractLinkProvider
         }
     }
 
+    public function track_status($year, $term)
+    {
+        $api_info = $this->get_api_info();
+
+        $now = new \DateTime('now', new \DateTimeZone('Asia/Taipei'));
+        $post_args = [
+            'RespondType' => 'JSON',
+            'Version' => '1.0',
+            'TimeStamp' => $now->getTimestamp(),
+            'Year' => $year - 1911,
+            'Term' => $term,
+        ];
+
+        if ($api_info['testmode']) {
+            $post_url = $this->api_test_url['track'];
+        } else {
+            $post_url = $this->api_url['track'];
+        }
+
+        $result = $this->link_server_number($post_url, $post_args, $api_info['CompanyID'], $api_info['C_HashKey'], $api_info['C_HashIV']);
+        Logs::log('ezpay-invoice', 'info', 'Track LINK #' . $year . '-' . $term, $result);
+        return $result;
+    }
+
     public function get_api_info($load_test = true)
     {
         $api_info = Main::get_option('apiinfo', []);
@@ -200,6 +226,9 @@ final class LinkProvider extends AbstractLinkProvider
             'MerchantID' => '',
             'HashKey' => '',
             'HashIV' => '',
+            'CompanyID' => '',
+            'C_HashKey' => '',
+            'C_HashIV' => '',
         ], $api_info);
         $api_info['testmode'] = Utils::string_to_bool($api_info['testmode']);
 
@@ -251,6 +280,44 @@ final class LinkProvider extends AbstractLinkProvider
 
         if ($result->Status === 'SUCCESS') {
             $result->Result = json_decode($result->Result);
+        }
+
+        return $result;
+    }
+
+    protected function link_server_number(string $url, array $args, string $MerchantID, string $HashKey, string $HashIV, int $timeout = 30)
+    {
+        wc_set_time_limit(40);
+
+        ksort($args);
+        $args_string = http_build_query($args);
+        $encrypt_string = @openssl_encrypt($args_string, 'aes-256-cbc', $HashKey, OPENSSL_RAW_DATA, $HashIV);
+
+        $post_data = [
+            'CompanyID_' => 'C1467281175',
+            'PostData_' => bin2hex($encrypt_string),
+        ];
+        $response = wp_remote_post($url, [
+            'timeout' => $timeout,
+            'body' => $post_data,
+            'user-agent' => apply_filters('http_headers_useragent', 'WordPress/' . get_bloginfo('version')),
+        ]);
+
+        if (is_wp_error($response)) {
+            Logs::log('ezpay-invoice', 'error', 'Link failed', $response->get_error_messages());
+            return;
+        }
+
+        if (wp_remote_retrieve_response_code($response) != 200) {
+            Logs::log('ezpay-invoice', 'error', 'Link HTTP status error', ['status' => wp_remote_retrieve_response_code($response)]);
+            return;
+        }
+
+        $result = json_decode(wp_remote_retrieve_body($response));
+
+        if (!is_object($result)) {
+            Logs::log('ezpay-invoice', 'error', 'Link response parse failed', ['response' => wp_remote_retrieve_body($response)]);
+            return;
         }
 
         return $result;

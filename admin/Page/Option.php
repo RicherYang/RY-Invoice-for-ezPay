@@ -61,6 +61,9 @@ final class Option extends AbstractAdminPage
             'MerchantID' => sanitize_locale_name($_POST['MerchantID'] ?? ''),
             'HashKey' => sanitize_locale_name($_POST['HashKey'] ?? ''),
             'HashIV' => sanitize_locale_name($_POST['HashIV'] ?? ''),
+            'CompanyID' => sanitize_locale_name($_POST['CompanyID'] ?? ''),
+            'C_HashKey' => sanitize_locale_name($_POST['C_HashKey'] ?? ''),
+            'C_HashIV' => sanitize_locale_name($_POST['C_HashIV'] ?? ''),
         ];
         Main::update_option('apiinfo', $api_info, false);
         $this->add_notice('success', __('Settings saved.', 'ry-invoice-for-ezpay'));

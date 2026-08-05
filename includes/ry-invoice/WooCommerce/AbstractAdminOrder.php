@@ -1,11 +1,11 @@
 <?php
 
-namespace RY\Invoice\V20260729\WooCommerce;
+namespace RY\Invoice\V20260805\WooCommerce;
 
 defined('ABSPATH') or exit;
 
 use Automattic\WooCommerce\Utilities\OrderUtil;
-use RY\Invoice\V20260729\Utils;
+use RY\Invoice\V20260805\Utils;
 
 abstract class AbstractAdminOrder
 {

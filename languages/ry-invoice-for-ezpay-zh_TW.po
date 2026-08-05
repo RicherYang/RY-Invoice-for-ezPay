@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-06-29T20:45:49+08:00\n"
-"PO-Revision-Date: 2026-08-01 17:01+0800\n"
+"PO-Revision-Date: 2026-08-05 15:57+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -38,7 +38,7 @@ msgstr "https://ry-plugin.com/ry-invoice-for-ezpay"
 msgid "Richer Yang"
 msgstr "Richer Yang"
 
-#: admin/Admin.php:80
+#: admin/Admin.php:82
 msgid "E-Invoice"
 msgstr "電子發票"
 
@@ -342,11 +342,11 @@ msgstr "退款"
 msgid "General options"
 msgstr "一般設定"
 
-#: admin/Admin.php:72
+#: admin/Admin.php:74
 msgid "Not recommended enable two invoice plugins at the same time!"
 msgstr "不建議同時啟用兩個發票外掛！"
 
-#: admin/Page/Option.php:66
+#: admin/Page/Option.php:69
 #: includes/ry-general/Page/Option.php:72
 #: includes/ry-invoice/Page/General.php:66
 msgid "Settings saved."
@@ -390,7 +390,7 @@ msgstr "除錯記錄"
 msgid "Enable log"
 msgstr "啓用記錄"
 
-#: classes/LinkProvider.php:50
+#: classes/LinkProvider.php:52
 msgid "Customer"
 msgstr "消費者"
 
@@ -436,10 +436,12 @@ msgid "MerchantID"
 msgstr "商店代號 ( MerchantID )"
 
 #: admin/Page/html/option.php:52
+#: admin/Page/html/option.php:69
 msgid "HashKey"
 msgstr "HashKey"
 
 #: admin/Page/html/option.php:56
+#: admin/Page/html/option.php:73
 msgid "HashIV"
 msgstr "HashIV"
 
@@ -451,7 +453,7 @@ msgstr "商品數量的小數點位數"
 msgid "Item amount precision"
 msgstr "商品金額的小數點位數"
 
-#: classes/LinkProvider.php:51
+#: classes/LinkProvider.php:53
 msgid "Taiwan"
 msgstr "台灣"
 
@@ -564,3 +566,117 @@ msgstr "無法停用錯誤等級的紀錄。<strong>注意：</strong>紀錄可�
 #: admin/Page/html/option.php:40
 msgid "<strong>Note:</strong> For developers use ONLY."
 msgstr "<strong>注意：</strong>僅供開發者使用。"
+
+#: classes/Utils.php:14
+msgctxt "track term"
+msgid "Jan - Feb"
+msgstr "01 - 02 月"
+
+#: classes/Utils.php:15
+msgctxt "track term"
+msgid "Mar - Apr"
+msgstr "03 - 04 月"
+
+#: classes/Utils.php:16
+msgctxt "track term"
+msgid "May - Jun"
+msgstr "05 - 06 月"
+
+#: classes/Utils.php:17
+msgctxt "track term"
+msgid "Jul - Aug"
+msgstr "07 - 08 月"
+
+#: classes/Utils.php:18
+msgctxt "track term"
+msgid "Sep - Oct"
+msgstr "09 - 10 月"
+
+#: classes/Utils.php:19
+msgctxt "track term"
+msgid "Nov - Dec"
+msgstr "11 - 12 月"
+
+#: classes/Utils.php:32
+msgctxt "track status"
+msgid "Use"
+msgstr "使用中"
+
+#: classes/Utils.php:33
+msgctxt "track status"
+msgid "Disable"
+msgstr "停用"
+
+#: includes/ry-invoice/ListTable/Track.php:14
+msgctxt "Track table header"
+msgid "Year"
+msgstr "年分"
+
+#: includes/ry-invoice/ListTable/Track.php:15
+msgctxt "Track table header"
+msgid "Term"
+msgstr "期別"
+
+#: includes/ry-invoice/ListTable/Track.php:16
+msgctxt "Track table header"
+msgid "Code"
+msgstr "字軌名稱"
+
+#: includes/ry-invoice/ListTable/Track.php:17
+msgctxt "Track table header"
+msgid "Start number"
+msgstr "起始號碼"
+
+#: includes/ry-invoice/ListTable/Track.php:18
+msgctxt "Track table header"
+msgid "End number"
+msgstr "結束號碼"
+
+#: includes/ry-invoice/ListTable/Track.php:19
+msgctxt "Track table header"
+msgid "Current number"
+msgstr "目前已使用號碼"
+
+#: includes/ry-invoice/ListTable/Track.php:22
+msgctxt "Track table header"
+msgid "Status"
+msgstr "狀態"
+
+#: includes/ry-invoice/Page/Status.php:42
+msgid "Loading data..."
+msgstr "資料讀取中..."
+
+#: admin/Page/html/option.php:61
+msgid "Number API credentials"
+msgstr "會員 API 憑證"
+
+#: admin/Page/html/option.php:65
+msgid "CompanyID"
+msgstr "會員編號 ( CompanyID )"
+
+#: classes/Utils.php:31
+msgctxt "track status"
+msgid "Pending"
+msgstr "暫停中"
+
+#: admin/Page/html/option.php:62
+msgid "For getting invoice track information"
+msgstr "取得發票字軌資訊使用"
+
+#: includes/ry-invoice/Page/Status.php:22
+msgid "Track status"
+msgstr "字軌狀態"
+
+#: includes/ry-invoice/Page/Status.php:43
+msgid "Only get this and next term status."
+msgstr "只讀取本期與下期的狀態。"
+
+#: includes/ry-invoice/ListTable/Track.php:20
+msgctxt "Track table header"
+msgid "Unused quantity"
+msgstr "未使用數量"
+
+#: includes/ry-invoice/ListTable/Track.php:21
+msgctxt "Track table header"
+msgid "Track code"
+msgstr "字軌代號"

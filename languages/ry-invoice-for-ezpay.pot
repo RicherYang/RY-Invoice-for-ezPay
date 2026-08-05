@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Invoice for ezPay 2026.7.31\n"
+"Project-Id-Version: RY Invoice for ezPay 2026.8.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-invoice-for-ezpay\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,11 +38,11 @@ msgstr ""
 msgid "https://richer.tw/"
 msgstr ""
 
-#: admin/Admin.php:72
+#: admin/Admin.php:74
 msgid "Not recommended enable two invoice plugins at the same time!"
 msgstr ""
 
-#: admin/Admin.php:80
+#: admin/Admin.php:82
 msgid "E-Invoice"
 msgstr ""
 
@@ -81,11 +81,25 @@ msgid "MerchantID"
 msgstr ""
 
 #: admin/Page/html/option.php:52
+#: admin/Page/html/option.php:69
 msgid "HashKey"
 msgstr ""
 
 #: admin/Page/html/option.php:56
+#: admin/Page/html/option.php:73
 msgid "HashIV"
+msgstr ""
+
+#: admin/Page/html/option.php:61
+msgid "Number API credentials"
+msgstr ""
+
+#: admin/Page/html/option.php:62
+msgid "For getting invoice track information"
+msgstr ""
+
+#: admin/Page/html/option.php:65
+msgid "CompanyID"
 msgstr ""
 
 #: admin/Page/Option.php:23
@@ -99,18 +113,63 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: admin/Page/Option.php:66
+#: admin/Page/Option.php:69
 #: includes/ry-general/Page/Option.php:72
 #: includes/ry-invoice/Page/General.php:66
 msgid "Settings saved."
 msgstr ""
 
-#: classes/LinkProvider.php:50
+#: classes/LinkProvider.php:52
 msgid "Customer"
 msgstr ""
 
-#: classes/LinkProvider.php:51
+#: classes/LinkProvider.php:53
 msgid "Taiwan"
+msgstr ""
+
+#: classes/Utils.php:14
+msgctxt "track term"
+msgid "Jan - Feb"
+msgstr ""
+
+#: classes/Utils.php:15
+msgctxt "track term"
+msgid "Mar - Apr"
+msgstr ""
+
+#: classes/Utils.php:16
+msgctxt "track term"
+msgid "May - Jun"
+msgstr ""
+
+#: classes/Utils.php:17
+msgctxt "track term"
+msgid "Jul - Aug"
+msgstr ""
+
+#: classes/Utils.php:18
+msgctxt "track term"
+msgid "Sep - Oct"
+msgstr ""
+
+#: classes/Utils.php:19
+msgctxt "track term"
+msgid "Nov - Dec"
+msgstr ""
+
+#: classes/Utils.php:31
+msgctxt "track status"
+msgid "Pending"
+msgstr ""
+
+#: classes/Utils.php:32
+msgctxt "track status"
+msgid "Use"
+msgstr ""
+
+#: classes/Utils.php:33
+msgctxt "track status"
+msgid "Disable"
 msgstr ""
 
 #: includes/ry-general/ActionScheduler/ListTable.php:30
@@ -202,6 +261,51 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
+#: includes/ry-invoice/ListTable/Track.php:14
+msgctxt "Track table header"
+msgid "Year"
+msgstr ""
+
+#: includes/ry-invoice/ListTable/Track.php:15
+msgctxt "Track table header"
+msgid "Term"
+msgstr ""
+
+#: includes/ry-invoice/ListTable/Track.php:16
+msgctxt "Track table header"
+msgid "Code"
+msgstr ""
+
+#: includes/ry-invoice/ListTable/Track.php:17
+msgctxt "Track table header"
+msgid "Start number"
+msgstr ""
+
+#: includes/ry-invoice/ListTable/Track.php:18
+msgctxt "Track table header"
+msgid "End number"
+msgstr ""
+
+#: includes/ry-invoice/ListTable/Track.php:19
+msgctxt "Track table header"
+msgid "Current number"
+msgstr ""
+
+#: includes/ry-invoice/ListTable/Track.php:20
+msgctxt "Track table header"
+msgid "Unused quantity"
+msgstr ""
+
+#: includes/ry-invoice/ListTable/Track.php:21
+msgctxt "Track table header"
+msgid "Track code"
+msgstr ""
+
+#: includes/ry-invoice/ListTable/Track.php:22
+msgctxt "Track table header"
+msgid "Status"
+msgstr ""
+
 #: includes/ry-invoice/Page/html/general.php:10
 msgid "General options"
 msgstr ""
@@ -212,6 +316,18 @@ msgstr ""
 
 #: includes/ry-invoice/Page/html/general.php:28
 msgid "Item amount precision"
+msgstr ""
+
+#: includes/ry-invoice/Page/Status.php:22
+msgid "Track status"
+msgstr ""
+
+#: includes/ry-invoice/Page/Status.php:42
+msgid "Loading data..."
+msgstr ""
+
+#: includes/ry-invoice/Page/Status.php:43
+msgid "Only get this and next term status."
 msgstr ""
 
 #: includes/ry-invoice/Utils.php:14

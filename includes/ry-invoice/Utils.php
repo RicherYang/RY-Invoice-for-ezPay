@@ -1,30 +1,30 @@
 <?php
 
-namespace RY\Invoice\V20260729;
+namespace RY\Invoice\V20260805;
 
 defined('ABSPATH') or exit;
 
 final class Utils
 {
-    public static function invoice_type_to_name($invoice_type = '')
+    public static function invoice_type_to_name($value = '')
     {
-        static $type_name = [];
-        if (empty($type_name)) {
-            $type_name = [
+        static $list = [];
+        if (empty($list)) {
+            $list = [
                 'personal' => _x('personal', 'invoice type', 'ry-invoice-for-ezpay'),
                 'company' => _x('company', 'invoice type', 'ry-invoice-for-ezpay'),
                 'donate' => _x('donate', 'invoice type', 'ry-invoice-for-ezpay'),
             ];
         }
 
-        return $type_name[$invoice_type] ?? $invoice_type;
+        return $list[$value] ?? $value;
     }
 
-    public static function carruer_type_to_name($carruer_type = '')
+    public static function carruer_type_to_name($value = '')
     {
-        static $type_name = [];
-        if (empty($type_name)) {
-            $type_name = [
+        static $list = [];
+        if (empty($list)) {
+            $list = [
                 'amego_host' => _x('amego_host', 'carruer type', 'ry-invoice-for-ezpay'),
                 'ezpay_host' => _x('ezpay_host', 'carruer type', 'ry-invoice-for-ezpay'),
                 'ecpay_host' => _x('ecpay_host', 'carruer type', 'ry-invoice-for-ezpay'),
@@ -34,6 +34,6 @@ final class Utils
             ];
         }
 
-        return $type_name[$carruer_type] ?? $carruer_type;
+        return $list[$value] ?? $value;
     }
 }

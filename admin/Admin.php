@@ -6,7 +6,8 @@ defined('ABSPATH') or exit;
 
 use RY\Invoice\Ezpay\Admin\Page\Option as PageOption;
 use RY\Invoice\Ezpay\License;
-use RY\Invoice\V20260729\Page\General as PageGeneral;
+use RY\Invoice\V20260805\Page\General as PageGeneral;
+use RY\Invoice\V20260805\Page\Status as PageStatus;
 use RY\Paid\V20260729\AbstractAdmin;
 
 final class Admin extends AbstractAdmin
@@ -37,6 +38,7 @@ final class Admin extends AbstractAdmin
 
             PageGeneral::init_menu();
             PageOption::init_menu();
+            PageStatus::init_menu();
 
             Ajax::instance();
 
@@ -89,9 +91,12 @@ final class Admin extends AbstractAdmin
     public function show_page(): void
     {
         $navs = apply_filters('ry_invoice-navs', []);
-        $show_type = wp_unslash($_GET['type'] ?? 'general');
+        $show_type = wp_unslash($_GET['type'] ?? '');
         if ($show_type !== sanitize_key($show_type)) {
             $show_type = '';
+        }
+        if ($show_type === '') {
+            $show_type = $navs[array_key_first($navs)]['type'];
         }
 
         echo '<div class="wrap">';

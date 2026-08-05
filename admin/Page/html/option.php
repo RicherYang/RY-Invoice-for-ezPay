@@ -57,3 +57,20 @@ use RY\Invoice\Ezpay\Main;
         <td><input name="HashIV" type="text" id="HashIV" value="<?php echo esc_attr($api_info['HashIV']); ?>" class="regular-text"></td>
     </tr>
 </table>
+
+<h2 class="title"><?php esc_html_e('Number API credentials', 'ry-invoice-for-ezpay'); ?></h2>
+<p class="description"><?php esc_html_e('For getting invoice track information', 'ry-invoice-for-ezpay'); ?></p>
+<table class="form-table" role="presentation">
+    <tr>
+        <th scope="row"><label for="CompanyID"><?php esc_html_e('CompanyID', 'ry-invoice-for-ezpay'); ?></label></th>
+        <td><input name="CompanyID" type="text" id="CompanyID" value="<?php echo esc_attr($api_info['CompanyID']); ?>" class="regular-text"></td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="C_HashKey"><?php esc_html_e('HashKey', 'ry-invoice-for-ezpay'); ?></label></th>
+        <td><input name="C_HashKey" type="text" id="C_HashKey" value="<?php echo esc_attr($api_info['C_HashKey']); ?>" class="regular-text"></td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="C_HashIV"><?php esc_html_e('HashIV', 'ry-invoice-for-ezpay'); ?></label></th>
+        <td><input name="C_HashIV" type="text" id="C_HashIV" value="<?php echo esc_attr($api_info['C_HashIV']); ?>" class="regular-text"></td>
+    </tr>
+</table>

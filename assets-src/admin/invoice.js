@@ -60,7 +60,7 @@ $(function () {
             return;
         }
         $.blockUI({
-            message: RyWaiAdminInvoiceParams.i18n[action],
+            message: RyAdminInvoiceParams.i18n[action],
         });
         $.ajax({
             url: ajaxurl,
@@ -68,10 +68,29 @@ $(function () {
             data: {
                 action: `RY_IFEZPAY_${action}`,
                 id: $(this).data('orderid'),
-                _ajax_nonce: RyWaiAdminInvoiceParams._nonce[action]
+                _ajax_nonce: RyAdminInvoiceParams._nonce[action]
             }
         }).always(function () {
             location.reload();
         });
     });
+
+    if ($('#invoice-track-status').length) {
+        $.ajax({
+            url: ajaxurl,
+            method: 'GET',
+            data: {
+                action: 'RY_IFEZPAY_track',
+                _ajax_nonce: RyAdminInvoiceParams._nonce['track']
+            }
+        }).done(function (Jdata) {
+            if (Jdata.success === true) {
+                $('#invoice-track-status').html(Jdata.data);
+            } else {
+                $('#invoice-track-status').empty();
+            }
+        }).fail(function () {
+            $('#invoice-track-status').empty();
+        });
+    }
 });

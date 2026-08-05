@@ -50,7 +50,7 @@ final class Admin
             wp_enqueue_script('ry-invoice-admin-invoice');
             wp_enqueue_style('ry-invoice-admin-invoice');
 
-            wp_localize_script('ry-invoice-admin-invoice', 'RyWaiAdminInvoiceParams', [
+            wp_localize_script('ry-invoice-admin-invoice', 'RyAdminInvoiceParams', [
                 'i18n' => [
                     'get' => __('Issue invoice.<br>Please wait.', 'ry-invoice-for-ezpay'),
                     'cancel' => __('Cancel get invoice.<br>Please wait.', 'ry-invoice-for-ezpay'),
