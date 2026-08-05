@@ -245,7 +245,7 @@ final class LinkProvider extends AbstractLinkProvider
 
     protected function link_server(string $url, array $args, string $MerchantID, string $HashKey, string $HashIV, int $timeout = 30)
     {
-        wc_set_time_limit(40);
+        @set_time_limit(40);
 
         ksort($args);
         $args_string = http_build_query($args);
@@ -287,7 +287,7 @@ final class LinkProvider extends AbstractLinkProvider
 
     protected function link_server_number(string $url, array $args, string $MerchantID, string $HashKey, string $HashIV, int $timeout = 30)
     {
-        wc_set_time_limit(40);
+        @set_time_limit(40);
 
         ksort($args);
         $args_string = http_build_query($args);
