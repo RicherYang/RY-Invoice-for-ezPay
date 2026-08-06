@@ -215,7 +215,7 @@ final class LinkProvider extends AbstractLinkProvider
         return $result;
     }
 
-    public function get_api_info($load_test = true)
+    public function get_api_info()
     {
         $api_info = Main::get_option('apiinfo', []);
         if (!is_array($api_info)) {
