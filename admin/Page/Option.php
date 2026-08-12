@@ -4,8 +4,8 @@ namespace RY\Invoice\Ezpay\Admin\Page;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260801\AbstractAdminPage;
-use RY\General\V20260801\Utils;
+use RY\General\V20260810\AbstractAdminPage;
+use RY\General\V20260810\Utils;
 use RY\Invoice\Ezpay\Main;
 
 final class Option extends AbstractAdminPage

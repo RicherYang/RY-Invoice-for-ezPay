@@ -4,8 +4,8 @@ namespace RY\Invoice\V20260805\Page;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260801\AbstractAdminPage;
-use RY\General\V20260801\Utils;
+use RY\General\V20260810\AbstractAdminPage;
+use RY\General\V20260810\Utils;
 
 final class General extends AbstractAdminPage
 {

@@ -4,8 +4,8 @@ namespace RY\Invoice\Ezpay;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260801\AbstractBasic;
-use RY\General\V20260801\Utils;
+use RY\General\V20260810\AbstractBasic;
+use RY\General\V20260810\Utils;
 use RY\Invoice\Ezpay\Admin\Admin;
 use RY\Invoice\Ezpay\WooCommerce\Fields;
 use RY\Invoice\Ezpay\WooCommerce\Invoice;
