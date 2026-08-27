@@ -6,7 +6,7 @@ defined('ABSPATH') or exit;
 
 use RY\General\V20260810\Logs;
 use RY\General\V20260810\Utils;
-use RY\Invoice\V20260805\AbstractLinkProvider;
+use RY\Invoice\V20260827\AbstractLinkProvider;
 
 final class LinkProvider extends AbstractLinkProvider
 {

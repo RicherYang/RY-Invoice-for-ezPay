@@ -1,6 +1,6 @@
 <?php
 
-namespace RY\Invoice\V20260805\Page;
+namespace RY\Invoice\V20260827\Page;
 
 defined('ABSPATH') or exit;
 
@@ -60,7 +60,28 @@ final class General extends AbstractAdminPage
         $general_info = [
             'count_precision' => intval($_POST['count_precision'] ?? ''),
             'amount_precision' => intval($_POST['amount_precision'] ?? ''),
+            'donate' => sanitize_text_field($_POST['donate'] ?? ''),
         ];
+
+        if ($general_info['count_precision'] < 1 || $general_info['count_precision'] > 7) {
+            $general_info['count_precision'] = 3;
+        }
+
+        if ($general_info['amount_precision'] < 1 || $general_info['amount_precision'] > 7) {
+            $general_info['amount_precision'] = 7;
+        }
+
+        $general_info['donate'] = explode(',', $general_info['donate']);
+        foreach ($general_info['donate'] as &$donate) {
+            $donate = preg_replace('/[^0-9]/', '', $donate);
+        }
+        unset($donate);
+        $general_info['donate'] = array_filter($general_info['donate']);
+        sort($general_info['donate']);
+        if (empty($general_info['donate'])) {
+            // 預設捐贈單位 財團法人台灣兒童暨家庭扶助基金會 ( CCF )
+            $general_info['donate'] = ['024', '035', '1785', '2085', '2100', '3100', '5520', '5584', '5875', '5900', '6782', '7123', '7885', '8300', '8585', '8700', '33085', '68660', '70885', '078585', '176176', '323804', '326139', '378585', '461234', '818585', '2812085', '5678585', '6323200', '6361712', '6361716', '7261651'];
+        }
 
         update_option('RY_Invoice_general', $general_info, false);
         $this->add_notice('success', __('Settings saved.', 'ry-invoice-for-ezpay'));

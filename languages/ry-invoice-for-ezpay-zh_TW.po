@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-06-29T20:45:49+08:00\n"
-"PO-Revision-Date: 2026-08-06 14:16+0800\n"
+"PO-Revision-Date: 2026-08-27 13:46+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -58,7 +58,7 @@ msgstr "測試模式"
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:181
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:269
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:58
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:263
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:257
 msgid "Tax ID number"
 msgstr "公司統一編號"
 
@@ -69,7 +69,7 @@ msgstr "啟用測試模式"
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:154
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:258
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:30
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:244
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:238
 msgid "Invoice type"
 msgstr "發票類型"
 
@@ -116,40 +116,40 @@ msgstr "手機條碼"
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:176
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:264
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:53
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:255
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:249
 msgid "Carruer number"
 msgstr "載具編號"
 
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:186
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:273
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:63
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:270
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:264
 msgid "Donate number"
-msgstr "捐贈愛心碼"
+msgstr "捐贈碼"
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:72
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:73
 msgid "Company name"
 msgstr "公司名稱"
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:132
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:139
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:126
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:133
 msgid "Invalid carruer number"
 msgstr "無效的載具編號"
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:171
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:165
 msgid "Invalid tax ID number"
 msgstr "無效的統一編號"
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:148
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:142
 msgid "Invalid donate number"
-msgstr "無效的愛心碼"
+msgstr "無效的捐贈碼"
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:227
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:221
 #: woocommerce/Invoice.php:252
 msgid "Zero total fee without invoice"
 msgstr "總額零元不開立發票"
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:234
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:228
 #: woocommerce/Invoice.php:258
 msgid "Negative total fee can't invoice"
 msgstr "總額負數不開立發票"
@@ -160,7 +160,7 @@ msgstr "總額負數不開立發票"
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:242
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:246
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:250
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:207
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:201
 #: woocommerce/Invoice.php:154
 #: woocommerce/Invoice.php:210
 msgid "Invoice number"
@@ -168,14 +168,14 @@ msgstr "發票號碼"
 
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:203
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:251
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:212
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:206
 #: woocommerce/Invoice.php:155
 msgid "Invoice random number"
 msgstr "發票隨機碼"
 
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:209
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:252
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:217
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:211
 msgid "Invoice date"
 msgstr "發票開立時間"
 
@@ -348,7 +348,7 @@ msgstr "不建議同時啟用兩個發票外掛！"
 
 #: admin/Page/Option.php:73
 #: includes/ry-general/Page/Option.php:72
-#: includes/ry-invoice/Page/General.php:66
+#: includes/ry-invoice/Page/General.php:87
 msgid "Settings saved."
 msgstr "設定已儲存。"
 
@@ -547,7 +547,8 @@ msgstr "啟用追蹤"
 msgid "Allow usage of RY Plugin to be tracked"
 msgstr "允許 RY Plugin 追蹤使用情況"
 
-#: includes/ry-general/Page/html/options.php:18
+#. translators: %s: link to usage tracking information
+#: includes/ry-general/Page/html/options.php:19
 #, php-format
 msgid "Read about what usage data is tracked at: %s ."
 msgstr "閱讀 %s 以理解我們追蹤那些數據。"
@@ -684,3 +685,13 @@ msgstr "字軌代號"
 #: admin/Page/Option.php:71
 msgid "Need API key information for connect to provider server."
 msgstr "請提供 API 金鑰資訊用以與供應商伺服器連線。"
+
+#: includes/ry-invoice/Page/html/general.php:42
+msgid "Default donate number"
+msgstr "預設的捐贈碼"
+
+#. translators: %s: link to full list of donate numbers
+#: includes/ry-invoice/Page/html/general.php:49
+#, php-format
+msgid "Separate donate numbers with commas. Get <a href=\"%s\" target=\"_blank\">full list</a>."
+msgstr "請使用逗號分隔多個捐贈碼。取得 <a href=\"%s\" target=\"_blank\">完整清單</a>。"

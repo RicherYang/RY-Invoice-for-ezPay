@@ -1,7 +1,7 @@
 <?php defined('ABSPATH') or exit; ?>
 
 <?php
-use RY\Invoice\V20260805\AbstractLinkProvider;
+use RY\Invoice\V20260827\AbstractLinkProvider;
 
 ?>
 
@@ -36,6 +36,22 @@ use RY\Invoice\V20260805\AbstractLinkProvider;
                 <option value="6" <?php selected($general_info['amount_precision'], 6); ?>>6</option>
                 <option value="7" <?php selected($general_info['amount_precision'], 7); ?>>7</option>
             </select>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><label for="donate"><?php esc_html_e('Default donate number', 'ry-invoice-for-ezpay'); ?></label></th>
+        <td>
+            <input name="donate" type="text" id="donate" value="<?php echo esc_attr(implode(', ', $general_info['donate'])); ?>" class="large-text">
+            <p class="description">
+                <?php echo wp_kses(
+                    sprintf(
+                        /* translators: %s: link to full list of donate numbers */
+                        __('Separate donate numbers with commas. Get <a href="%s" target="_blank">full list</a>.', 'ry-invoice-for-ezpay'),
+                        'https://www.einvoice.nat.gov.tw/portal/btc/btc603w/search'
+                    ),
+                    ['a' => ['href' => [], 'target' => []]]
+                ); ?>
+            </p>
         </td>
     </tr>
 </table>

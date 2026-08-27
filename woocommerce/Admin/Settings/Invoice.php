@@ -27,7 +27,7 @@ final class Invoice
         add_action('woocommerce_update_options_rytools_ezpay_invoice', [$this, 'check_option']);
     }
 
-    public function add_sections($sections)
+    public function add_sections($sections = [])
     {
         if (isset($sections['tools'])) {
             $add_idx = array_search('tools', array_keys($sections));

@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Invoice for ezPay 2026.8.7\n"
+"Project-Id-Version: RY Invoice for ezPay 2026.8.27\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-invoice-for-ezpay\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: admin/Page/Option.php:73
 #: includes/ry-general/Page/Option.php:72
-#: includes/ry-invoice/Page/General.php:66
+#: includes/ry-invoice/Page/General.php:87
 msgid "Settings saved."
 msgstr ""
 
@@ -237,7 +237,8 @@ msgstr ""
 msgid "Allow usage of RY Plugin to be tracked"
 msgstr ""
 
-#: includes/ry-general/Page/html/options.php:18
+#. translators: %s: link to usage tracking information
+#: includes/ry-general/Page/html/options.php:19
 #, php-format
 msgid "Read about what usage data is tracked at: %s ."
 msgstr ""
@@ -322,6 +323,16 @@ msgstr ""
 msgid "Item amount precision"
 msgstr ""
 
+#: includes/ry-invoice/Page/html/general.php:42
+msgid "Default donate number"
+msgstr ""
+
+#. translators: %s: link to full list of donate numbers
+#: includes/ry-invoice/Page/html/general.php:49
+#, php-format
+msgid "Separate donate numbers with commas. Get <a href=\"%s\" target=\"_blank\">full list</a>."
+msgstr ""
+
 #: includes/ry-invoice/Page/Status.php:22
 msgid "Track status"
 msgstr ""
@@ -393,7 +404,7 @@ msgstr[1] ""
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:242
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:246
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:250
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:207
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:201
 #: woocommerce/Invoice.php:154
 #: woocommerce/Invoice.php:210
 msgid "Invoice number"
@@ -422,7 +433,7 @@ msgstr ""
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:154
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:258
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:30
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:244
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:238
 msgid "Invoice type"
 msgstr ""
 
@@ -435,34 +446,34 @@ msgstr ""
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:176
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:264
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:53
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:255
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:249
 msgid "Carruer number"
 msgstr ""
 
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:181
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:269
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:58
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:263
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:257
 msgid "Tax ID number"
 msgstr ""
 
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:186
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:273
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:63
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:270
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:264
 msgid "Donate number"
 msgstr ""
 
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:203
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:251
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:212
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:206
 #: woocommerce/Invoice.php:155
 msgid "Invoice random number"
 msgstr ""
 
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:209
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:252
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:217
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:211
 msgid "Invoice date"
 msgstr ""
 
@@ -501,29 +512,29 @@ msgstr ""
 msgid " (send paper when win)"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:72
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:73
 msgid "Company name"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:132
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:139
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:126
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:133
 msgid "Invalid carruer number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:148
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:142
 msgid "Invalid donate number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:171
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:165
 msgid "Invalid tax ID number"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:227
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:221
 #: woocommerce/Invoice.php:252
 msgid "Zero total fee without invoice"
 msgstr ""
 
-#: includes/ry-invoice/WooCommerce/AbstractFields.php:234
+#: includes/ry-invoice/WooCommerce/AbstractFields.php:228
 #: woocommerce/Invoice.php:258
 msgid "Negative total fee can't invoice"
 msgstr ""

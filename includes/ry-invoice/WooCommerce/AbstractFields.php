@@ -1,10 +1,10 @@
 <?php
 
-namespace RY\Invoice\V20260805\WooCommerce;
+namespace RY\Invoice\V20260827\WooCommerce;
 
 defined('ABSPATH') or exit;
 
-use RY\Invoice\V20260805\Utils;
+use RY\Invoice\V20260827\Utils;
 
 abstract class AbstractFields
 {
@@ -61,6 +61,7 @@ abstract class AbstractFields
             ],
             'invoice_donate_no' => [
                 'label' => __('Donate number', 'ry-invoice-for-ezpay'),
+                'default' => Utils::get_default_donate_no(),
                 'required' => true,
                 'priority' => 40,
             ],
@@ -74,13 +75,6 @@ abstract class AbstractFields
                 'priority' => 30,
             ];
         }
-
-        // default donate no - 財團法人台灣兒童暨家庭扶助基金會 ( CCF )
-        $donate_no = apply_filters('ry_invoice-default_donate_no', ['7261651', '5900', '8585', '7885', '035', '378585', '2085', '024', '326139', '5875', '5520', '68660', '2100', '323804', '078585', '5584', '70885', '8300', '5678585', '2812085', '6323200', '6361712', '6361716', '8700', '7123', '1785', '3100', '6782', '461234', '818585', '33085', '176176'], '');
-        if (is_array($donate_no)) {
-            $donate_no = $donate_no[intval(time() / 86400) % count($donate_no)];
-        }
-        $fields['invoice']['invoice_donate_no']['default'] = $donate_no;
 
         if (did_action('woocommerce_checkout_process')) {
             $invoice_type = sanitize_locale_name($_POST['invoice_type'] ?? '');
@@ -142,7 +136,7 @@ abstract class AbstractFields
                         break;
                 }
                 break;
-            case 'donate': // 愛心碼
+            case 'donate': // 捐贈碼
                 if (!empty($data['invoice_donate_no'])) {
                     if (!preg_match('/^[0-9]{3,7}$/', $data['invoice_donate_no'])) {
                         $errors->add('validation', __('Invalid donate number', 'ry-invoice-for-ezpay'));

@@ -75,8 +75,27 @@ final class Update
             });
         }
 
-        if (version_compare($now_version, '2026.8.12', '<')) {
-            Main::update_option('version', '2026.8.12', true);
+        if (version_compare($now_version, '2026.8.27', '<')) {
+            $general_info = get_option('RY_Invoice_general', []);
+            if (!is_array($general_info)) {
+                $general_info = [];
+            }
+            if (!isset($general_info['donate'])) {
+                $general_info['donate'] = apply_filters('ry_invoice-default_donate_no', ['024', '035', '1785', '2085', '2100', '3100', '5520', '5584', '5875', '5900', '6782', '7123', '7885', '8300', '8585', '8700', '33085', '68660', '70885', '078585', '176176', '323804', '326139', '378585', '461234', '818585', '2812085', '5678585', '6323200', '6361712', '6361716', '7261651'], '');
+                if (!is_array($general_info['donate'])) {
+                    $general_info['donate'] = explode(',', (string) $general_info['donate']);
+                }
+                foreach ($general_info['donate'] as &$donate) {
+                    $donate = preg_replace('/[^0-9]/', '', $donate);
+                }
+                sort($general_info['donate']);
+                if (empty($general_info['donate'])) {
+                    $general_info['donate'] = ['024', '035', '1785', '2085', '2100', '3100', '5520', '5584', '5875', '5900', '6782', '7123', '7885', '8300', '8585', '8700', '33085', '68660', '70885', '078585', '176176', '323804', '326139', '378585', '461234', '818585', '2812085', '5678585', '6323200', '6361712', '6361716', '7261651'];
+                }
+                update_option('RY_Invoice_general', $general_info, false);
+            }
+
+            Main::update_option('version', '2026.8.27', true);
         }
     }
 }

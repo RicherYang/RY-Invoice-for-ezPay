@@ -1,6 +1,6 @@
 <?php
 
-namespace RY\Invoice\V20260805;
+namespace RY\Invoice\V20260827;
 
 defined('ABSPATH') or exit;
 
@@ -35,5 +35,16 @@ final class Utils
         }
 
         return $list[$value] ?? $value;
+    }
+
+    public static function get_default_donate_no()
+    {
+        $general_info = AbstractLinkProvider::get_info();
+        $donate_no = $general_info['donate'];
+        if (is_array($donate_no)) {
+            $donate_no = $donate_no[intval(time() / 86400) % count($donate_no)];
+        }
+
+        return $donate_no;
     }
 }
