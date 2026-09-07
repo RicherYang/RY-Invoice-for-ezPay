@@ -1,6 +1,6 @@
 <?php
 
-namespace RY\Invoice\V20260827\Page;
+namespace RY\Invoice\V20260906\Page;
 
 defined('ABSPATH') or exit;
 

@@ -138,7 +138,7 @@ final class Invoice
             }
 
             $order->add_order_note(sprintf(
-                /* translators: %1$s Error messade, %2$s Status code */
+                /* translators: %1$s Error message, %2$s Status code */
                 __('Issue invoice error: %1$s (%2$s)', 'ry-invoice-for-ezpay'),
                 $result->Message,
                 $result->Status,
@@ -172,7 +172,7 @@ final class Invoice
 
         if ($result->Status != 'SUCCESS') {
             $order->add_order_note(sprintf(
-                /* translators: %1$s Error messade, %2$s Status code */
+                /* translators: %1$s Error message, %2$s Status code */
                 __('Invalid invoice error: %1$s (%2$s)', 'ry-invoice-for-ezpay'),
                 $result->Message,
                 $result->Status,
@@ -239,10 +239,20 @@ final class Invoice
             return;
         }
 
+        $country = $order->get_billing_country();
+        $countries = WC()->countries->get_countries();
+        $full_country = ($country && isset($countries[$country])) ? $countries[$country] : $country;
+
+        $state = $order->get_billing_state();
+        $states = WC()->countries->get_states($country);
+        $full_state = ($state && isset($states[$state])) ? $states[$state] : $state;
+
         $invoice_data = [
             'no' => $order->get_order_number(),
             'prefix' => Main::get_option('prefix', ''),
             'email' => $order->get_billing_email(),
+            'name' => $order->get_billing_last_name() . ' ' . $order->get_billing_first_name(),
+            'address' => $full_country . $full_state . $order->get_billing_city() . $order->get_billing_address_1() . $order->get_billing_address_2(),
             'total' => $order->get_total() - $order->get_total_refunded(),
         ];
 

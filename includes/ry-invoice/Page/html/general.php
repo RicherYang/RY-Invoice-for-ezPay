@@ -1,11 +1,42 @@
 <?php defined('ABSPATH') or exit; ?>
 
 <?php
-use RY\Invoice\V20260827\AbstractLinkProvider;
+use RY\Invoice\V20260906\AbstractLinkProvider;
 
 ?>
 
 <?php $general_info = AbstractLinkProvider::get_info(); ?>
+
+<h2 class="title"><?php esc_html_e('Buyer options', 'ry-invoice-for-ezpay'); ?></h2>
+<table class="form-table" role="presentation">
+    <tr>
+        <th scope="row"><?php esc_html_e('Buyer name', 'ry-invoice-for-ezpay'); ?></th>
+        <td>
+            <fieldset>
+                <legend class="screen-reader-text"><span><?php esc_html_e('Use real name', 'ry-invoice-for-ezpay'); ?></span></legend>
+                <label for="buyer_name"><input name="buyer_name" type="checkbox" id="buyer_name" value="yes" <?php checked($general_info['buyer']['name']); ?>>
+                    <?php esc_html_e('Use real name', 'ry-invoice-for-ezpay'); ?></label>
+                <p class="description">
+                    <?php echo esc_html(sprintf(__('If disabled, fallback to "%s" as the name.', 'ry-invoice-for-ezpay'), __('Customer', 'ry-invoice-for-ezpay'))); ?>
+                    <?php esc_html_e('Only for personal invoice.', 'ry-invoice-for-ezpay'); ?>
+                </p>
+            </fieldset>
+        </td>
+    </tr>
+    <tr>
+        <th scope="row"><?php esc_html_e('Buyer address', 'ry-invoice-for-ezpay'); ?></th>
+        <td>
+            <fieldset>
+                <legend class="screen-reader-text"><span><?php esc_html_e('Use real address', 'ry-invoice-for-ezpay'); ?></span></legend>
+                <label for="buyer_address"><input name="buyer_address" type="checkbox" id="buyer_address" value="yes" <?php checked($general_info['buyer']['address']); ?>>
+                    <?php esc_html_e('Use real address', 'ry-invoice-for-ezpay'); ?></label>
+                <p class="description">
+                    <?php echo esc_html(sprintf(__('If disabled, fallback to "%s" as the address.', 'ry-invoice-for-ezpay'), __('Taiwan', 'ry-invoice-for-ezpay'))); ?>
+                </p>
+            </fieldset>
+        </td>
+    </tr>
+</table>
 
 <h2 class="title"><?php esc_html_e('General options', 'ry-invoice-for-ezpay'); ?></h2>
 
@@ -46,7 +77,7 @@ use RY\Invoice\V20260827\AbstractLinkProvider;
                 <?php echo wp_kses(
                     sprintf(
                         /* translators: %s: link to full list of donate numbers */
-                        __('Separate donate numbers with commas. Get <a href="%s" target="_blank">full list</a>.', 'ry-invoice-for-ezpay'),
+                        __('Separate donate numbers with commas. View <a href="%s" target="_blank">full list</a>.', 'ry-invoice-for-ezpay'),
                         'https://www.einvoice.nat.gov.tw/portal/btc/btc603w/search'
                     ),
                     ['a' => ['href' => [], 'target' => []]]

@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-06-29T20:45:49+08:00\n"
-"PO-Revision-Date: 2026-08-27 13:46+0800\n"
+"PO-Revision-Date: 2026-09-06 11:03+0800\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -91,7 +91,7 @@ msgstr "捐贈"
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:165
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:261
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:42
-msgid "Carruer type"
+msgid "Carrier type"
 msgstr "載具類型"
 
 #: includes/ry-invoice/Utils.php:28
@@ -117,7 +117,7 @@ msgstr "手機條碼"
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:264
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:53
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:249
-msgid "Carruer number"
+msgid "Carrier number"
 msgstr "載具編號"
 
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:186
@@ -145,12 +145,12 @@ msgid "Invalid donate number"
 msgstr "無效的捐贈碼"
 
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:221
-#: woocommerce/Invoice.php:252
+#: woocommerce/Invoice.php:262
 msgid "Zero total fee without invoice"
 msgstr "總額零元不開立發票"
 
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:228
-#: woocommerce/Invoice.php:258
+#: woocommerce/Invoice.php:268
 msgid "Negative total fee can't invoice"
 msgstr "總額負數不開立發票"
 
@@ -313,7 +313,7 @@ msgstr "分"
 msgid "s"
 msgstr "秒"
 
-#. translators: %1$s Error messade, %2$s Status code
+#. translators: %1$s Error message, %2$s Status code
 #: woocommerce/Invoice.php:142
 #, php-format
 msgid "Issue invoice error: %1$s (%2$s)"
@@ -323,22 +323,22 @@ msgstr "開立發票錯誤：%1$s (%2$s)"
 msgid "Invoice create time"
 msgstr "發票開立時間"
 
-#: woocommerce/Invoice.php:322
-#: woocommerce/Invoice.php:335
-#: woocommerce/Invoice.php:348
+#: woocommerce/Invoice.php:332
+#: woocommerce/Invoice.php:345
 #: woocommerce/Invoice.php:358
+#: woocommerce/Invoice.php:368
 msgid "parcel"
 msgstr "批"
 
-#: woocommerce/Invoice.php:345
+#: woocommerce/Invoice.php:355
 msgid "shipping fee"
 msgstr "運費"
 
-#: woocommerce/Invoice.php:355
+#: woocommerce/Invoice.php:365
 msgid "return fee"
 msgstr "退款"
 
-#: includes/ry-invoice/Page/html/general.php:10
+#: includes/ry-invoice/Page/html/general.php:41
 msgid "General options"
 msgstr "一般設定"
 
@@ -348,7 +348,7 @@ msgstr "不建議同時啟用兩個發票外掛！"
 
 #: admin/Page/Option.php:73
 #: includes/ry-general/Page/Option.php:72
-#: includes/ry-invoice/Page/General.php:87
+#: includes/ry-invoice/Page/General.php:91
 msgid "Settings saved."
 msgstr "設定已儲存。"
 
@@ -391,10 +391,11 @@ msgid "Enable log"
 msgstr "啓用記錄"
 
 #: classes/LinkProvider.php:52
+#: includes/ry-invoice/Page/html/general.php:20
 msgid "Customer"
 msgstr "消費者"
 
-#. translators: %1$s Error messade, %2$s Status code
+#. translators: %1$s Error message, %2$s Status code
 #: woocommerce/Invoice.php:176
 #, php-format
 msgid "Invalid invoice error: %1$s (%2$s)"
@@ -414,7 +415,7 @@ msgstr "交易編號前綴字只允許使用英文字母與數字，且不得超
 
 #. Description of the plugin
 #: ry-invoice-for-ezpay.php
-msgid "ezPay E-invoice, support WooCommerce."
+msgid "ezPay E-invoice, support for WooCommerce."
 msgstr "ezPay 電子發票，支援 WooCommerce。"
 
 #: admin/Page/Option.php:23
@@ -445,15 +446,16 @@ msgstr "HashKey"
 msgid "HashIV"
 msgstr "HashIV"
 
-#: includes/ry-invoice/Page/html/general.php:14
+#: includes/ry-invoice/Page/html/general.php:45
 msgid "Item count precision"
 msgstr "商品數量的小數點位數"
 
-#: includes/ry-invoice/Page/html/general.php:28
+#: includes/ry-invoice/Page/html/general.php:59
 msgid "Item amount precision"
 msgstr "商品金額的小數點位數"
 
 #: classes/LinkProvider.php:53
+#: includes/ry-invoice/Page/html/general.php:34
 msgid "Taiwan"
 msgstr "台灣"
 
@@ -686,12 +688,48 @@ msgstr "字軌代號"
 msgid "Need API key information for connect to provider server."
 msgstr "請提供 API 金鑰資訊用以與供應商伺服器連線。"
 
-#: includes/ry-invoice/Page/html/general.php:42
+#: includes/ry-invoice/Page/html/general.php:73
 msgid "Default donate number"
 msgstr "預設的捐贈碼"
 
-#. translators: %s: link to full list of donate numbers
-#: includes/ry-invoice/Page/html/general.php:49
+#: includes/ry-invoice/Page/html/general.php:10
+msgid "Buyer options"
+msgstr "買方設定"
+
+#: includes/ry-invoice/Page/html/general.php:13
+msgid "Buyer name"
+msgstr "買方名稱"
+
+#: includes/ry-invoice/Page/html/general.php:16
+#: includes/ry-invoice/Page/html/general.php:18
+msgid "Use real name"
+msgstr "使用真實姓名"
+
+#: includes/ry-invoice/Page/html/general.php:20
 #, php-format
-msgid "Separate donate numbers with commas. Get <a href=\"%s\" target=\"_blank\">full list</a>."
-msgstr "請使用逗號分隔多個捐贈碼。取得 <a href=\"%s\" target=\"_blank\">完整清單</a>。"
+msgid "If disabled, fallback to \"%s\" as the name."
+msgstr "若已停用，則改以 [%s] 作為名稱。"
+
+#: includes/ry-invoice/Page/html/general.php:21
+msgid "Only for personal invoice."
+msgstr "僅限個人發票。"
+
+#: includes/ry-invoice/Page/html/general.php:27
+msgid "Buyer address"
+msgstr "買方地址"
+
+#: includes/ry-invoice/Page/html/general.php:30
+#: includes/ry-invoice/Page/html/general.php:32
+msgid "Use real address"
+msgstr "使用真實地址"
+
+#: includes/ry-invoice/Page/html/general.php:34
+#, php-format
+msgid "If disabled, fallback to \"%s\" as the address."
+msgstr "若已停用，則改以 [%s] 作為地址。"
+
+#. translators: %s: link to full list of donate numbers
+#: includes/ry-invoice/Page/html/general.php:80
+#, php-format
+msgid "Separate donate numbers with commas. View <a href=\"%s\" target=\"_blank\">full list</a>."
+msgstr ""

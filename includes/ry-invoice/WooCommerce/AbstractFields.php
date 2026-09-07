@@ -1,10 +1,10 @@
 <?php
 
-namespace RY\Invoice\V20260827\WooCommerce;
+namespace RY\Invoice\V20260906\WooCommerce;
 
 defined('ABSPATH') or exit;
 
-use RY\Invoice\V20260827\Utils;
+use RY\Invoice\V20260906\Utils;
 
 abstract class AbstractFields
 {
@@ -39,7 +39,7 @@ abstract class AbstractFields
             ],
             'invoice_carruer_type' => [
                 'type' => 'select',
-                'label' => __('Carruer type', 'ry-invoice-for-ezpay'),
+                'label' => __('Carrier type', 'ry-invoice-for-ezpay'),
                 'options' => [
                     $host_type => Utils::carruer_type_to_name($host_type) . __(' (send paper when win)', 'ry-invoice-for-ezpay'),
                     'MOICA' => Utils::carruer_type_to_name('MOICA'),
@@ -50,7 +50,7 @@ abstract class AbstractFields
                 'priority' => 10,
             ],
             'invoice_carruer_no' => [
-                'label' => __('Carruer number', 'ry-invoice-for-ezpay'),
+                'label' => __('Carrier number', 'ry-invoice-for-ezpay'),
                 'required' => true,
                 'priority' => 20,
             ],
@@ -246,7 +246,7 @@ abstract class AbstractFields
                 if (in_array($carruer_type, ['MOICA', 'phone_barcode'])) {
                     $invoice_info[] = [
                         'key' => 'carruer-number',
-                        'name' => __('Carruer number', 'ry-invoice-for-ezpay'),
+                        'name' => __('Carrier number', 'ry-invoice-for-ezpay'),
                         'value' => $order->get_meta('_invoice_carruer_no'),
                     ];
                 }

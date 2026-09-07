@@ -1,11 +1,11 @@
 <?php
 
-namespace RY\Invoice\V20260827\WooCommerce;
+namespace RY\Invoice\V20260906\WooCommerce;
 
 defined('ABSPATH') or exit;
 
 use Automattic\WooCommerce\Utilities\OrderUtil;
-use RY\Invoice\V20260827\Utils;
+use RY\Invoice\V20260906\Utils;
 
 abstract class AbstractAdminOrder
 {
@@ -162,7 +162,7 @@ abstract class AbstractAdminOrder
                 ],
             ],
             'carruer_type' => [
-                'label' => __('Carruer type', 'ry-invoice-for-ezpay'),
+                'label' => __('Carrier type', 'ry-invoice-for-ezpay'),
                 'show' => false,
                 'class' => 'select short',
                 'type' => 'select',
@@ -173,7 +173,7 @@ abstract class AbstractAdminOrder
                 ],
             ],
             'carruer_no' => [
-                'label' => __('Carruer number', 'ry-invoice-for-ezpay'),
+                'label' => __('Carrier number', 'ry-invoice-for-ezpay'),
                 'show' => false,
                 'type' => 'text',
             ],
@@ -258,10 +258,10 @@ abstract class AbstractAdminOrder
             <strong><?php esc_html_e('Invoice type', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html(Utils::invoice_type_to_name($invoice_type)); ?><br>
 
             <?php if ($invoice_type === 'personal') { ?>
-            <strong><?php esc_html_e('Carruer type', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html(Utils::carruer_type_to_name($carruer_type)); ?><br>
+            <strong><?php esc_html_e('Carrier type', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html(Utils::carruer_type_to_name($carruer_type)); ?><br>
 
             <?php if (in_array($carruer_type, ['MOICA', 'phone_barcode'])) { ?>
-            <strong><?php esc_html_e('Carruer number', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html($order->get_meta('_invoice_carruer_no')); ?><br>
+            <strong><?php esc_html_e('Carrier number', 'ry-invoice-for-ezpay'); ?>:</strong> <?php echo esc_html($order->get_meta('_invoice_carruer_no')); ?><br>
             <?php } ?>
             <?php } ?>
 

@@ -97,5 +97,9 @@ final class Update
 
             Main::update_option('version', '2026.8.27', true);
         }
+
+        if (version_compare($now_version, '2026.9.6', '<')) {
+            Main::update_option('version', '2026.9.6', true);
+        }
     }
 }

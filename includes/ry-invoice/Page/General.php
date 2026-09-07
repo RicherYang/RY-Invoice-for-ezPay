@@ -1,6 +1,6 @@
 <?php
 
-namespace RY\Invoice\V20260827\Page;
+namespace RY\Invoice\V20260906\Page;
 
 defined('ABSPATH') or exit;
 
@@ -61,6 +61,10 @@ final class General extends AbstractAdminPage
             'count_precision' => intval($_POST['count_precision'] ?? ''),
             'amount_precision' => intval($_POST['amount_precision'] ?? ''),
             'donate' => sanitize_text_field($_POST['donate'] ?? ''),
+            'buyer' => [
+                'name' => Utils::bool_to_string($_POST['buyer_name'] ?? 'no'),
+                'address' => Utils::bool_to_string($_POST['buyer_address'] ?? 'no'),
+            ],
         ];
 
         if ($general_info['count_precision'] < 1 || $general_info['count_precision'] > 7) {
