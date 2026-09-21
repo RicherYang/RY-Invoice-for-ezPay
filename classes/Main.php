@@ -51,14 +51,11 @@ final class Main extends AbstractBasic
 
     public function do_wp_init(): void
     {
+        Cron::add_action();
         Updater::instance();
 
         if (is_admin()) {
             Admin::instance();
-        }
-
-        if (License::instance()->is_activated()) {
-            Cron::add_action();
         }
 
         if (did_action('woocommerce_init')) {
