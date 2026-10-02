@@ -16,6 +16,10 @@ final class Main extends AbstractBasic
 
     public const PLUGIN_NAME = 'RY Invoice for ezPay';
 
+    public const MIN_WC_VERSION = '9.0.0';
+
+    public const MIN_TUTOR_VERSION = '4.0.0';
+
     private static ?self $_instance = null;
 
     public static function instance(): Main
@@ -58,12 +62,15 @@ final class Main extends AbstractBasic
             Admin::instance();
         }
 
-        if (did_action('woocommerce_init')) {
+        if (did_action('woocommerce_init') && version_compare(WC_VERSION, self::MIN_WC_VERSION, '>=')) {
             Fields::instance();
 
             if (License::instance()->is_activated()) {
                 Invoice::instance();
             }
+        }
+
+        if (did_action('tutor_loaded') && version_compare(TUTOR_VERSION, self::MIN_TUTOR_VERSION, '>=')) {
         }
     }
 

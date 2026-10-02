@@ -6,6 +6,7 @@ defined('ABSPATH') or exit;
 
 use RY\Invoice\Ezpay\Admin\Page\Option as PageOption;
 use RY\Invoice\Ezpay\License;
+use RY\Invoice\Ezpay\Main;
 use RY\Invoice\V20260906\Page\General as PageGeneral;
 use RY\Invoice\V20260906\Page\Status as PageStatus;
 use RY\Paid\V20260729\AbstractAdmin;
@@ -73,6 +74,26 @@ final class Admin extends AbstractAdmin
             echo '<div class="notice notice-info is-dismissible">';
             echo '<p>' . esc_html__('Not recommended enable two invoice plugins at the same time!', 'ry-invoice-for-ezpay') . '</p>';
             echo '</div>';
+        }
+
+        if (defined('WC_VERSION') && version_compare(WC_VERSION, Main::MIN_WC_VERSION, '<')) {
+            $message = sprintf(
+                /* translators: %1$s: Name of this plugin %2$s: min require version */
+                __('<strong>%1$s</strong> is inactive. It require WooCommerce version %2$s or newer.', 'ry-invoice-for-ezpay'),
+                __('RY Invoice for EZPay', 'ry-invoice-for-ezpay'),
+                Main::MIN_WC_VERSION,
+            );
+            printf('<div class="notice notice-error"><p>%s</p></div>', wp_kses($message, ['strong' => []]));
+        }
+
+        if (defined('TUTOR_VERSION') && version_compare(TUTOR_VERSION, Main::MIN_TUTOR_VERSION, '<')) {
+            $message = sprintf(
+                /* translators: %1$s: Name of this plugin %2$s: min require version */
+                __('<strong>%1$s</strong> is inactive. It require Tutor LMS version %2$s or newer.', 'ry-invoice-for-ezpay'),
+                __('RY Invoice for EZPay', 'ry-invoice-for-ezpay'),
+                Main::MIN_TUTOR_VERSION,
+            );
+            printf('<div class="notice notice-error"><p>%s</p></div>', wp_kses($message, ['strong' => []]));
         }
     }
 
