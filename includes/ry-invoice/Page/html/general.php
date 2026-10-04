@@ -1,7 +1,7 @@
 <?php defined('ABSPATH') or exit; ?>
 
 <?php
-use RY\Invoice\V20260906\AbstractLinkProvider;
+use RY\Invoice\V20261004\AbstractLinkProvider;
 
 ?>
 

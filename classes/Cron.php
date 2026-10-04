@@ -12,8 +12,8 @@ final class Cron
     {
         add_action(Main::get_prefix_name('check_expire'), [__CLASS__, 'check_expire']);
 
-        add_action(Main::get_prefix_name('auto_get_invoice'), [__CLASS__, 'get_invoice']);
-        add_action(Main::get_prefix_name('auto_invalid_invoice'), [__CLASS__, 'invalid_invoice']);
+        add_action(Main::get_prefix_name('auto_get_invoice'), [__CLASS__, 'get_invoice'], 10, 2);
+        add_action(Main::get_prefix_name('auto_invalid_invoice'), [__CLASS__, 'invalid_invoice'], 10, 2);
     }
 
     public static function check_expire(): void
@@ -21,23 +21,37 @@ final class Cron
         License::instance()->check_expire();
     }
 
-    public static function get_invoice($object_ID): void
+    /**
+     * @param int $object_ID
+     */
+    public static function get_invoice($object_ID, $type = 'woocommerce'): void
     {
-        if (function_exists('wc_get_order')) {
-            $order = wc_get_order($object_ID);
-            if ($order) {
-                Invoice::instance()->get_invoice($order);
-            }
+        switch ($type) {
+            case 'woocommerce':
+                if (function_exists('wc_get_order')) {
+                    $order = wc_get_order($object_ID);
+                    if ($order) {
+                        Invoice::instance()->get_invoice($order);
+                    }
+                }
+                break;
         }
     }
 
-    public static function invalid_invoice($object_ID): void
+    /**
+     * @param int $object_ID
+     */
+    public static function invalid_invoice($object_ID, $type = 'woocommerce'): void
     {
-        if (function_exists('wc_get_order')) {
-            $order = wc_get_order($object_ID);
-            if ($order) {
-                Invoice::instance()->invalid_invoice($order);
-            }
+        switch ($type) {
+            case 'woocommerce':
+                if (function_exists('wc_get_order')) {
+                    $order = wc_get_order($object_ID);
+                    if ($order) {
+                        Invoice::instance()->invalid_invoice($order);
+                    }
+                }
+                break;
         }
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace RY\Invoice\V20260906\WooCommerce;
+namespace RY\Invoice\V20261004\WooCommerce;
 
 defined('ABSPATH') or exit;
 
 use Automattic\WooCommerce\Utilities\OrderUtil;
-use RY\Invoice\V20260906\Utils;
+use RY\Invoice\V20261004\Utils;
 
 abstract class AbstractAdminOrder
 {
@@ -277,15 +277,15 @@ abstract class AbstractAdminOrder
     <div class="ivoice_action_column">
         <?php
         if (preg_match('/^[A-Z]{2}[0-9]{8}$/', $invoice_number)) {
-            echo '<button type="button" class="button ajax-' . esc_attr($this->type) . '-invoice" data-action="invalid" data-orderid="' . esc_attr($order->get_id()) . '">'
+            echo '<button type="button" class="button ajax-' . esc_attr($this->type) . '-invoice" data-action="invalid" data-type="woocommerce" data-orderid="' . esc_attr($order->get_id()) . '">'
                 . esc_html__('Invalid invoice', 'ry-invoice-for-ezpay')
                 . '</button>';
         } elseif ($invoice_number === 'wait') {
-            echo '<button type="button" class="button ajax-' . esc_attr($this->type) . '-invoice" data-action="cancel" data-orderid="' . esc_attr($order->get_id()) . '">'
+            echo '<button type="button" class="button ajax-' . esc_attr($this->type) . '-invoice" data-action="cancel" data-type="woocommerce" data-orderid="' . esc_attr($order->get_id()) . '">'
                 . esc_html__('Cancel get', 'ry-invoice-for-ezpay')
                 . '</button>';
         } elseif ($order->is_paid()) {
-            echo '<button type="button" class="button ajax-' . esc_attr($this->type) . '-invoice" data-action="get" data-orderid="' . esc_attr($order->get_id()) . '">'
+            echo '<button type="button" class="button ajax-' . esc_attr($this->type) . '-invoice" data-action="get" data-type="woocommerce" data-orderid="' . esc_attr($order->get_id()) . '">'
                 . esc_html__('Issue invoice', 'ry-invoice-for-ezpay')
                 . '</button>';
         }

@@ -1,10 +1,10 @@
 <?php
 
-namespace RY\Invoice\V20260906\WooCommerce;
+namespace RY\Invoice\V20261004\WooCommerce;
 
 defined('ABSPATH') or exit;
 
-use RY\Invoice\V20260906\Utils;
+use RY\Invoice\V20261004\Utils;
 
 abstract class AbstractFields
 {

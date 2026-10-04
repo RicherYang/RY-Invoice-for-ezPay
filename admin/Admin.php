@@ -7,8 +7,8 @@ defined('ABSPATH') or exit;
 use RY\Invoice\Ezpay\Admin\Page\Option as PageOption;
 use RY\Invoice\Ezpay\License;
 use RY\Invoice\Ezpay\Main;
-use RY\Invoice\V20260906\Page\General as PageGeneral;
-use RY\Invoice\V20260906\Page\Status as PageStatus;
+use RY\Invoice\V20261004\Page\General as PageGeneral;
+use RY\Invoice\V20261004\Page\Status as PageStatus;
 use RY\Paid\V20260729\AbstractAdmin;
 
 final class Admin extends AbstractAdmin

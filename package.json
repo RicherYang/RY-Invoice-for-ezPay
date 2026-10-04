@@ -1,7 +1,7 @@
 {
     "name": "ry-invoice-for-ezpay",
     "title": "RY Invoice for ezPay",
-    "version": "2026.9.6",
+    "version": "2026.10.4",
     "author": "Richer Yang",
     "private": true,
     "devDependencies": {

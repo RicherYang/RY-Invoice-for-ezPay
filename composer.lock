@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7516388f4cbed40b47d2b195e9e3d6e",
+    "content-hash": "c1bee02f15ef8460e181b3491445d700",
     "packages": [
         {
             "name": "woocommerce/action-scheduler",
@@ -51,7 +51,8 @@
                 "issues": "https://github.com/woocommerce/action-scheduler/issues",
                 "source": "https://github.com/woocommerce/action-scheduler/tree/4.2.0"
             },
-            "time": "2026-09-16T21:40:40+00:00"
+            "time": "2026-09-16T21:40:40+00:00",
+            "published-time": "2026-09-16T21:53:56+00:00"
         }
     ],
     "packages-dev": [],
@@ -65,5 +66,5 @@
     "platform-overrides": {
         "php": "8.2"
     },
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.11.0"
 }

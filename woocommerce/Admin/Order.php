@@ -6,7 +6,7 @@ defined('ABSPATH') or exit;
 
 use RY\Invoice\Ezpay\Main;
 use RY\Invoice\Ezpay\WooCommerce\Invoice;
-use RY\Invoice\V20260906\WooCommerce\AbstractAdminOrder;
+use RY\Invoice\V20261004\WooCommerce\AbstractAdminOrder;
 
 final class Order extends AbstractAdminOrder
 {
@@ -31,7 +31,7 @@ final class Order extends AbstractAdminOrder
 
     public function show_invoice_info($order)
     {
-        $scheduled_time = as_next_scheduled_action(Main::get_prefix_name('auto_get_invoice'), [$order->get_id()], 'ry-invoice');
+        $scheduled_time = as_next_scheduled_action(Main::get_prefix_name('auto_get_invoice'), [$order->get_id(), 'woocommerce'], 'ry-invoice');
         $this->_show_invoice_info($order, $scheduled_time);
     }
 

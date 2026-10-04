@@ -1,6 +1,6 @@
 <?php
 
-namespace RY\Invoice\V20260906\ListTable;
+namespace RY\Invoice\V20261004\ListTable;
 
 defined('ABSPATH') or exit;
 

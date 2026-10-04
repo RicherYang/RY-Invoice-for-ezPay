@@ -68,6 +68,7 @@ $(function () {
             data: {
                 action: `RY_IFEZPAY_${action}`,
                 id: $(this).data('orderid'),
+                type: $(this).data('type'),
                 _ajax_nonce: RyAdminInvoiceParams._nonce[action]
             }
         }).always(function () {

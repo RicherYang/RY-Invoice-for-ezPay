@@ -35,13 +35,18 @@ final class Ajax
         check_ajax_referer('get-invoice');
 
         $object_ID = intval($_POST['id'] ?? '');
-        as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$object_ID], 'ry-invoice');
+        $type = sanitize_key($_POST['type'] ?? '');
+        as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$object_ID, $type], 'ry-invoice');
 
-        if (function_exists('wc_get_order')) {
-            $order = wc_get_order($object_ID);
-            if ($order) {
-                Invoice::instance()->get_invoice($order);
-            }
+        switch ($type) {
+            case 'woocommerce':
+                if (function_exists('wc_get_order')) {
+                    $order = wc_get_order($object_ID);
+                    if ($order) {
+                        Invoice::instance()->get_invoice($order);
+                    }
+                }
+                break;
         }
 
         wp_die();
@@ -52,13 +57,18 @@ final class Ajax
         check_ajax_referer('cancel-invoice');
 
         $object_ID = intval($_POST['id'] ?? '');
-        as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$object_ID], 'ry-invoice');
+        $type = sanitize_key($_POST['type'] ?? '');
+        as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$object_ID, $type], 'ry-invoice');
 
-        if (function_exists('wc_get_order')) {
-            $order = wc_get_order($object_ID);
-            if ($order) {
-                Invoice::instance()->cancel_invoice($order);
-            }
+        switch ($type) {
+            case 'woocommerce':
+                if (function_exists('wc_get_order')) {
+                    $order = wc_get_order($object_ID);
+                    if ($order) {
+                        Invoice::instance()->cancel_invoice($order);
+                    }
+                }
+                break;
         }
 
         wp_die();
@@ -69,13 +79,18 @@ final class Ajax
         check_ajax_referer('invalid-invoice');
 
         $object_ID = intval($_POST['id'] ?? '');
-        as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$object_ID], 'ry-invoice');
+        $type = sanitize_key($_POST['type'] ?? '');
+        as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$object_ID, $type], 'ry-invoice');
 
-        if (function_exists('wc_get_order')) {
-            $order = wc_get_order($object_ID);
-            if ($order) {
-                Invoice::instance()->invalid_invoice($order);
-            }
+        switch ($type) {
+            case 'woocommerce':
+                if (function_exists('wc_get_order')) {
+                    $order = wc_get_order($object_ID);
+                    if ($order) {
+                        Invoice::instance()->invalid_invoice($order);
+                    }
+                }
+                break;
         }
 
         wp_die();

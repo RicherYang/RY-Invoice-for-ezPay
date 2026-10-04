@@ -98,8 +98,27 @@ final class Update
             Main::update_option('version', '2026.8.27', true);
         }
 
-        if (version_compare($now_version, '2026.9.6', '<')) {
-            Main::update_option('version', '2026.9.6', true);
+        if (version_compare($now_version, '2026.10.4', '<')) {
+            add_action('init', function () {
+                global $wpdb;
+                $result = $wpdb->get_results("SELECT * FROM `{$wpdb->prefix}actionscheduler_actions` WHERE (`hook` = 'RY_IFEZPAY_auto_get_invoice' OR `hook` = 'RY_IFEZPAY_auto_invalid_invoice') AND `status` = 'pending'");
+                foreach ($result as $row) {
+                    $args = json_decode($row->args, true);
+                    if (is_array($args) && count($args) === 1) {
+                        $args[] = 'woocommerce';
+                        $args = json_encode($args);
+                        $wpdb->update(
+                            $wpdb->prefix . 'actionscheduler_actions',
+                            ['args' => $args],
+                            [
+                                'action_id' => $row->action_id,
+                                'status' => 'pending',
+                            ]
+                        );
+                    }
+                }
+            });
+            Main::update_option('version', '2026.10.4', true);
         }
     }
 }

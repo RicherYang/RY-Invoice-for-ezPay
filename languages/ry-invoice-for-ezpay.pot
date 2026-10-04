@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: RY Invoice for ezPay 2026.9.6\n"
+"Project-Id-Version: RY Invoice for ezPay 2026.10.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ry-invoice-for-ezpay\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,11 +38,28 @@ msgstr ""
 msgid "https://richer.tw/"
 msgstr ""
 
-#: admin/Admin.php:74
+#: admin/Admin.php:75
 msgid "Not recommended enable two invoice plugins at the same time!"
 msgstr ""
 
+#. translators: %1$s: Name of this plugin %2$s: min require version
 #: admin/Admin.php:82
+#, php-format
+msgid "<strong>%1$s</strong> is inactive. It require WooCommerce version %2$s or newer."
+msgstr ""
+
+#: admin/Admin.php:83
+#: admin/Admin.php:93
+msgid "RY Invoice for EZPay"
+msgstr ""
+
+#. translators: %1$s: Name of this plugin %2$s: min require version
+#: admin/Admin.php:92
+#, php-format
+msgid "<strong>%1$s</strong> is inactive. It require Tutor LMS version %2$s or newer."
+msgstr ""
+
+#: admin/Admin.php:103
 msgid "E-Invoice"
 msgstr ""
 

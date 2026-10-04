@@ -38,7 +38,7 @@ msgstr "https://ry-plugin.com/ry-invoice-for-ezpay"
 msgid "Richer Yang"
 msgstr "Richer Yang"
 
-#: admin/Admin.php:82
+#: admin/Admin.php:103
 msgid "E-Invoice"
 msgstr "電子發票"
 
@@ -342,7 +342,7 @@ msgstr "退款"
 msgid "General options"
 msgstr "一般設定"
 
-#: admin/Admin.php:74
+#: admin/Admin.php:75
 msgid "Not recommended enable two invoice plugins at the same time!"
 msgstr "不建議同時啟用兩個發票外掛！"
 
@@ -732,4 +732,21 @@ msgstr "若已停用，則改以 [%s] 作為地址。"
 #: includes/ry-invoice/Page/html/general.php:80
 #, php-format
 msgid "Separate donate numbers with commas. View <a href=\"%s\" target=\"_blank\">full list</a>."
+msgstr ""
+
+#. translators: %1$s: Name of this plugin %2$s: min require version
+#: admin/Admin.php:82
+#, php-format
+msgid "<strong>%1$s</strong> is inactive. It require WooCommerce version %2$s or newer."
+msgstr ""
+
+#: admin/Admin.php:83
+#: admin/Admin.php:93
+msgid "RY Invoice for EZPay"
+msgstr ""
+
+#. translators: %1$s: Name of this plugin %2$s: min require version
+#: admin/Admin.php:92
+#, php-format
+msgid "<strong>%1$s</strong> is inactive. It require Tutor LMS version %2$s or newer."
 msgstr ""

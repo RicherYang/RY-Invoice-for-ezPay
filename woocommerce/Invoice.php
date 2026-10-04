@@ -85,7 +85,7 @@ final class Invoice
             return;
         }
 
-        if (!as_has_scheduled_action(Main::get_prefix_name('auto_get_invoice'), [$order->get_id()], 'ry-invoice')) {
+        if (!as_has_scheduled_action(Main::get_prefix_name('auto_get_invoice'), [$order->get_id(), 'woocommerce'], 'ry-invoice')) {
             $delay_time = (int) Main::get_option('get_delay_time', '0');
             if ($delay_time < 0) {
                 $delay_time = 0;
@@ -95,7 +95,7 @@ final class Invoice
             }
             $order->update_meta_data('_invoice_number', 'wait');
             $order->save();
-            as_schedule_single_action(time() + MINUTE_IN_SECONDS * 2 + HOUR_IN_SECONDS * $delay_time, Main::get_prefix_name('auto_get_invoice'), [$order->get_id()], 'ry-invoice');
+            as_schedule_single_action(time() + MINUTE_IN_SECONDS * 2 + HOUR_IN_SECONDS * $delay_time, Main::get_prefix_name('auto_get_invoice'), [$order->get_id(), 'woocommerce'], 'ry-invoice');
         }
     }
 
@@ -114,12 +114,12 @@ final class Invoice
             case 'wait':
             case 'zero':
             case 'negative':
-                as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$order->get_id()], 'ry-invoice');
+                as_unschedule_action(Main::get_prefix_name('auto_get_invoice'), [$order->get_id(), 'woocommerce'], 'ry-invoice');
                 $order->delete_meta_data('_invoice_number');
                 $order->save();
                 break;
             default:
-                as_schedule_single_action(time() + MINUTE_IN_SECONDS * 2, Main::get_prefix_name('auto_invalid_invoice'), [$order->get_id()], 'ry-invoice');
+                as_schedule_single_action(time() + MINUTE_IN_SECONDS * 2, Main::get_prefix_name('auto_invalid_invoice'), [$order->get_id(), 'woocommerce'], 'ry-invoice');
                 break;
         }
     }
