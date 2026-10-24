@@ -59,7 +59,7 @@ msgstr ""
 msgid "<strong>%1$s</strong> is inactive. It require Tutor LMS version %2$s or newer."
 msgstr ""
 
-#: admin/Admin.php:103
+#: admin/Admin.php:104
 msgid "E-Invoice"
 msgstr ""
 

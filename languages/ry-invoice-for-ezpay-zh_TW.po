@@ -38,7 +38,7 @@ msgstr "https://ry-plugin.com/ry-invoice-for-ezpay"
 msgid "Richer Yang"
 msgstr "Richer Yang"
 
-#: admin/Admin.php:103
+#: admin/Admin.php:104
 msgid "E-Invoice"
 msgstr "電子發票"
 
