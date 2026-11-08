@@ -97,11 +97,11 @@ msgstr "載具類型"
 #: includes/ry-invoice/Utils.php:28
 msgctxt "carruer type"
 msgid "amego_host"
-msgstr "雲端發票 (光貿)"
+msgstr "雲端發票(光貿)"
 
 #: includes/ry-invoice/WooCommerce/AbstractFields.php:44
 msgid " (send paper when win)"
-msgstr " (中獎時寄送紙本發票)"
+msgstr " (中獎時提供紙本發票)"
 
 #: includes/ry-invoice/Utils.php:32
 msgctxt "carruer type"
@@ -182,12 +182,12 @@ msgstr "發票開立時間"
 #: includes/ry-invoice/Utils.php:29
 msgctxt "carruer type"
 msgid "ezpay_host"
-msgstr "雲端發票 (ezPay)"
+msgstr "雲端發票(ezPay)"
 
 #: includes/ry-invoice/Utils.php:30
 msgctxt "carruer type"
 msgid "ecpay_host"
-msgstr "雲端發票 (綠界)"
+msgstr "雲端發票(綠界)"
 
 #: includes/ry-invoice/WooCommerce/AbstractAdminOrder.php:225
 #: woocommerce/templates/checkout/form-invoice.php:17
@@ -425,7 +425,7 @@ msgstr "ezPay 設定"
 #: includes/ry-invoice/Utils.php:31
 msgctxt "carruer type"
 msgid "smilepay_host"
-msgstr "雲端發票 (速買配)"
+msgstr "雲端發票(速買配)"
 
 #: woocommerce/Admin/Settings/Invoice.php:35
 #: woocommerce/Admin/Settings/Invoice.php:38

@@ -1,12 +1,12 @@
 {
     "name": "ry-invoice-for-ezpay",
     "title": "RY Invoice for ezPay",
-    "version": "2026.10.4",
+    "version": "2026.11.7",
     "author": "Richer Yang",
     "private": true,
     "devDependencies": {
-        "@wordpress/i18n": "7.0.0",
-        "@wordpress/scripts": "37.0.0"
+        "@wordpress/i18n": "7.1.0",
+        "@wordpress/scripts": "37.1.0"
     },
     "scripts": {
         "start": "wp-scripts start",

@@ -87,6 +87,7 @@ final class Main extends AbstractBasic
 
     public static function plugin_deactivation(): void
     {
-        wp_unschedule_hook(self::get_prefix_name('check_expire'));
+        as_unschedule_all_actions(self::get_prefix_name('check_expire'));
+        as_unschedule_all_actions('RY_GENERAL_usage_tracking');
     }
 }

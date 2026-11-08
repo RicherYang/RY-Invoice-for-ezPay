@@ -9,7 +9,7 @@ use RY\Invoice\Ezpay\License;
 use RY\Invoice\Ezpay\Main;
 use RY\Invoice\V20261004\Page\General as PageGeneral;
 use RY\Invoice\V20261004\Page\Status as PageStatus;
-use RY\Paid\V20260729\AbstractAdmin;
+use RY\Paid\V20261107\AbstractAdmin;
 
 final class Admin extends AbstractAdmin
 {
