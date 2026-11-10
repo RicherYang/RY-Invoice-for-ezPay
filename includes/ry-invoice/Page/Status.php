@@ -4,7 +4,7 @@ namespace RY\Invoice\V20261004\Page;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260810\AbstractAdminPage;
+use RY\General\V20261107\AbstractAdminPage;
 
 final class Status extends AbstractAdminPage
 {

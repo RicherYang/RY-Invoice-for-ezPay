@@ -4,7 +4,7 @@ namespace RY\Invoice\V20261004;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260810\Utils;
+use RY\General\V20261107\Utils;
 
 abstract class AbstractLinkProvider
 {

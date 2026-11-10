@@ -4,8 +4,8 @@ namespace RY\Invoice\Ezpay;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20260810\AbstractBasic;
-use RY\General\V20260810\Utils;
+use RY\General\V20261107\AbstractBasic;
+use RY\General\V20261107\Utils;
 use RY\Invoice\Ezpay\Admin\Admin;
 use RY\Invoice\Ezpay\WooCommerce\Fields;
 use RY\Invoice\Ezpay\WooCommerce\Invoice;
@@ -76,18 +76,22 @@ final class Main extends AbstractBasic
 
     public static function usage_tracking(): void
     {
-        if (get_option('RY_General_tracking', 'yes') !== 'yes') {
+        if (get_option('RY_GENERAL_tracking', 'yes') !== 'yes') {
             return;
         }
 
         LinkServer::instance()->send_tracking();
     }
 
-    public static function plugin_activation(): void {}
+    public static function plugin_activation(): void
+    {
+        parent::plugin_activation();
+    }
 
     public static function plugin_deactivation(): void
     {
+        parent::plugin_deactivation();
+
         as_unschedule_all_actions(self::get_prefix_name('check_expire'));
-        as_unschedule_all_actions('RY_GENERAL_usage_tracking');
     }
 }
