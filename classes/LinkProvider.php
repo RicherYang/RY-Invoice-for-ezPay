@@ -4,8 +4,8 @@ namespace RY\Invoice\Ezpay;
 
 defined('ABSPATH') or exit;
 
-use RY\General\V20261107\Logs;
-use RY\General\V20261107\Utils;
+use RY\General\V20261116\Logs;
+use RY\General\V20261116\Utils;
 use RY\Invoice\V20261004\AbstractLinkProvider;
 
 final class LinkProvider extends AbstractLinkProvider
