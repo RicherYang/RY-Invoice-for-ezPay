@@ -257,8 +257,9 @@ final class LinkProvider extends AbstractLinkProvider
         ];
         $response = wp_remote_post($url, [
             'timeout' => $timeout,
+            'httpversion' => '1.1',
+            'user-agent' => apply_filters('http_headers_useragent', 'RY/' . date('Y.m')),
             'body' => $post_data,
-            'user-agent' => apply_filters('http_headers_useragent', 'WordPress/' . get_bloginfo('version')),
         ]);
 
         if (is_wp_error($response)) {
@@ -299,8 +300,9 @@ final class LinkProvider extends AbstractLinkProvider
         ];
         $response = wp_remote_post($url, [
             'timeout' => $timeout,
+            'httpversion' => '1.1',
+            'user-agent' => apply_filters('http_headers_useragent', 'RY/' . date('Y.m')),
             'body' => $post_data,
-            'user-agent' => apply_filters('http_headers_useragent', 'WordPress/' . get_bloginfo('version')),
         ]);
 
         if (is_wp_error($response)) {
