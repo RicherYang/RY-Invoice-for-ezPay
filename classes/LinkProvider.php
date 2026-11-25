@@ -191,6 +191,11 @@ final class LinkProvider extends AbstractLinkProvider
         }
     }
 
+    /**
+     * @param  int    $year 年分
+     * @param  int    $term 期別
+     * @return object
+     */
     public function track_status($year, $term)
     {
         $api_info = $this->get_api_info();

@@ -23,7 +23,11 @@ class Track extends \WP_List_Table
         ];
     }
 
-    protected function column_unused($item)
+    /**
+     * @param  array  $item
+     * @return string
+     */
+    protected function column_unused($item): string
     {
         if (empty($item['now_no'])) {
             return '';
@@ -35,12 +39,17 @@ class Track extends \WP_List_Table
         return sprintf('%d ( %.1f%% )', $unused, $unused / $total * 100);
     }
 
-    protected function column_default($item, $column_name)
+    /**
+     * @param  array  $item
+     * @param  string $column_name
+     * @return string
+     */
+    protected function column_default($item, $column_name): string
     {
         return $item[$column_name] ?? '';
     }
 
-    public function display()
+    public function display(): void
     {
         echo '<table class="wp-list-table ' . implode(' ', ['widefat', 'striped', 'table-view-list']) . '">';
         $this->print_table_description();

@@ -41,7 +41,7 @@ final class Admin extends AbstractAdmin
             PageOption::init_menu();
             PageStatus::init_menu();
 
-            Ajax::instance();
+            Ajax::init_action();
 
             add_filter('ry-plugin/menu_list', [$this, 'add_menu']);
             add_action('admin_enqueue_scripts', [$this, 'enqueue_scripts']);
@@ -67,7 +67,7 @@ final class Admin extends AbstractAdmin
         return $enable;
     }
 
-    public function show_invoice_check()
+    public function show_invoice_check(): void
     {
         $enable_list = apply_filters('enable_ry_invoice', []);
         if (count($enable_list) > 1) {
@@ -143,7 +143,7 @@ final class Admin extends AbstractAdmin
         echo '</div>';
     }
 
-    public function enqueue_scripts()
+    public function enqueue_scripts(): void
     {
         $asset_info = include RY_IFEZPAY_PLUGIN_DIR . 'assets/admin/invoice.asset.php';
         wp_register_script('ry-invoice-admin-invoice', RY_IFEZPAY_PLUGIN_URL . 'assets/admin/invoice.js', $asset_info['dependencies'], $asset_info['version'], true);
